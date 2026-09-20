@@ -16,6 +16,8 @@
 
 ## 0.3 — trustworthy document coverage
 
+Delivered in v0.3.0: an opt-in experimental context retry with continuity gates, preserved isolated decisions, bounded neighboring-page evidence, and a [paired development report](benchmarks/context-2026-09-20.md). Recognition improved on the reused set; automatic acceptance remains low. The [DocJev review](DOCJEV-REVIEW.md) prioritizes independent labels, document grouping, OCR, separate calibration and a measured fallback. The broader coverage work below remains open.
+
 Initial public baseline delivered: [44 pages from 21 official PDFs](benchmarks/public-2026-09-20.md), a frozen source/input-hashed manifest, separate recognition/acceptance/review metrics, and reproducible evaluation. The first run accepted 9/44 pages with no incorrect acceptance observed; continuation pages and missing issuer evidence remain key limitations. This does not meet the representative-corpus exit criterion below.
 
 1. Build a permissioned and redacted Spanish document corpus with expert labels; keep issuer/document families disjoint across development and test splits.

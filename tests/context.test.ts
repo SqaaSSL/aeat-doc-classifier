@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { classifyPageWithContext, planContext, type Backend } from '../src/index.js';
+import { contextSummary, type ContextRow } from '../eval/context-metrics.js';
 
 const pages = [1, 2, 3, 4, 5].map(page => ({ page, text: `Page ${page}\n` + 'A sufficiently detailed document continuation. '.repeat(8) }));
 function mock(continuity = 'same_document', continuityConfidence = 0.99, jurisdiction = 'aeat', form = 'aeat-390') {
@@ -70,4 +71,17 @@ test('already accepted isolated results do not trigger a second paid request', a
   const backend: Backend = { ask: (s, qs) => m.backend.ask(s, { ...qs, continuity: { type: 'choice', instructions: '', criteria: { same_document: '', other: '' } } }) };
   const r = await classifyPageWithContext(pages, 3, { backend });
   assert.equal(r.result.status, 'accepted'); assert.equal(r.context.attempted, false); assert.equal(m.states.length, 1);
+});
+
+test('paired report counts both attempts without double-counting a no-retry result', async () => {
+  const contextual = await classifyPageWithContext(pages, 3, { backend: mock().backend });
+  const row: ContextRow = { sourceId: 'test', page: 3, inputSha256: '', inputBytes: 400, group: 'aeat',
+    expected: { kind: 'tax_form', jurisdiction: 'aeat', form: 'aeat-390' }, reviewRequired: false,
+    note: '', elapsedMs: 200, result: contextual.result, contextual };
+  const noRetry = { ...row, page: 4, result: contextual.pageOnly,
+    contextual: { ...contextual, result: contextual.pageOnly, context: { ...contextual.context, attempted: false } } };
+  const s = contextSummary([row, noRetry]);
+  assert.equal(s.successfulApiCalls, 3); assert.equal(s.inputTokens, 60); assert.equal(s.outputTokens, 15);
+  assert.equal(s.contextRetries, 1); assert.equal(s.medianPipelineMs, 200);
+  assert.ok(!('medianModelCallMs' in s.pairedPageOnly));
 });

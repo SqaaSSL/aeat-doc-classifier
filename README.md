@@ -26,12 +26,25 @@ The 27 recognition pages cover **11 AEAT models**. Labels are assistant-curated,
 
 [Full report and every page's outcome](docs/benchmarks/public-2026-09-20.md) · [Machine-readable results](docs/benchmarks/public-2026-09-20.json) · [Sources and frozen labels](eval/public-v1.json) · [Reproduce the benchmark](eval/PUBLIC-BENCHMARK.md)
 
+### Experimental context retry (v0.3.0)
+
+Inspired by [DocJev's document-context approach](https://github.com/jerryjliu/docjev), an optional retry gives uncertain PDF pages a bounded window of neighboring pages and requires a confident same-document continuity decision. The isolated-page mode remains the default.
+
+| Paired development comparison | Isolated attempt | With context retry |
+| --- | ---: | ---: |
+| Correct AEAT model + page kind | 24/27 (88.9%) | 27/27 (100%) |
+| Automatically accepted among eligible AEAT pages | 8/27 (29.6%) | 10/27 (37.0%) |
+| Wrong automatic acceptances observed | 0 | 0 |
+| Required review/OCR controls held | 17/17 | 17/17 |
+
+**This reuses the inspected benchmark and adds neighboring-page evidence; it is not an independent accuracy estimate.** The fresh isolated run varied from the original 23/27 and 9/27 result above. Context improved recognition in this run, but automatic acceptance remains low and extra calls increase usage. See the [paired report](docs/benchmarks/context-2026-09-20.md), [full results](docs/benchmarks/context-2026-09-20.json), and [DocJev review and improvement priorities](docs/DOCJEV-REVIEW.md).
+
 ## Install the CLI
 
 Requirements: Node.js 22+, npm and a [TypeSafe API key](https://docs.typesafe.ai/). The prebuilt release includes the executable and catalogs; no Git checkout or TypeScript build is needed.
 
 ```sh
-npm install --global https://github.com/SqaaSSL/aeat-doc-classifier/releases/download/v0.2.0/sqaassl-aeat-doc-classifier-0.2.0.tgz
+npm install --global https://github.com/SqaaSSL/aeat-doc-classifier/releases/download/v0.3.0/sqaassl-aeat-doc-classifier-0.3.0.tgz
 
 # Set in the environment that will run your agent. Never commit a real key.
 export TYPESAFE_API_KEY="your-key"
@@ -45,7 +58,7 @@ For PDF input, install [Poppler](https://poppler.freedesktop.org/) with `brew in
 Run without a global installation:
 
 ```sh
-npx --yes --package=https://github.com/SqaaSSL/aeat-doc-classifier/releases/download/v0.2.0/sqaassl-aeat-doc-classifier-0.2.0.tgz aeat-classify --help
+npx --yes --package=https://github.com/SqaaSSL/aeat-doc-classifier/releases/download/v0.3.0/sqaassl-aeat-doc-classifier-0.3.0.tgz aeat-classify --help
 ```
 
 The release is distributed through [GitHub Releases](https://github.com/SqaaSSL/aeat-doc-classifier/releases), not the npm registry. Install the library locally using the same tarball URL without `--global`, or build from a Git checkout as described under [Development](#development-and-evaluation). Global installation is recommended for the agent skill below so `aeat-classify` is on the agent's `PATH`.
@@ -54,6 +67,7 @@ The release is distributed through [GitHub Releases](https://github.com/SqaaSSL/
 
 ```sh
 aeat-classify classify /absolute/path/return.pdf --max-pages 20 --compact
+aeat-classify classify /absolute/path/return.pdf --experimental-context --fail-on-review
 aeat-classify classify - --compact < /absolute/path/extracted-page.txt
 aeat-classify account - --direction sale --plan pgc --activity "Asesoría fiscal" < /absolute/path/transaction.txt
 aeat-classify catalog forms
@@ -63,6 +77,8 @@ aeat-classify --help
 ```
 
 Results are JSON on stdout; errors are `{ "error": { "code": "...", "message": "..." } }` on stderr. `classify` returns an array of `{page, result}`; `account` returns one suggestion object. `--compact` makes the JSON one line. `-` reads UTF-8 text from stdin, bounded at 24,000 bytes; supply PDFs by file path. Quote paths, or use `--` before a filename beginning with a dash.
+
+With `--experimental-context` (PDF only), each item also includes `pageOnly` and `context`: the original decision, whether a retry occurred, context-page hashes, request hash and continuity distribution. At most two predecessors and one successor are considered; whole neighboring pages are omitted when they cannot fit, and text is not truncated. Empty/sparse targets cannot inherit a neighbor's identity. This is an experimental classification retry, not a packet splitter or OCR engine. It can increase API usage and sends neighboring text to TypeSafe. When a retry occurs, total usage is the sum of `pageOnly.audit.usage` and `result.audit.usage`; otherwise these represent the same single attempt.
 
 | Exit | Meaning |
 | --- | --- |
@@ -222,6 +238,7 @@ npm run eval            # 39 synthetic development cases; uses TYPESAFE_API_KEY
 npm run eval:pdf        # Four public reference PDF pages; requires Poppler and key
 npm run eval:public -- --download-only # Fetch and verify the frozen corpus; no key
 npm run eval:public     # 44 public PDF pages; requires Poppler and key
+npm run eval:context    # Paired development comparison with neighboring-page retries
 npm pack --dry-run      # Inspect the distributable package
 node dist/cli.js --help # Run the local build
 ```
@@ -232,4 +249,4 @@ A custom `Backend` can replace Jev. It must return the full Choice distributions
 
 ## License and inspiration
 
-Original implementation, criteria prose and synthetic fixtures: [MIT](LICENSE). Inspired by the public approach in [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier), which is Apache-2.0. No upstream source code or IRS criteria were copied into this repository. Source documents retain their own status and terms; see [data provenance](DATA-LICENSE.md). This project is not affiliated with AEAT, ICAC or TypeSafe.
+Original implementation, criteria prose and synthetic fixtures: [MIT](LICENSE). Inspired by [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) and the document-context approach in [jerryjliu/docjev](https://github.com/jerryjliu/docjev), both Apache-2.0. No upstream source code, assets or IRS criteria were copied into this repository. Source documents retain their own status and terms; see [data provenance](DATA-LICENSE.md). This project is not affiliated with AEAT, ICAC, TypeSafe or DocJev.

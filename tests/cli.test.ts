@@ -97,7 +97,9 @@ test('catalog and machine-readable command contract need no API credentials', as
   assert.equal(JSON.parse((await call(['catalog', 'forms'])).stdout).forms.length, 33);
   assert.equal(JSON.parse((await call(['catalog', 'accounts'])).stdout).accounts.length, 40);
   const schema = JSON.parse((await call(['schema'])).stdout);
-  assert.equal(schema.contractVersion, 1); assert.equal(schema.authentication.cliArgumentSupported, false);
+  assert.equal(schema.contractVersion, 2); assert.equal(schema.authentication.cliArgumentSupported, false);
+  assert.equal(schema.options['experimental-context'].default, false);
+  assert.ok(schema.commands.classify.options.includes('experimental-context'));
   assert.equal(schema.outputSchemas.accountSuggestion.properties.requiresHumanReview.const, true);
 });
 test('help, version and portable skill work offline', async () => {

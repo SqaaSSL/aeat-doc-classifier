@@ -6,6 +6,7 @@ import { promisify } from 'node:util';
 import { classifyPageWithContext, readPdfPages, jevBackend, planContext, DEFAULT_GATE, type ContextualPageResult } from '../src/index.js';
 import { normalizeText } from '../src/decisions.js';
 import { summarize, type PublicManifest, type PublicRow } from './public-types.js';
+import { contextSummary } from './context-metrics.js';
 
 const hash = (data: string | Uint8Array) => createHash('sha256').update(data).digest('hex');
 const exec = promisify(execFile);
@@ -54,13 +55,7 @@ for (const item of prepared) {
   } catch { row.error = 'classification_failed'; }
   row.elapsedMs = Math.round(performance.now() - start);
   report.rows.push(row); report.completedAt = new Date().toISOString();
-  report.summary = {
-    pairedPageOnly: summarize(report.rows.map(r => ({ ...r, result: r.contextual?.pageOnly }))),
-    contextual: summarize(report.rows),
-    contextRetries: report.rows.filter(r => r.contextual?.context.attempted).length,
-    inputTokens: report.rows.reduce((n, r) => n + (r.contextual?.pageOnly.audit.usage.input_tokens ?? 0) + (r.contextual?.context.attempted ? r.result!.audit.usage.input_tokens : 0), 0),
-    outputTokens: report.rows.reduce((n, r) => n + (r.contextual?.pageOnly.audit.usage.output_tokens ?? 0) + (r.contextual?.context.attempted ? r.result!.audit.usage.output_tokens : 0), 0),
-  };
+  report.summary = contextSummary(report.rows);
   await writeFile(out, JSON.stringify(report, null, 2) + '\n');
   console.log(`${row.sourceId} p${row.page}: ${row.contextual?.pageOnly.status ?? 'error'} -> ${row.result?.status ?? 'error'} (${row.result?.candidates?.form.value ?? 'none'}); ${row.contextual?.context.reason ?? row.error}`);
 }

@@ -1,6 +1,6 @@
 {
   "name": "@sqaassl/aeat-doc-classifier",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Jev-powered Spanish tax document classification and reviewable PGC account suggestions.",
   "license": "MIT",
   "type": "module",
@@ -47,7 +47,8 @@
     "eval:typecheck": "tsc -p tsconfig.eval.json",
     "catalog:check": "node --import tsx scripts/check-catalog.ts",
     "prepublishOnly": "npm run check && npm run catalog:check",
-    "eval:context": "node --import tsx eval/context.ts"
+    "eval:context": "node --import tsx eval/context.ts",
+    "eval:context-report": "node --import tsx eval/context-report.ts"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
