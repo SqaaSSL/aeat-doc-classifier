@@ -16,6 +16,8 @@
 
 ## 0.3 — trustworthy document coverage
 
+Initial public baseline delivered: [44 pages from 21 official PDFs](benchmarks/public-2026-09-20.md), a frozen source/input-hashed manifest, separate recognition/acceptance/review metrics, and reproducible evaluation. The first run accepted 9/44 pages with no incorrect acceptance observed; continuation pages and missing issuer evidence remain key limitations. This does not meet the representative-corpus exit criterion below.
+
 1. Build a permissioned and redacted Spanish document corpus with expert labels; keep issuer/document families disjoint across development and test splits.
 2. Add OCR as an explicit adapter with provenance and page quality, then compare scans against text-bearing versions.
 3. Add packet segmentation and page-to-document grouping without inheriting labels across unrelated attachments or taxpayers.

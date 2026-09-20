@@ -4,7 +4,27 @@ Spanish tax document classification and reviewable Plan General de Contabilidad 
 
 The classifier identifies a page's document type, tax authority and AEAT model. A separate accounting function proposes one principal PGC account for a transaction whose direction and accounting plan the caller supplies. It returns candidates, probabilities, provider confidence, review reasons, source references and an audit hash.
 
-This is a document-routing library and CLI. It does not calculate tax, extract invoice amounts, determine deductibility, create complete journal entries, file returns, or implement SII/VERI*FACTU. No OCR is bundled. Spanish production accuracy is not yet established; see [measured development results](docs/benchmarks/README.md).
+This is a document-routing library and CLI. It does not calculate tax, extract invoice amounts, determine deductibility, create complete journal entries, file returns, or implement SII/VERI*FACTU. No OCR is bundled. Spanish production accuracy is not yet established; see the [public PDF benchmark](docs/benchmarks/public-2026-09-20.md).
+
+## Public benchmark
+
+Evaluated **44 pages from 21 official public PDFs** on **2026-09-20**, with `jev-1.13.0` and the unchanged 0.95 confidence/probability gates. The corpus includes AEAT/BOE forms and instructions, Canary Islands, Catalan, Bizkaia and IRS scope checks, and PDFs with missing text. Sources, page selections and labels were frozen before the first run; the previous four-page Modelo 303 development test is excluded.
+
+| Measure | First-run result |
+| --- | ---: |
+| Correct top AEAT model and page kind, before gates | **23/27 (85.2%)** |
+| Automatically accepted across all selected pages | **9/44 (20.5%)** |
+| Automatically accepted among AEAT recognition pages | **9/27 (33.3%)** |
+| Correct among automatically accepted | **9/9** |
+| Incorrect automatic acceptances observed | **0** |
+| Required review / extraction checks handled correctly | **17/17** |
+| Other outcomes | **32 review, 3 needs OCR, 0 errors** |
+
+The gates held incorrect guesses on two Modelo 390 continuation pages (guessed as 303), a Modelo 100 continuation and a Modelo 349 instruction continuation. Authority uncertainty also held many correct model candidates. All non-national and mixed-model controls were held, including two Bizkaia pages whose raw candidates incorrectly suggested AEAT 303. This run demonstrates conservative routing with limited automation coverage; **nine correct accepted pages do not establish production reliability**.
+
+The 27 recognition pages cover **11 AEAT models**. Labels are assistant-curated, not independently accountant-reviewed, and the sample is mostly blank forms, teaching examples and instructions, with correlated pages and some older layouts. PGC suggestions are **not** externally benchmarked here; the [13 synthetic accounting cases](docs/benchmarks/README.md) remain a separate development result.
+
+[Full report and every page's outcome](docs/benchmarks/public-2026-09-20.md) · [Machine-readable results](docs/benchmarks/public-2026-09-20.json) · [Sources and frozen labels](eval/public-v1.json) · [Reproduce the benchmark](eval/PUBLIC-BENCHMARK.md)
 
 ## Install the CLI
 
@@ -188,7 +208,7 @@ The default model is pinned to `jev-1.13.0`; override with `TYPESAFE_MODEL` or `
 
 Calling Jev sends page/transaction text and supplied context to **TypeSafe's hosted API**. This is not an offline model. The library does not persist text or keys and does not log provider error bodies. Your application remains responsible for its own logging, retention and access controls. A hash is an audit aid, not anonymization. Review the provider's [data-processing terms](https://docs.typesafe.ai/legal) before sending real taxpayer data; zero retention is not assumed for a standard account.
 
-The examples and committed tests contain synthetic material. Optional PDF evaluation downloads only public AEAT references into a git-ignored directory. CI needs no API key and makes no inference calls. Live evaluations incur usage; the project reports tokens rather than borrowing the reference project's US accuracy or pricing claims.
+The examples and committed tests contain synthetic material. Optional PDF evaluation downloads only public government references into a git-ignored directory. Published benchmark artifacts contain source links, hashes, annotations and results, not original PDFs or extracted document text. CI needs no API key and makes no inference calls. Live evaluations incur usage; the project reports tokens rather than borrowing the reference project's US accuracy or pricing claims.
 
 ## Development and evaluation
 
@@ -200,11 +220,13 @@ npm run check           # Types, unit tests and build; no API key required
 npm run catalog:check   # Catalog integrity and Choice option limits
 npm run eval            # 39 synthetic development cases; uses TYPESAFE_API_KEY
 npm run eval:pdf        # Four public reference PDF pages; requires Poppler and key
+npm run eval:public -- --download-only # Fetch and verify the frozen corpus; no key
+npm run eval:public     # 44 public PDF pages; requires Poppler and key
 npm pack --dry-run      # Inspect the distributable package
 node dist/cli.js --help # Run the local build
 ```
 
-Live reports are written to ignored `eval/results/`; [published summaries](docs/benchmarks/README.md) distinguish raw identity, acceptance, abstention and wrong accepted results. The synthetic set is a development set, not a held-out benchmark. Only one model is represented in the small PDF smoke test.
+Live reports are written to ignored `eval/results/`; [published summaries](docs/benchmarks/README.md) distinguish raw identity, acceptance, abstention and wrong accepted results. The synthetic set is a development set. The separate public benchmark pins PDFs and extracted inputs by SHA-256 and refuses changed sources before inference; see its [methodology, metric definitions and report-generation command](eval/PUBLIC-BENCHMARK.md). Neither set establishes population accuracy, and model-training overlap is unknown.
 
 A custom `Backend` can replace Jev. It must return the full Choice distributions, provider confidence, model ID and usage; all responses undergo the same validation. Keep arithmetic and fiscal calculations in deterministic code. Read [research and design](docs/RESEARCH.md), [the roadmap](docs/ROADMAP.md), and [contribution guidelines](CONTRIBUTING.md).
 

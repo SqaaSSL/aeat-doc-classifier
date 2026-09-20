@@ -1,4 +1,10 @@
-# Development evaluation — 2026-09-20
+# Benchmark reports
+
+The latest [public PDF benchmark](public-2026-09-20.md) evaluates **44 pages from 21 official PDFs** with labels frozen before inference: **23/27** AEAT pages have the correct raw model and page kind; **9/44** pages are automatically accepted, all nine correctly; **17/17** required review/OCR checks are held. It includes per-page outcomes, source links, hashes and [complete JSON results](public-2026-09-20.json). See [reproduction and metric definitions](../../eval/PUBLIC-BENCHMARK.md). It is a small source-based benchmark, not a production accuracy estimate.
+
+The earlier development evaluation below is kept unchanged for comparison. It includes tuned synthetic cases and a four-page Modelo 303 smoke test; those source PDFs are excluded from the newer public benchmark.
+
+## Development evaluation — 2026-09-20
 
 Live model: `jev-1.13.0`. This report records the v0.1.0 model evaluation; v0.2.0 adds agent CLI integration without changing those classification criteria. Both provider confidence and selected-option probability must reach 0.95. [Machine-readable results, individual outcomes and hashes](2026-09-20.json) accompany this report. No real taxpayer documents were used.
 
