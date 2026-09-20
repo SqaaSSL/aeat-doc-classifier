@@ -1,0 +1,803 @@
+{
+  "version": "public-v1",
+  "frozenAt": "2026-09-20T19:16:28.559945+00:00",
+  "annotation": "Assistant-curated source-level identity labels, inspected before any model predictions; not independently reviewed by a tax professional. Visual inspection of BOE image annexes; text/title/field inspection for recognition pages. Source jurisdiction and form are targets, not claims that every isolated page contains enough evidence.",
+  "selection": "Purposive sample of official public PDFs found on 2026-09-20. First two distinct content pages where practical; payment pages and annexes add layout diversity. Avoid duplicate taxpayer/administration copies. 100: pages 1,2,49 (payment); 840: 1,3,5; 390: 2,3,4 (forms, skip preceding numerical worksheet); Bizkaia: 4,12,14,22 (first body page, explicit 303 mentions, foral section). Keep selected blank/dynamic and image-only pages as extraction controls. Exclude all four previously evaluated Modelo 303 PDF pages and their source documents. No random or population-representative sampling.",
+  "sources": [
+    {
+      "id": "030-form",
+      "title": "AEAT Modelo 030 blank census form",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/G321/mod030_es_es.pdf",
+      "sha256": "c6a4b24d9ef3b8d2843fd5f726ec7dd0117546e695aacf92cc5b3ed67841261f",
+      "bytes": 830991,
+      "pageCount": 4,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "e7928a6c4dc1db4c93cabb59f9fe811fef2b715be8246755d0e8146816047e68",
+          "inputBytes": 8174,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-030"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 2,
+          "inputSha256": "0187921d9317594afb97ea2f3a48b3f141722e9561c3ccbbb3f5b72773c1f4fb",
+          "inputBytes": 5204,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-030"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "102-form",
+      "title": "AEAT Modelo 102, second IRPF instalment, 2025",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/G229/102/Modelo102.pdf",
+      "sha256": "89057ad5b5ce4028c91d9a9aa76f1412df80cf2f6a88d35ecd3a63797df0279a",
+      "bytes": 83311,
+      "pageCount": 4,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "a070e91b07b03ba8fb483328e14531ac63c95851fb4dc4c6c8707c91113179f2",
+          "inputBytes": 2878,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-102"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 2,
+          "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "inputBytes": 0,
+          "group": "extraction",
+          "expected": {
+            "kind": null,
+            "jurisdiction": null,
+            "form": null
+          },
+          "reviewRequired": true,
+          "expectedStatus": "needs_ocr",
+          "note": "No text extracted. Requires needs_ocr without inference; this does not establish whether the PDF page is blank or an unsupported dynamic form."
+        }
+      ]
+    },
+    {
+      "id": "200-payment",
+      "title": "AEAT Modelo 200 dynamic payment PDF (empty text extraction)",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/GE04/200/Modelo_200.pdf",
+      "sha256": "470bfe181e486c57f3556b8532978049c666a65deb8b712d68615b7440e43b12",
+      "bytes": 755436,
+      "pageCount": 1,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "inputBytes": 0,
+          "group": "extraction",
+          "expected": {
+            "kind": null,
+            "jurisdiction": null,
+            "form": null
+          },
+          "reviewRequired": true,
+          "expectedStatus": "needs_ocr",
+          "note": "No text extracted. Requires needs_ocr without inference; this does not establish whether the PDF page is blank or an unsupported dynamic form."
+        }
+      ]
+    },
+    {
+      "id": "206-unsupported",
+      "title": "AEAT Modelo 206 dynamic payment PDF (empty text extraction)",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/GE04/206/Modelo_206.pdf",
+      "sha256": "c6cafb7acab4fc4cc9f7949547119f32059495fda77ad31b067d19887e759834",
+      "bytes": 769221,
+      "pageCount": 1,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "inputBytes": 0,
+          "group": "extraction",
+          "expected": {
+            "kind": null,
+            "jurisdiction": null,
+            "form": null
+          },
+          "reviewRequired": true,
+          "expectedStatus": "needs_ocr",
+          "note": "No text extracted. Requires needs_ocr without inference; this does not establish whether the PDF page is blank or an unsupported dynamic form."
+        }
+      ]
+    },
+    {
+      "id": "840-form",
+      "title": "AEAT Modelo 840 blank IAE form and premises annex",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/G323/mod840e_es_es.pdf",
+      "sha256": "cf3cd1a77f92d38d2668d30b378a8eca922d6a262fe82ba86f5008074001ece0",
+      "bytes": 555817,
+      "pageCount": 6,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "a40276e9f6992b604844da794323f5f64b348fa9cba8ba213583aed9b124492f",
+          "inputBytes": 7777,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-840"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 3,
+          "inputSha256": "db7b7e077efaeb2f0748f127c398afd2e271f43615a9acc6c762968ac42b2521",
+          "inputBytes": 8959,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-840"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 5,
+          "inputSha256": "beaa649624a22a2a5c69f640b644cf6f0617bef457453dd320b68d6bdfab2be0",
+          "inputBytes": 5846,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-840"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "840-instructions",
+      "title": "AEAT Modelo 840 completion instructions",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/G323/840instr_es_es.pdf",
+      "sha256": "19addc9ecfabdcbd7e07d97d252ef027ef448fc36fa631184a4ad43543d798c9",
+      "bytes": 77013,
+      "pageCount": 5,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "c9563dda1b23110371a946c7e2a9aa576c1800521a3350b6077054352fa58813",
+          "inputBytes": 8767,
+          "group": "aeat",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-840"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 2,
+          "inputSha256": "0e38271bdd61506d715499ddf4c274a40f6fb5cd9bc1dc6024029baaab298566",
+          "inputBytes": 9060,
+          "group": "aeat",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-840"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "848-form",
+      "title": "AEAT Modelo 848 blank turnover communication",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/G323/848.pdf",
+      "sha256": "73429e3f34b74ac3532b8886912965b573b04c068b018e4e63a385c99117aa45",
+      "bytes": 483710,
+      "pageCount": 2,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "54be2029d813241eb208279b53b188dfd546dabfc7c3f8a954813d0598221a8a",
+          "inputBytes": 8329,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-848"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "184-instructions",
+      "title": "AEAT Modelo 184 completion note (historical tax rules)",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/GI04/Nota_mod_184.pdf",
+      "sha256": "6f9d7e50fc1608f51f8f811db23d3ac66a9f2be82f14e071c8d4f48746c4dff2",
+      "bytes": 314843,
+      "pageCount": 1,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "fdd94dc936857755d6dbb71b276f97f7b674ca80e61ff4a394452aa1039214af",
+          "inputBytes": 2463,
+          "group": "aeat",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-184"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "190-instructions",
+      "title": "AEAT Modelo 190 completion instructions",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/GI10/Instrucciones/instr_mod190_es_es.pdf",
+      "sha256": "5d75dc197729fe5dfdd13fc2f97de4a4e3f4eaa4db24d68271c559e4dcca92c6",
+      "bytes": 225156,
+      "pageCount": 7,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "d3709c33d8bdcd93d19cda9872b77c2a4963834905c01474930e8182b0ba714f",
+          "inputBytes": 2789,
+          "group": "aeat",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-190"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 2,
+          "inputSha256": "da4c18c7bb22eb0cdd7720e97800f7e827b973e75e886fbcfe5147609cd6dd31",
+          "inputBytes": 3417,
+          "group": "aeat",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-190"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "193-296-mixed",
+      "title": "AEAT joint instructions for Modelos 193 and 296",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Tema/Declaraciones_informativas/2024/Notas_informartivas/Nota_informativa_193-296.pdf",
+      "sha256": "d71fcd7ccd03d7f4ca205b418d4415a2bd74093ca95269b0aaa4fab05e02cf17",
+      "bytes": 857905,
+      "pageCount": 19,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "af4f4be8394ef6249b85acaec3c042e72bb3a9ce1e04bb83ed7bc8bc54649ee2",
+          "inputBytes": 2891,
+          "group": "scope_control",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Joint discussion of 193 and 296; no single model label is correct. Must abstain."
+        },
+        {
+          "page": 2,
+          "inputSha256": "2ec8e4b9a7af8bcc609a6957500d999313e721794e6f3e0adc4b3bd75efb490c",
+          "inputBytes": 3103,
+          "group": "scope_control",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Joint discussion of 193 and 296; no single model label is correct. Must abstain."
+        }
+      ]
+    },
+    {
+      "id": "232-instructions",
+      "title": "AEAT Modelo 232 completion instructions",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/GI43/Instrucciones_Modelo_232.pdf",
+      "sha256": "44a7606d2e5be723416c441ca8824e31fbfdf35af3554dceef2da4185e1a2a0c",
+      "bytes": 376447,
+      "pageCount": 10,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "39efffa536d4f05511bb649208738da10bd94abeb6b5f8bc745afddf95ab4bb0",
+          "inputBytes": 2362,
+          "group": "aeat",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-232"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 2,
+          "inputSha256": "09cdbbde40dd20d25f89fb345fb52eba4521ae4a26583ba44ebbe9097c9b69a5",
+          "inputBytes": 3189,
+          "group": "aeat",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-232"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "349-instructions",
+      "title": "AEAT Modelo 349 completion instructions",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/GI28/instr_mod_349.pdf",
+      "sha256": "da5ec8935319024f59e6d0d9e47281ad5a37e708d0c2149cf80c3d659c788c44",
+      "bytes": 407417,
+      "pageCount": 37,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "f66351e7686bdadd830ef6cf904c8757ad2daa5a063e9527de725f374acb2706",
+          "inputBytes": 2222,
+          "group": "aeat",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-349"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 2,
+          "inputSha256": "390a63dbef239fc6c311e5df72f3e5e0fa16f6bf60a42b2d33a3b7df4142e17c",
+          "inputBytes": 2644,
+          "group": "aeat",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-349"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "390-instructions",
+      "title": "AEAT Modelo 390 instructions, 2025",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/G412/Instrucciones_modelo_390-2025.pdf",
+      "sha256": "26028dcb993675bf91cdf9b9fb50742c473c5fe6680735e29acdc3c560d3301d",
+      "bytes": 355432,
+      "pageCount": 28,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "23c70deb6ab250f0e3072880ec321da13e2a3da1cd294bdb19eef4315481ca7c",
+          "inputBytes": 2293,
+          "group": "aeat",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-390"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 2,
+          "inputSha256": "bde2fb07d33a0c7c288e10ee63eda6619154c004b5b8a7a1c8f5cafe2e5efb13",
+          "inputBytes": 3171,
+          "group": "aeat",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-390"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "390-form",
+      "title": "AEAT IVA 2025 manual: filled teaching example of Modelo 390",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Biblioteca/Manual/Practicos/IVA/IVA_2025/Imagenes/Cap_9_390_resumen_anual_gl_es.pdf",
+      "sha256": "78135af2e4c915b8bc64ddae5b9d96e44875ed13ef39cef017724e8362197612",
+      "bytes": 487755,
+      "pageCount": 7,
+      "cases": [
+        {
+          "page": 2,
+          "inputSha256": "7222fad4ddd0d4ed4b659c8af44fa716aa6eba07d188007e064255fe3864f4b8",
+          "inputBytes": 6934,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-390"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 3,
+          "inputSha256": "066eefd3b2ff0e52610b865b631ab4680b62901a020930688813d7336cc2b819",
+          "inputBytes": 7813,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-390"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 4,
+          "inputSha256": "2364c76211b16fd4445ac9adcff131bda6955d6b63c3d791776cd69baa2a4f26",
+          "inputBytes": 8512,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-390"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "200-form",
+      "title": "AEAT Modelo 200 blank annual return, 2021",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Biblioteca/Manual/Practicos/Sociedades/Sociedades_2021/Imagenes/AnexoI_Mod200_es_es.pdf",
+      "sha256": "87b3932538c39dea235f2f8b5b41c955fe76b2886c94b068a3b8e50f2bfaf7a3",
+      "bytes": 4608516,
+      "pageCount": 69,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "d3a47e4f77e0b483ef8ba09ee5ccf875bf5299fdd388f22f9625053c8ebd50ed",
+          "inputBytes": 17203,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-200"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 2,
+          "inputSha256": "5fbc63b08329dd74c8e735271384d5ea600511d68f5929bb07886a384dccddee",
+          "inputBytes": 7817,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-200"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 3,
+          "inputSha256": "c1928a5de08d67a4d0e303f3b8b99e13bd06d0ce243ab34907893e8c27f9e0f8",
+          "inputBytes": 1634,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-200"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "100-form",
+      "title": "AEAT-hosted BOE annex: Modelo 100 blank annual return, 2023",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Tema/Estadisticas/Estadisticas_impuesto/Irpf_patrimonio/Irpf/Documentacion/Metodologia_pdf_new/Modelo_100_Irpf.pdf",
+      "sha256": "7558f225b9daf277abdf24a904e2604dbee72d2cee7113297c2db99e0d1c0bcd",
+      "bytes": 1384435,
+      "pageCount": 52,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "71d1e71a0722b0b7af0642fd69df47897d93eea553cbe7fd179f020e78289134",
+          "inputBytes": 9324,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-100"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 2,
+          "inputSha256": "c49b6cd7101d739f4c4ca802fe4535151a142f254e6b251d981faf489d513ead",
+          "inputBytes": 16966,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-100"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        },
+        {
+          "page": 49,
+          "inputSha256": "762ddcbf6b0d113a5a6be313d09d321815ebd1e5f2317d954ac7854501879030",
+          "inputBytes": 10718,
+          "group": "aeat",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-100"
+          },
+          "reviewRequired": false,
+          "note": "Form number, page kind and issuing administration annotated from the public source before inference. Continuation pages retain source identity even when their text omits issuer/model; no source context is sent to Jev."
+        }
+      ]
+    },
+    {
+      "id": "canary-420-instructions",
+      "title": "Agencia Tributaria Canaria: IGIC Modelo 420 instructions",
+      "url": "https://www3.gobiernodecanarias.org/tributos/atc/estatico/asistencia_contribuyente/modelos/ref_y_propios/igic/mod420/pdf/instrucciones/420.pdf",
+      "sha256": "fc74274197e6367392ca0a7b978b7831f1a0de40f7d85e7de3b05557ffefdba4",
+      "bytes": 164400,
+      "pageCount": 7,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "02dec764de3630f1ba469f173cfb6d7c093bf26533275df649c95fed3bc29e0e",
+          "inputBytes": 3535,
+          "group": "scope_control",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "canary",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Non-national tax administration; no AEAT form is correct. Must abstain. Source authority may be absent from continuation-page text."
+        },
+        {
+          "page": 2,
+          "inputSha256": "a428b75792eb6f3b491b9d7203582f50a1965af8793733935c8059c16e7514bb",
+          "inputBytes": 3672,
+          "group": "scope_control",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "canary",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Non-national tax administration; no AEAT form is correct. Must abstain. Source authority may be absent from continuation-page text."
+        }
+      ]
+    },
+    {
+      "id": "catalonia-600-instructions",
+      "title": "Agència Tributària de Catalunya: Modelo 600 instructions (Catalan)",
+      "url": "https://atc.gencat.cat/web/.content/documents/05_doc_models/arxius/600_instruccions.pdf",
+      "sha256": "61ac8f7cf7b01f89095976aa448af3fd53cd048594fba7d3a5f1cf6b54e77849",
+      "bytes": 587439,
+      "pageCount": 21,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "46accd048a052c83c3f0be25020f9359e2dbc400943e60ac89437a6c1a6b7352",
+          "inputBytes": 3610,
+          "group": "scope_control",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Non-national tax administration; no AEAT form is correct. Must abstain. Source authority may be absent from continuation-page text."
+        },
+        {
+          "page": 2,
+          "inputSha256": "a6f941ad8f89349b2e7fd21cb22b04a50d67cad249f8f37f48dba857be4c83c9",
+          "inputBytes": 3812,
+          "group": "scope_control",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Non-national tax administration; no AEAT form is correct. Must abstain. Source authority may be absent from continuation-page text."
+        }
+      ]
+    },
+    {
+      "id": "irs-1040-form",
+      "title": "IRS Form 1040 blank annual return, 2025 (English)",
+      "url": "https://www.irs.gov/pub/irs-pdf/f1040.pdf",
+      "sha256": "3d31c226df0d189ced80e039d01cf0f8820c1019681a0f0ca6264de277b7e982",
+      "bytes": 220237,
+      "pageCount": 2,
+      "cases": [
+        {
+          "page": 1,
+          "inputSha256": "6f4bec2c2651c8e041a5d778418f2ac3d80fd8afb4d4f1ae1f54d12de0d66052",
+          "inputBytes": 10883,
+          "group": "scope_control",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "foreign",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Non-national tax administration; no AEAT form is correct. Must abstain. Source authority may be absent from continuation-page text."
+        },
+        {
+          "page": 2,
+          "inputSha256": "51d9efd2f90c772d3893ae849a3b79cc951b5f06e675a8281c88a88d5fe86fe3",
+          "inputBytes": 9819,
+          "group": "scope_control",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "foreign",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Non-national tax administration; no AEAT form is correct. Must abstain. Source authority may be absent from continuation-page text."
+        }
+      ]
+    },
+    {
+      "id": "130-131-order",
+      "title": "BOE consolidated EHA/672/2007: image-based Modelos 130 and 131 annexes",
+      "url": "https://www.boe.es/buscar/pdf/2007/BOE-A-2007-6032-consolidado.pdf",
+      "sha256": "9f9810e7908a11795573319b24fd71d398ecf91b0142946bf9ec62f2b1f9399b",
+      "bytes": 1142924,
+      "pageCount": 14,
+      "cases": [
+        {
+          "page": 10,
+          "inputSha256": "1556d492208457fd599ef622f34c4a5123f0031962225c905403072e0c896858",
+          "inputBytes": 100,
+          "group": "extraction",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-130"
+          },
+          "reviewRequired": true,
+          "note": "Rendered annex visually inspected: form is an image. Extracted text contains only BOE/annex/page headings. Must abstain; no OCR supplied."
+        },
+        {
+          "page": 12,
+          "inputSha256": "1f2c08e3c2e6f8ab6993c0e9a9789fb1cca65f8a633dda5c77ac3199d5d4c4ec",
+          "inputBytes": 100,
+          "group": "extraction",
+          "expected": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-131"
+          },
+          "reviewRequired": true,
+          "note": "Rendered annex visually inspected: form is an image. Extracted text contains only BOE/annex/page headings. Must abstain; no OCR supplied."
+        }
+      ]
+    },
+    {
+      "id": "bizkaia-303-instructions",
+      "title": "Bizkaia: IVA application manual, September 2023, including Modelo 303",
+      "url": "https://gidak.bizkaia.eus/content/imagenes/iva/MANUALM303AYUDAAPLICACIONIVA1.pdf",
+      "sha256": "363856e2cd0649abed3c3b9fed538235011e70a514e01a0236265270f73179c7",
+      "bytes": 7985643,
+      "pageCount": 46,
+      "cases": [
+        {
+          "page": 4,
+          "inputSha256": "e6e96533a30b064ecf91b77e248ffd8fd309946d018ee701d5b47cba722b5a9d",
+          "inputBytes": 583,
+          "group": "scope_control",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "foral",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Non-national tax administration; no AEAT form is correct. Must abstain. Source authority may be absent from continuation-page text."
+        },
+        {
+          "page": 12,
+          "inputSha256": "021a1f6890d8dfe3e6a4308059f06ec47ee305f2e39c60a965cddf76774b216e",
+          "inputBytes": 718,
+          "group": "scope_control",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "foral",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Non-national tax administration; no AEAT form is correct. Must abstain. Source authority may be absent from continuation-page text."
+        },
+        {
+          "page": 14,
+          "inputSha256": "bfe316e50b233aa24569c7434eb97563cd1e42ee35afefa9e48f468c6052ed75",
+          "inputBytes": 573,
+          "group": "scope_control",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "foral",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Non-national tax administration; no AEAT form is correct. Must abstain. Source authority may be absent from continuation-page text."
+        },
+        {
+          "page": 22,
+          "inputSha256": "1c5f5a1a2d872d8c2254868b8b677d5d273887862b352c31a85a496d603d933e",
+          "inputBytes": 523,
+          "group": "scope_control",
+          "expected": {
+            "kind": "instructions",
+            "jurisdiction": "foral",
+            "form": null
+          },
+          "reviewRequired": true,
+          "note": "Non-national tax administration; no AEAT form is correct. Must abstain. Source authority may be absent from continuation-page text."
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/G322/instr_mod036.pdf",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://egoitza.araba.eus/documents/1525748/1525865/341.pdf/495fe6cd-445a-361f-a677-d93c9bafca5a?t=1575364701366",
+      "reason": "<urlopen error timed out>"
+    }
+  ]
+}
