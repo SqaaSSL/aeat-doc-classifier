@@ -1,0 +1,666 @@
+{
+  "version": "2026-09-20",
+  "reviewedAt": "2026-09-20",
+  "scope": "Selected shared PGC/PGC-PYMES accounts, not a complete chart or sector adaptation.",
+  "accounts": [
+    {
+      "code": "206",
+      "title": "Aplicaciones informáticas",
+      "description": "Acquired capitalizable software rights with enduring use; not recurring SaaS subscriptions. Capitalization policy must be reviewed.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "213",
+      "title": "Maquinaria",
+      "description": "Production machinery held for continuing business use, not inventory for resale.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "216",
+      "title": "Mobiliario",
+      "description": "Office furniture acquired for enduring use; review capitalization policy.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "217",
+      "title": "Equipos para procesos de información",
+      "description": "Computers and information-processing equipment acquired for enduring internal use; not resale inventory.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "218",
+      "title": "Elementos de transporte",
+      "description": "Vehicles acquired as business fixed assets, not rentals or resale inventory. Does not establish tax deductibility.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "600",
+      "title": "Compras de mercaderías",
+      "description": "Goods purchased for resale without transformation; not fixed assets or raw materials.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "601",
+      "title": "Compras de materias primas",
+      "description": "Raw materials purchased for transformation in production.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "602",
+      "title": "Compras de otros aprovisionamientos",
+      "description": "Other production supplies or consumables, not office services or merchandise for resale.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "607",
+      "title": "Trabajos realizados por otras empresas",
+      "description": "Subcontracted production work forming part of the entity's own production process; distinguish independent professional advisory services 623.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "621",
+      "title": "Arrendamientos y cánones",
+      "description": "Operating rental of premises, equipment or rights/royalties. Finance leases require specialist review.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "622",
+      "title": "Reparaciones y conservación",
+      "description": "Maintenance or repairs restoring condition; improvements creating enduring benefits need asset review.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "623",
+      "title": "Servicios de profesionales independientes",
+      "description": "Independent legal, tax, accounting, consultancy, architect or similar professional fees.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "624",
+      "title": "Transportes",
+      "description": "Third-party freight/transport expenses not included in asset or inventory acquisition cost.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "625",
+      "title": "Primas de seguros",
+      "description": "Insurance premiums; do not infer VAT from the account.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "626",
+      "title": "Servicios bancarios y similares",
+      "description": "Bank service fees and commissions, not interest on debt (662).",
+      "directions": [
+        "purchase",
+        "finance"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "627",
+      "title": "Publicidad, propaganda y relaciones públicas",
+      "description": "Advertising campaigns, promotion and public-relations services.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "628",
+      "title": "Suministros",
+      "description": "Electricity, gas, water and other non-storable supplies.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "629",
+      "title": "Otros servicios",
+      "description": "Other external services not covered by 621-628; recurring SaaS access, telecom or office services. Do not use when the transaction is unclear.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "631",
+      "title": "Otros tributos",
+      "description": "Business taxes other than income tax, as applicable; excludes penalties, collected VAT and amounts forming asset cost.",
+      "directions": [
+        "purchase"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "640",
+      "title": "Sueldos y salarios",
+      "description": "Gross wages and salary expense evidenced as a single component; not the whole multi-component payroll journal.",
+      "directions": [
+        "payroll"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "642",
+      "title": "Seguridad Social a cargo de la empresa",
+      "description": "Employer social-security cost separately identified; not employee withholding or a self-employed person's RETA payment by assumption.",
+      "directions": [
+        "payroll"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "649",
+      "title": "Otros gastos sociales",
+      "description": "Other employer welfare/social expenditure explicitly documented, not ordinary wages or employer contributions.",
+      "directions": [
+        "payroll"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "662",
+      "title": "Intereses de deudas",
+      "description": "Interest expense on borrowings, not loan principal or bank service commissions.",
+      "directions": [
+        "finance"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "669",
+      "title": "Otros gastos financieros",
+      "description": "Other clearly identified financing expenses not allocated to another specific financial expense account.",
+      "directions": [
+        "finance"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "700",
+      "title": "Ventas de mercaderías",
+      "description": "Revenue from sale of goods purchased for resale without transformation.",
+      "directions": [
+        "sale"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "701",
+      "title": "Ventas de productos terminados",
+      "description": "Revenue from sale of finished goods manufactured by the entity.",
+      "directions": [
+        "sale"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "705",
+      "title": "Prestaciones de servicios",
+      "description": "Revenue from services constituting the entity's ordinary activity; includes professional fees and core rental activity where appropriate.",
+      "directions": [
+        "sale"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "752",
+      "title": "Ingresos por arrendamientos",
+      "description": "Ancillary rental income outside the entity's ordinary activity; ordinary rental business may use 705.",
+      "directions": [
+        "sale"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "759",
+      "title": "Ingresos por servicios diversos",
+      "description": "Ancillary service income outside ordinary activity, not main service revenue 705.",
+      "directions": [
+        "sale"
+      ],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "principal",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "400",
+      "title": "Proveedores",
+      "description": "Trade payables to merchandise and other inventory suppliers; reference only, never inferred as a complete entry.",
+      "directions": [],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "reference",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "410",
+      "title": "Acreedores por prestaciones de servicios",
+      "description": "Payables to service providers; reference only.",
+      "directions": [],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "reference",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "430",
+      "title": "Clientes",
+      "description": "Trade receivables from customers; reference only.",
+      "directions": [],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "reference",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "465",
+      "title": "Remuneraciones pendientes de pago",
+      "description": "Wages payable; reference only.",
+      "directions": [],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "reference",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "472",
+      "title": "Hacienda Pública, IVA soportado",
+      "description": "Input VAT; amount and deductibility require explicit independent validation.",
+      "directions": [],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "reference",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "4750",
+      "title": "Hacienda Pública, acreedora por IVA",
+      "description": "VAT payable to tax authority; reference only.",
+      "directions": [],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "reference",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "4751",
+      "title": "Hacienda Pública, acreedora por retenciones practicadas",
+      "description": "Withholdings payable; reference only.",
+      "directions": [],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "reference",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "476",
+      "title": "Organismos de la Seguridad Social, acreedores",
+      "description": "Social-security contributions payable; reference only.",
+      "directions": [],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "reference",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "477",
+      "title": "Hacienda Pública, IVA repercutido",
+      "description": "Output VAT; rate, location and liability cannot be inferred from account identity alone.",
+      "directions": [],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "reference",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "570",
+      "title": "Caja, euros",
+      "description": "Euro cash balance; reference only.",
+      "directions": [],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "reference",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    },
+    {
+      "code": "572",
+      "title": "Bancos e instituciones de crédito c/c vista, euros",
+      "description": "Euro current bank account balance; reference only.",
+      "directions": [],
+      "plans": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "role": "reference",
+      "sources": [
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884",
+        "https://www.boe.es/buscar/act.php?id=BOE-A-2007-19966"
+      ]
+    }
+  ]
+}

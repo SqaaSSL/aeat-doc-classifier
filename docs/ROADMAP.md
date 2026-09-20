@@ -1,0 +1,34 @@
+# Roadmap
+
+## 0.1 — delivered foundation
+
+- MIT TypeScript library and CLI, pinned Jev integration, bounded requests and validated distributions.
+- 33 AEAT definitions, page-type and authority routing, historical Modelo 037.
+- Selected PGC/PGC-PYMES principal-account suggestions with explicit caller context and review status.
+- Text and PDF ingestion, synthetic evaluation, public PDF smoke test, offline CI and source documentation.
+
+## 0.2 — trustworthy document coverage
+
+1. Build a permissioned and redacted Spanish document corpus with expert labels; keep issuer/document families disjoint across development and test splits.
+2. Add OCR as an explicit adapter with provenance and page quality, then compare scans against text-bearing versions.
+3. Add packet segmentation and page-to-document grouping without inheriting labels across unrelated attachments or taxpayers.
+4. Expand AEAT models from primary sources, preserve historical revisions, hash downloaded references, and publish reviewed catalog diffs.
+5. Calibrate type, jurisdiction and form gates separately. Report precision among accepted decisions, total coverage, abstention and confusion matrices; evaluate adversarial content and co-official languages.
+
+Exit criterion: documented performance on a held-out representative corpus, not a target invented from the US reference project.
+
+## 0.3 — accounting assistance
+
+1. Extract invoice fields with evidence spans and immutable source links; exact decimal arithmetic, document totals and identifier checks belong in code.
+2. Split multi-category invoices and payrolls into reviewed components, introduce entity-specific charts, and collect explicit capitalization and business-use policy.
+3. Suggest complete balanced draft entries only after rates, tax territory, exemptions, reverse charge, withholding, timing and deductibility are explicitly validated.
+4. Export reviewed data to supported accounting packages and AEAT book layouts, with year-specific validation and traceable corrections.
+
+Account acceptance never substitutes for fiscal treatment or user authorization to post an entry.
+
+## Separate projects or later adapters
+
+- Facturae/XML and other structured formats should be parsed and validated before semantic classification.
+- SII and VERI*FACTU require their own current schemas, certificate handling, lifecycle and conformance work.
+- Regional/foral/IGIC packs require local source catalogs and separately measured performance.
+- A review UI can consume this library; no hosted service or user-data store is required by the core.

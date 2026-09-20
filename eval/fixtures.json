@@ -1,0 +1,446 @@
+[
+  {
+    "id": "iva-quarter",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 303\nImpuesto sobre el Valor Añadido. Autoliquidación\nEjercicio 2025 Periodo 3T\nIVA devengado. IVA deducible. Resultado de la liquidación.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-303",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "iva-annual",
+    "task": "document",
+    "text": "Agencia Tributaria\n390\nImpuesto sobre el Valor Añadido\nDeclaración-resumen anual\nEjercicio 2025\nVolumen de operaciones. Resultado de las liquidaciones periódicas.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-390",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "withholding-quarter",
+    "task": "document",
+    "text": "AEAT Agencia Tributaria\nModelo 111\nRetenciones e ingresos a cuenta del IRPF\nRendimientos del trabajo. Rendimientos de actividades económicas. Premios.\nEjercicio 2025 Periodo 2T\nNúmero de perceptores. Importe de las retenciones.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-111",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "withholding-annual",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 190\nResumen anual de retenciones e ingresos a cuenta del IRPF\nRelación de perceptores. Clave y subclave. Ejercicio 2025.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-190",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "rent-quarter",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 115\nRetenciones e ingresos a cuenta. Rentas procedentes del arrendamiento de inmuebles urbanos.\nAutoliquidación. Periodo 1T.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-115",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "rent-annual",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 180\nArrendamientos de inmuebles urbanos. Resumen anual.\nRelación de perceptores. Referencia catastral.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-180",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "direct-income",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 130\nIRPF. Actividades económicas en estimación directa. Pago fraccionado.\nIngresos computables. Gastos fiscalmente deducibles. Rendimiento neto.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-130",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "objective-income",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 131\nIRPF. Actividades económicas en estimación objetiva. Pago fraccionado.\nEpígrafe IAE. Rendimiento neto de la actividad a efectos del pago fraccionado.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-131",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "corporate-annual",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 200\nImpuesto sobre Sociedades\nDeclaración del período impositivo 2025\nBalance. Cuenta de pérdidas y ganancias. Liquidación.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-200",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "corporate-instalment",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 202\nImpuesto sobre Sociedades. Pago fraccionado.\nEjercicio 2025 Período 1P. Base del pago fraccionado.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-202",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "census",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 036\nDeclaración censal de alta, modificación y baja en el Censo de empresarios, profesionales y retenedores.\nCausas de presentación. Identificación.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-036",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "census-historical",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 037\nDeclaración censal simplificada. Alta, modificación y baja en el censo de empresarios, profesionales y retenedores.\nFecha: 15/03/2022.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-037",
+      "jurisdiction": "aeat",
+      "status": "needs_review"
+    }
+  },
+  {
+    "id": "third-parties",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 347\nDeclaración anual de operaciones con terceras personas.\nEjercicio 2025. Relación de declarados. Importe anual de las operaciones.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-347",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "eu-operations",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 349\nDeclaración recapitulativa de operaciones intracomunitarias.\nNIF operador comunitario. Clave de operación. Base imponible.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-349",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "nonresident",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 210\nImpuesto sobre la Renta de no Residentes.\nNo residentes sin establecimiento permanente. Autoliquidación.\nTipo de renta. Devengo.",
+    "expected": {
+      "kind": "tax_form",
+      "form": "aeat-210",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "receipt-303",
+    "task": "document",
+    "text": "Agencia Tributaria\nJUSTIFICANTE DE PRESENTACIÓN\nPresentación realizada el 20/10/2025\nModelo 303. Ejercicio 2025. Período 3T.\nNúmero de registro: EJEMPLO. Código seguro de verificación: DEMOSTRACION.",
+    "expected": {
+      "kind": "filing_receipt",
+      "form": "aeat-303",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "instructions-303",
+    "task": "document",
+    "text": "Agencia Tributaria\nModelo 303. Instrucciones de cumplimentación\nEn la casilla 01 deberá consignar la base imponible. Para cumplimentar esta autoliquidación consulte las siguientes instrucciones.",
+    "expected": {
+      "kind": "instructions",
+      "form": "aeat-303",
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "notice-303-reference",
+    "task": "document",
+    "text": "Agencia Tributaria\nREQUERIMIENTO DE INFORMACIÓN\nSe le requiere aportar el libro registro de facturas recibidas para comprobar su autoliquidación modelo 303 del ejercicio 2025.\nEste requerimiento no es una autoliquidación.",
+    "expected": {
+      "kind": "notification",
+      "form": null,
+      "jurisdiction": "aeat",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "invoice-mentions-model",
+    "task": "document",
+    "text": "FACTURA F-2025-303\nAsesoría Demostración SL\nCliente: Empresa Ejemplo SL\nServicios de preparación del modelo 303 y del resumen 390.\nBase: 100,00 EUR. IVA: 21,00 EUR. Total: 121,00 EUR.",
+    "expected": {
+      "kind": "invoice",
+      "form": null,
+      "jurisdiction": "not_applicable",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "credit-note",
+    "task": "document",
+    "text": "FACTURA RECTIFICATIVA R-12\nProveedor: Empresa de Demostración SL\nCliente: Ejemplo SL\nRectifica factura F-17 por devolución de mercancía. Base: -100,00. IVA: -21,00. Total: -121,00 EUR.",
+    "expected": {
+      "kind": "credit_note",
+      "form": null,
+      "jurisdiction": "not_applicable",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "payroll",
+    "task": "document",
+    "text": "RECIBO INDIVIDUAL DE SALARIOS\nEmpresa: Demostración SL. Trabajador: Persona Ejemplo.\nPeriodo de liquidación: septiembre 2025.\nSalario base. Cotizaciones del trabajador. Retención IRPF. Líquido a percibir.",
+    "expected": {
+      "kind": "payroll",
+      "form": null,
+      "jurisdiction": "not_applicable",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "bank",
+    "task": "document",
+    "text": "EXTRACTO DE CUENTA\nBanco Demostración\nFecha operación | Concepto | Importe | Saldo\n20/10/2025 Pago AEAT Modelo 303 -210,00 EUR\n21/10/2025 Transferencia recibida 500,00 EUR",
+    "expected": {
+      "kind": "bank_statement",
+      "form": null,
+      "jurisdiction": "not_applicable",
+      "status": "accepted"
+    }
+  },
+  {
+    "id": "foral-303",
+    "task": "document",
+    "text": "Diputación Foral de Bizkaia. Hacienda Foral\nModelo 303. Impuesto sobre el Valor Añadido. Autoliquidación.\nEjercicio 2025. Período 3T.",
+    "expected": {
+      "kind": "tax_form",
+      "form": null,
+      "jurisdiction": "foral",
+      "status": "needs_review"
+    }
+  },
+  {
+    "id": "canary-420",
+    "task": "document",
+    "text": "Agencia Tributaria Canaria\nModelo 420. Impuesto General Indirecto Canario. IGIC.\nRégimen general. Autoliquidación trimestral.",
+    "expected": {
+      "kind": "tax_form",
+      "form": null,
+      "jurisdiction": "canary",
+      "status": "needs_review"
+    }
+  },
+  {
+    "id": "foreign-irs",
+    "task": "document",
+    "text": "Department of the Treasury - Internal Revenue Service\nForm 1040. U.S. Individual Income Tax Return. Tax year 2025. Filing status. Adjusted gross income.",
+    "expected": {
+      "kind": "tax_form",
+      "form": null,
+      "jurisdiction": "foreign",
+      "status": "needs_review"
+    }
+  },
+  {
+    "id": "no-text",
+    "task": "document",
+    "text": "",
+    "expected": {
+      "kind": "",
+      "form": null,
+      "jurisdiction": "",
+      "status": "needs_ocr"
+    }
+  },
+  {
+    "id": "professional-purchase",
+    "task": "account",
+    "text": "Factura recibida por asesoría fiscal y contable del mes de septiembre para nuestra empresa. Base del servicio 200 EUR.",
+    "context": {
+      "direction": "purchase",
+      "plan": "pgc-pymes"
+    },
+    "expected": {
+      "account": "623"
+    }
+  },
+  {
+    "id": "professional-sale",
+    "task": "account",
+    "text": "Factura emitida por nuestra asesoría por servicios contables prestados a un cliente durante septiembre.",
+    "context": {
+      "direction": "sale",
+      "plan": "pgc-pymes",
+      "activity": "Asesoría contable y fiscal"
+    },
+    "expected": {
+      "account": "705"
+    }
+  },
+  {
+    "id": "office-rent",
+    "task": "account",
+    "text": "Factura recibida por alquiler mensual de nuestro local de oficina, contrato de arrendamiento operativo.",
+    "context": {
+      "direction": "purchase",
+      "plan": "pgc-pymes"
+    },
+    "expected": {
+      "account": "621"
+    }
+  },
+  {
+    "id": "electricity",
+    "task": "account",
+    "text": "Factura recibida por suministro de energía eléctrica de la oficina durante septiembre.",
+    "context": {
+      "direction": "purchase",
+      "plan": "pgc-pymes"
+    },
+    "expected": {
+      "account": "628"
+    }
+  },
+  {
+    "id": "merchandise",
+    "task": "account",
+    "text": "Factura recibida por 30 camisetas para revender sin transformación en nuestra tienda.",
+    "context": {
+      "direction": "purchase",
+      "plan": "pgc-pymes",
+      "activity": "Comercio minorista de ropa"
+    },
+    "expected": {
+      "account": "600"
+    }
+  },
+  {
+    "id": "computer-asset",
+    "task": "account",
+    "text": "Compra de ordenador para uso interno permanente durante cuatro años. La empresa ha confirmado su capitalización como inmovilizado.",
+    "context": {
+      "direction": "purchase",
+      "plan": "pgc-pymes"
+    },
+    "expected": {
+      "account": "217"
+    }
+  },
+  {
+    "id": "saas",
+    "task": "account",
+    "text": "Factura recibida por suscripción mensual de acceso a software CRM en la nube. Sin adquisición de licencia permanente ni activo controlado.",
+    "context": {
+      "direction": "purchase",
+      "plan": "pgc-pymes"
+    },
+    "expected": {
+      "account": "629"
+    }
+  },
+  {
+    "id": "bank-interest",
+    "task": "account",
+    "text": "Liquidación de intereses del préstamo bancario de la empresa; únicamente intereses, sin amortización de principal ni comisiones.",
+    "context": {
+      "direction": "finance",
+      "plan": "pgc-pymes"
+    },
+    "expected": {
+      "account": "662"
+    }
+  },
+  {
+    "id": "bank-fee",
+    "task": "account",
+    "text": "Comisión bancaria por mantenimiento de la cuenta corriente de la empresa; sin intereses.",
+    "context": {
+      "direction": "finance",
+      "plan": "pgc-pymes"
+    },
+    "expected": {
+      "account": "626"
+    }
+  },
+  {
+    "id": "gross-wages",
+    "task": "account",
+    "text": "Componente separado del recibo salarial: salario bruto mensual del empleado, excluyendo cotizaciones y retenciones.",
+    "context": {
+      "direction": "payroll",
+      "plan": "pgc-pymes"
+    },
+    "expected": {
+      "account": "640"
+    }
+  },
+  {
+    "id": "mixed-invoice",
+    "task": "account",
+    "text": "Factura recibida: compra de un ordenador capitalizable para uso durante cuatro años y honorarios de asesoramiento jurídico por un litigio.",
+    "context": {
+      "direction": "purchase",
+      "plan": "pgc-pymes"
+    },
+    "expected": {
+      "account": null
+    }
+  },
+  {
+    "id": "tax-not-transaction",
+    "task": "account",
+    "text": "Agencia Tributaria. Modelo 303. Autoliquidación de IVA del tercer trimestre.",
+    "context": {
+      "direction": "purchase",
+      "plan": "pgc-pymes"
+    },
+    "expected": {
+      "account": null
+    }
+  },
+  {
+    "id": "direction-missing",
+    "task": "account",
+    "text": "Factura de asesoría fiscal.",
+    "context": {
+      "direction": "unknown",
+      "plan": "pgc-pymes"
+    },
+    "expected": {
+      "account": null
+    }
+  }
+]

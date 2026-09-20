@@ -1,0 +1,371 @@
+{
+  "version": "2026-09-20",
+  "reviewedAt": "2026-09-20",
+  "scope": "Curated national AEAT subset for autónomos and SMEs; document identity, not filing eligibility.",
+  "models": [
+    {
+      "id": "aeat-030",
+      "number": "030",
+      "title": "Censo de obligados tributarios",
+      "family": "census",
+      "description": "Personal tax census registration, change of address or personal details; not business census 036.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G321.shtml"
+      ]
+    },
+    {
+      "id": "aeat-036",
+      "number": "036",
+      "title": "Declaración censal de empresarios, profesionales y retenedores",
+      "family": "census",
+      "description": "Business/professional census registration, amendment or deregistration; IVA and withholding obligations.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G322.shtml"
+      ]
+    },
+    {
+      "id": "aeat-037",
+      "number": "037",
+      "title": "Declaración censal simplificada (histórico)",
+      "family": "census",
+      "description": "Historical simplified business census; identify old documents only. Withdrawn 3 February 2025; not the current 036.",
+      "status": "historical",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/manual-iva-2025/capitulo-01-novedades-destacar-2025/modelo-037.html"
+      ],
+      "validUntil": "2025-02-02"
+    },
+    {
+      "id": "aeat-100",
+      "number": "100",
+      "title": "Declaración del IRPF",
+      "family": "irpf",
+      "description": "Annual personal income tax return, Renta, rendimientos, ganancias patrimoniales, base liquidable. Not the separate second instalment 102.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G229.shtml"
+      ]
+    },
+    {
+      "id": "aeat-102",
+      "number": "102",
+      "title": "Segundo plazo del IRPF",
+      "family": "irpf",
+      "description": "Payment of the second instalment of the annual personal income tax return, segundo plazo. Not the main return 100.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G229.shtml"
+      ]
+    },
+    {
+      "id": "aeat-111",
+      "number": "111",
+      "title": "Retenciones de trabajo y actividades económicas",
+      "family": "withholding",
+      "description": "Periodic withholding return for employment, professional activities, prizes and certain gains; not annual summary 190 or rent withholding 115.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GH01.shtml"
+      ]
+    },
+    {
+      "id": "aeat-115",
+      "number": "115",
+      "title": "Retenciones de arrendamientos urbanos",
+      "family": "withholding",
+      "description": "Periodic urban property rent withholding return; not annual summary 180.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GH02.shtml"
+      ]
+    },
+    {
+      "id": "aeat-123",
+      "number": "123",
+      "title": "Retenciones de determinados rendimientos del capital mobiliario",
+      "family": "withholding",
+      "description": "Periodic withholding return for certain investment income; not annual summary 193.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GH04.shtml"
+      ]
+    },
+    {
+      "id": "aeat-130",
+      "number": "130",
+      "title": "Pago fraccionado IRPF: estimación directa",
+      "family": "irpf",
+      "description": "Quarterly personal business income tax prepayment under direct estimation; not objective estimation 131.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G601.shtml"
+      ]
+    },
+    {
+      "id": "aeat-131",
+      "number": "131",
+      "title": "Pago fraccionado IRPF: estimación objetiva",
+      "family": "irpf",
+      "description": "Personal business income tax prepayment under objective estimation, módulos; not direct estimation 130.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G602.shtml"
+      ]
+    },
+    {
+      "id": "aeat-180",
+      "number": "180",
+      "title": "Resumen anual de retenciones de arrendamientos urbanos",
+      "family": "withholding",
+      "description": "Annual urban property rent withholding information return, list of recipients; not periodic 115.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI00.shtml"
+      ]
+    },
+    {
+      "id": "aeat-184",
+      "number": "184",
+      "title": "Entidades en régimen de atribución de rentas",
+      "family": "information",
+      "description": "Annual information return for entities under income attribution regime; socios, herederos, comuneros, partícipes.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI04.shtml"
+      ]
+    },
+    {
+      "id": "aeat-190",
+      "number": "190",
+      "title": "Resumen anual de retenciones de trabajo y actividades económicas",
+      "family": "withholding",
+      "description": "Annual employment/professional withholding summary and recipient details; not periodic 111.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI10.shtml"
+      ]
+    },
+    {
+      "id": "aeat-193",
+      "number": "193",
+      "title": "Resumen anual de retenciones del capital mobiliario",
+      "family": "withholding",
+      "description": "Annual information return for certain investment income withholding; not periodic 123.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI12.shtml"
+      ]
+    },
+    {
+      "id": "aeat-200",
+      "number": "200",
+      "title": "Declaración del Impuesto sobre Sociedades",
+      "family": "corporate",
+      "description": "Annual corporate income tax or permanent-establishment non-resident income return, balance and profit and loss; not instalment 202.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GE04.shtml"
+      ]
+    },
+    {
+      "id": "aeat-202",
+      "number": "202",
+      "title": "Pago fraccionado del Impuesto sobre Sociedades",
+      "family": "corporate",
+      "description": "Corporate income tax or permanent-establishment instalment payment; not annual return 200.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GE00.shtml"
+      ]
+    },
+    {
+      "id": "aeat-210",
+      "number": "210",
+      "title": "IRNR sin establecimiento permanente",
+      "family": "nonresident",
+      "description": "Non-resident income tax self-assessment without permanent establishment; renta obtenida, inmuebles; not withholding 211 or 216.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GF00.shtml"
+      ]
+    },
+    {
+      "id": "aeat-211",
+      "number": "211",
+      "title": "Retención en adquisición de inmuebles a no residentes",
+      "family": "nonresident",
+      "description": "Withholding on purchasing Spanish real estate from a non-resident without permanent establishment.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GF01.shtml"
+      ]
+    },
+    {
+      "id": "aeat-216",
+      "number": "216",
+      "title": "Retenciones IRNR sin establecimiento permanente",
+      "family": "nonresident",
+      "description": "Periodic withholding on non-resident income without permanent establishment; not annual summary 296.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GF05.shtml"
+      ]
+    },
+    {
+      "id": "aeat-232",
+      "number": "232",
+      "title": "Operaciones vinculadas y determinadas operaciones con jurisdicciones no cooperativas",
+      "family": "information",
+      "description": "Related-party transactions and specified transactions/holdings involving tax-haven or non-cooperative jurisdictions information return.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI43.shtml"
+      ]
+    },
+    {
+      "id": "aeat-296",
+      "number": "296",
+      "title": "Resumen anual de retenciones IRNR",
+      "family": "nonresident",
+      "description": "Annual non-resident income withholding summary without permanent establishment; not periodic 216.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI22.shtml"
+      ]
+    },
+    {
+      "id": "aeat-303",
+      "number": "303",
+      "title": "Autoliquidación del IVA",
+      "family": "vat",
+      "description": "Periodic VAT self-assessment, IVA devengado, IVA deducible, resultado; not annual summary 390 or nonperiodic 309.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G414.shtml"
+      ]
+    },
+    {
+      "id": "aeat-309",
+      "number": "309",
+      "title": "Autoliquidación no periódica del IVA",
+      "family": "vat",
+      "description": "Nonperiodic VAT self-assessment, declaración-liquidación no periódica; not ordinary periodic 303.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G404.shtml"
+      ]
+    },
+    {
+      "id": "aeat-347",
+      "number": "347",
+      "title": "Declaración anual de operaciones con terceras personas",
+      "family": "information",
+      "description": "Annual third-party transactions information return; not EU recapitulative statement 349.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI27.shtml"
+      ]
+    },
+    {
+      "id": "aeat-349",
+      "number": "349",
+      "title": "Declaración recapitulativa de operaciones intracomunitarias",
+      "family": "information",
+      "description": "Recapitulative intra-Community operations statement, NIF operador comunitario, entregas/adquisiciones/servicios; not 347.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI28.shtml"
+      ]
+    },
+    {
+      "id": "aeat-369",
+      "number": "369",
+      "title": "IVA: regímenes especiales de comercio electrónico",
+      "family": "vat",
+      "description": "VAT self-assessment for OSS/IOSS special schemes, ventanilla única, régimen Unión, exterior o importación.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G420.shtml"
+      ]
+    },
+    {
+      "id": "aeat-390",
+      "number": "390",
+      "title": "Resumen anual del IVA",
+      "family": "vat",
+      "description": "Annual VAT summary, resumen anual, volumen de operaciones; not periodic self-assessment 303.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G412.shtml"
+      ]
+    },
+    {
+      "id": "aeat-714",
+      "number": "714",
+      "title": "Impuesto sobre el Patrimonio",
+      "family": "wealth",
+      "description": "Individual wealth tax declaration, bienes, derechos y deudas; not large-fortune solidarity tax 718.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G611.shtml"
+      ]
+    },
+    {
+      "id": "aeat-718",
+      "number": "718",
+      "title": "Impuesto Temporal de Solidaridad de las Grandes Fortunas",
+      "family": "wealth",
+      "description": "Large-fortune solidarity tax self-assessment; not wealth tax 714.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GC62.shtml"
+      ]
+    },
+    {
+      "id": "aeat-720",
+      "number": "720",
+      "title": "Bienes y derechos situados en el extranjero",
+      "family": "information",
+      "description": "Information return for foreign assets and rights such as accounts, securities and real estate; not virtual currencies 721.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI34.shtml"
+      ]
+    },
+    {
+      "id": "aeat-721",
+      "number": "721",
+      "title": "Monedas virtuales situadas en el extranjero",
+      "family": "information",
+      "description": "Information return for virtual currencies held abroad; not other foreign assets 720.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI55.shtml"
+      ]
+    },
+    {
+      "id": "aeat-840",
+      "number": "840",
+      "title": "IAE: alta, variación o baja",
+      "family": "iae",
+      "description": "Economic activities tax registration, variation or deregistration, cuota municipal/provincial/nacional.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G323.shtml"
+      ]
+    },
+    {
+      "id": "aeat-848",
+      "number": "848",
+      "title": "IAE: importe neto de la cifra de negocios",
+      "family": "iae",
+      "description": "Communication of net turnover for economic activities tax; not registration 840.",
+      "status": "current",
+      "sources": [
+        "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G323.shtml"
+      ]
+    }
+  ]
+}

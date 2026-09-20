@@ -1,0 +1,1406 @@
+{
+  "evaluatedAt": "2026-09-20T18:54:42.463Z",
+  "model": "jev-1.13.0",
+  "gate": {
+    "minConfidence": 0.95,
+    "minProbability": 0.95
+  },
+  "fixtureSha256": "7b3032b67d7bde29fa8b6f8eab30e47d0078403a2ad8429488c50e69288d79c7",
+  "catalogVersion": "2026-09-20/2026-09-20",
+  "synthetic": {
+    "cases": 39,
+    "passed": 37,
+    "strictMisses": 2,
+    "wrongAccepted": 0,
+    "errors": 0,
+    "inputTokens": 97192,
+    "outputTokens": 17635
+  },
+  "baselineSynthetic": {
+    "cases": 39,
+    "passed": 21,
+    "strictMisses": 18,
+    "wrongAccepted": 0,
+    "errors": 0,
+    "inputTokens": 93917,
+    "outputTokens": 17637
+  },
+  "pdf": {
+    "pages": 4,
+    "identityCorrect": 4,
+    "accepted": 1,
+    "wrongAccepted": 0
+  },
+  "limitations": [
+    "Small synthetic development set, not a held-out real-document accuracy or calibration benchmark. No taxpayer documents used.",
+    "Four selected public reference pages from two PDFs of one AEAT model; not representative of filled taxpayer documents. Page-level authority may be absent on continuation pages."
+  ],
+  "sourceSha256": {
+    "src/accounting.ts": "d6eade5519b598d51ab2147be7c2fc686e408d3e4fd379aff42b1d993251c846",
+    "src/catalog.ts": "4573913c4ddf998f302d280bfaefba0a1d8e71e03fb057727b7f358d7805af9c",
+    "src/classify.ts": "871827d5e962b930603228e862ea96df5f05b77b4aa768a861586e87cde23b84",
+    "src/cli.ts": "c85c49db122b8b750a810fc7c45fb8dc880fd837364ccdce4cb6e244dc7c3fc6",
+    "src/decisions.ts": "86ec88c2d15eb7c3ba4c051ca7e57b70268b0c0c56d6e5e1fb1b72b586b13d55",
+    "src/index.ts": "1b9de5473338e729b095b0100fd3361eda37fb34d4582ad47e0fcbc90d2b1c25",
+    "src/jev.ts": "ac85e4e34cfa44f307abb9f61686a9fdecfef6016eed9fe8e0100e5c6f993ebd",
+    "src/pdf.ts": "bee722418cacc695fac8303debb4da59b05f2c721a89706b2fa985dfa53d14b8",
+    "src/types.ts": "9b1ad84ad434aadb42949620ea6ea7e022ccc5aeecc84236ad978567077ee3e3"
+  },
+  "syntheticCases": [
+    {
+      "id": "iva-quarter",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-303",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 1203,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3326,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-303",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "iva-annual",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-390",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 1140,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3317,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-390",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "withholding-quarter",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-111",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 369,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3332,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 0.99,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-111",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "withholding-annual",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-190",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 378,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3312,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 0.99,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 0.97,
+          "probability": 0.98
+        },
+        "form": {
+          "value": "aeat-190",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "rent-quarter",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-115",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 349,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3310,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-115",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "rent-annual",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-180",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 344,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3303,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-180",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "direct-income",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-130",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 367,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3313,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 0.99,
+          "probability": 0.99
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-130",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "objective-income",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-131",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 383,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3314,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 0.98,
+          "probability": 0.99
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-131",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "corporate-annual",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-200",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": false,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "low_jurisdiction_confidence"
+      ],
+      "latencyMs": 361,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3310,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 0.87,
+          "probability": 0.89
+        },
+        "form": {
+          "value": "aeat-200",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "corporate-instalment",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-202",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 363,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3308,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 0.98,
+          "probability": 0.99
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-202",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "census",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-036",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": false,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "low_kind_confidence"
+      ],
+      "latencyMs": 382,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3310,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 0.94,
+          "probability": 0.95
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-036",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "census-historical",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-037",
+        "jurisdiction": "aeat",
+        "status": "needs_review"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "historical_model"
+      ],
+      "latencyMs": 338,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3315,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-037",
+          "confidence": 0.96,
+          "probability": 0.96
+        }
+      }
+    },
+    {
+      "id": "third-parties",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-347",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 392,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3309,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-347",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "eu-operations",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-349",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 331,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3305,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-349",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "nonresident",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": "aeat-210",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 402,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3310,
+        "output_tokens": 611
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-210",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "receipt-303",
+      "task": "document",
+      "expected": {
+        "kind": "filing_receipt",
+        "form": "aeat-303",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 372,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3339,
+        "output_tokens": 613
+      },
+      "decisions": {
+        "kind": {
+          "value": "filing_receipt",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-303",
+          "confidence": 0.98,
+          "probability": 0.98
+        }
+      }
+    },
+    {
+      "id": "instructions-303",
+      "task": "document",
+      "expected": {
+        "kind": "instructions",
+        "form": "aeat-303",
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 390,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3317,
+        "output_tokens": 610
+      },
+      "decisions": {
+        "kind": {
+          "value": "instructions",
+          "confidence": 0.97,
+          "probability": 0.98
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-303",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "notice-303-reference",
+      "task": "document",
+      "expected": {
+        "kind": "notification",
+        "form": null,
+        "jurisdiction": "aeat",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 368,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3328,
+        "output_tokens": 605
+      },
+      "decisions": {
+        "kind": {
+          "value": "notification",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "none",
+          "confidence": 0.93,
+          "probability": 0.9400000000000001
+        }
+      }
+    },
+    {
+      "id": "invoice-mentions-model",
+      "task": "document",
+      "expected": {
+        "kind": "invoice",
+        "form": null,
+        "jurisdiction": "not_applicable",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 341,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3340,
+        "output_tokens": 607
+      },
+      "decisions": {
+        "kind": {
+          "value": "invoice",
+          "confidence": 0.98,
+          "probability": 0.98
+        },
+        "jurisdiction": {
+          "value": "not_applicable",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "none",
+          "confidence": 0.86,
+          "probability": 0.87
+        }
+      }
+    },
+    {
+      "id": "credit-note",
+      "task": "document",
+      "expected": {
+        "kind": "credit_note",
+        "form": null,
+        "jurisdiction": "not_applicable",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 390,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3332,
+        "output_tokens": 608
+      },
+      "decisions": {
+        "kind": {
+          "value": "credit_note",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "not_applicable",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "none",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "payroll",
+      "task": "document",
+      "expected": {
+        "kind": "payroll",
+        "form": null,
+        "jurisdiction": "not_applicable",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 353,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3328,
+        "output_tokens": 608
+      },
+      "decisions": {
+        "kind": {
+          "value": "payroll",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "not_applicable",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "none",
+          "confidence": 0.98,
+          "probability": 0.99
+        }
+      }
+    },
+    {
+      "id": "bank",
+      "task": "document",
+      "expected": {
+        "kind": "bank_statement",
+        "form": null,
+        "jurisdiction": "not_applicable",
+        "status": "accepted"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "latencyMs": 330,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3341,
+        "output_tokens": 613
+      },
+      "decisions": {
+        "kind": {
+          "value": "bank_statement",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "not_applicable",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-303",
+          "confidence": 0.87,
+          "probability": 0.88
+        }
+      }
+    },
+    {
+      "id": "foral-303",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": null,
+        "jurisdiction": "foral",
+        "status": "needs_review"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "outside_national_aeat_scope",
+        "no_supported_aeat_form"
+      ],
+      "latencyMs": 344,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3314,
+        "output_tokens": 606
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "foral",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "none",
+          "confidence": 0.92,
+          "probability": 0.93
+        }
+      }
+    },
+    {
+      "id": "canary-420",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": null,
+        "jurisdiction": "canary",
+        "status": "needs_review"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "outside_national_aeat_scope",
+        "no_supported_aeat_form"
+      ],
+      "latencyMs": 399,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3301,
+        "output_tokens": 606
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 0.98,
+          "probability": 0.99
+        },
+        "jurisdiction": {
+          "value": "canary",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "none",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "id": "foreign-irs",
+      "task": "document",
+      "expected": {
+        "kind": "tax_form",
+        "form": null,
+        "jurisdiction": "foreign",
+        "status": "needs_review"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "outside_national_aeat_scope",
+        "no_supported_aeat_form"
+      ],
+      "latencyMs": 334,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3302,
+        "output_tokens": 605
+      },
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 0.98,
+          "probability": 0.98
+        },
+        "jurisdiction": {
+          "value": "foreign",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "none",
+          "confidence": 0.98,
+          "probability": 0.98
+        }
+      }
+    },
+    {
+      "id": "no-text",
+      "task": "document",
+      "expected": {
+        "kind": "",
+        "form": null,
+        "jurisdiction": "",
+        "status": "needs_ocr"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "needs_ocr",
+      "reasons": [
+        "no_extractable_text"
+      ],
+      "latencyMs": 0,
+      "model": null,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "decisions": {
+        "account": null
+      }
+    },
+    {
+      "id": "professional-purchase",
+      "task": "account",
+      "expected": {
+        "account": "623"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "suggested",
+      "reasons": [],
+      "latencyMs": 372,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1379,
+        "output_tokens": 246
+      },
+      "decisions": {
+        "account": "623"
+      }
+    },
+    {
+      "id": "professional-sale",
+      "task": "account",
+      "expected": {
+        "account": "705"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "suggested",
+      "reasons": [],
+      "latencyMs": 375,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 879,
+        "output_tokens": 120
+      },
+      "decisions": {
+        "account": "705"
+      }
+    },
+    {
+      "id": "office-rent",
+      "task": "account",
+      "expected": {
+        "account": "621"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "suggested",
+      "reasons": [],
+      "latencyMs": 366,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1370,
+        "output_tokens": 246
+      },
+      "decisions": {
+        "account": "621"
+      }
+    },
+    {
+      "id": "electricity",
+      "task": "account",
+      "expected": {
+        "account": "628"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "suggested",
+      "reasons": [],
+      "latencyMs": 380,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1365,
+        "output_tokens": 246
+      },
+      "decisions": {
+        "account": "628"
+      }
+    },
+    {
+      "id": "merchandise",
+      "task": "account",
+      "expected": {
+        "account": "600"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "suggested",
+      "reasons": [],
+      "latencyMs": 346,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1384,
+        "output_tokens": 246
+      },
+      "decisions": {
+        "account": "600"
+      }
+    },
+    {
+      "id": "computer-asset",
+      "task": "account",
+      "expected": {
+        "account": "217"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "suggested",
+      "reasons": [],
+      "latencyMs": 433,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1376,
+        "output_tokens": 246
+      },
+      "decisions": {
+        "account": "217"
+      }
+    },
+    {
+      "id": "saas",
+      "task": "account",
+      "expected": {
+        "account": "629"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "suggested",
+      "reasons": [],
+      "latencyMs": 387,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1380,
+        "output_tokens": 246
+      },
+      "decisions": {
+        "account": "629"
+      }
+    },
+    {
+      "id": "bank-interest",
+      "task": "account",
+      "expected": {
+        "account": "662"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "suggested",
+      "reasons": [],
+      "latencyMs": 361,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 788,
+        "output_tokens": 102
+      },
+      "decisions": {
+        "account": "662"
+      }
+    },
+    {
+      "id": "bank-fee",
+      "task": "account",
+      "expected": {
+        "account": "626"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "suggested",
+      "reasons": [],
+      "latencyMs": 347,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 775,
+        "output_tokens": 102
+      },
+      "decisions": {
+        "account": "626"
+      }
+    },
+    {
+      "id": "gross-wages",
+      "task": "account",
+      "expected": {
+        "account": "640"
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "suggested",
+      "reasons": [],
+      "latencyMs": 457,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 802,
+        "output_tokens": 102
+      },
+      "decisions": {
+        "account": "640"
+      }
+    },
+    {
+      "id": "mixed-invoice",
+      "task": "account",
+      "expected": {
+        "account": null
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "mixed",
+        "unsupported_or_ambiguous_account",
+        "low_account_confidence"
+      ],
+      "latencyMs": 338,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1384,
+        "output_tokens": 243
+      },
+      "decisions": {
+        "account": null
+      }
+    },
+    {
+      "id": "tax-not-transaction",
+      "task": "account",
+      "expected": {
+        "account": null
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "not_transaction",
+        "unsupported_or_ambiguous_account",
+        "low_account_confidence"
+      ],
+      "latencyMs": 371,
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1374,
+        "output_tokens": 244
+      },
+      "decisions": {
+        "account": null
+      }
+    },
+    {
+      "id": "direction-missing",
+      "task": "account",
+      "expected": {
+        "account": null
+      },
+      "passed": true,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "missing_transaction_direction"
+      ],
+      "latencyMs": 0,
+      "model": null,
+      "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "decisions": {
+        "account": null
+      }
+    }
+  ],
+  "pdfCases": [
+    {
+      "source": "https://sede.agenciatributaria.gob.es/static_files/Sede/Biblioteca/Manual/Practicos/IVA/IVA_2025/Imagenes/Cap_9_303_eu_es.pdf",
+      "sourceSha256": "5962adbacde129d1d95cca05e55ad5edc6639ebb47fcd2c61c6ceb56fd33eca5",
+      "page": 1,
+      "expectedKind": "tax_form",
+      "expectedForm": "aeat-303",
+      "identityCorrect": true,
+      "wrongAccepted": false,
+      "status": "accepted",
+      "reasons": [],
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 1,
+          "probability": 1
+        },
+        "form": {
+          "value": "aeat-303",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "source": "https://sede.agenciatributaria.gob.es/static_files/Sede/Biblioteca/Manual/Practicos/IVA/IVA_2025/Imagenes/Cap_9_303_eu_es.pdf",
+      "sourceSha256": "5962adbacde129d1d95cca05e55ad5edc6639ebb47fcd2c61c6ceb56fd33eca5",
+      "page": 2,
+      "expectedKind": "tax_form",
+      "expectedForm": "aeat-303",
+      "identityCorrect": true,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "low_jurisdiction_confidence"
+      ],
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 0.93,
+          "probability": 0.94
+        },
+        "form": {
+          "value": "aeat-303",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    },
+    {
+      "source": "https://sede.agenciatributaria.gob.es/static_files/Sede/Biblioteca/Manual/Practicos/IVA/IVA_2025/Imagenes/Cap_9_303_eu_es.pdf",
+      "sourceSha256": "5962adbacde129d1d95cca05e55ad5edc6639ebb47fcd2c61c6ceb56fd33eca5",
+      "page": 3,
+      "expectedKind": "tax_form",
+      "expectedForm": "aeat-303",
+      "identityCorrect": true,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "low_jurisdiction_confidence"
+      ],
+      "decisions": {
+        "kind": {
+          "value": "tax_form",
+          "confidence": 1,
+          "probability": 1
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 0.73,
+          "probability": 0.78
+        },
+        "form": {
+          "value": "aeat-303",
+          "confidence": 0.99,
+          "probability": 0.99
+        }
+      }
+    },
+    {
+      "source": "https://sede.agenciatributaria.gob.es/static_files/Sede/Procedimiento_ayuda/G414/Inst_mod_303_2025.pdf",
+      "sourceSha256": "789ec19325a3737d5de7db3f3de55f73d74e3b348037772d9a05776595a8fa52",
+      "page": 1,
+      "expectedKind": "instructions",
+      "expectedForm": "aeat-303",
+      "identityCorrect": true,
+      "wrongAccepted": false,
+      "status": "needs_review",
+      "reasons": [
+        "low_jurisdiction_confidence"
+      ],
+      "decisions": {
+        "kind": {
+          "value": "instructions",
+          "confidence": 0.98,
+          "probability": 0.98
+        },
+        "jurisdiction": {
+          "value": "aeat",
+          "confidence": 0.92,
+          "probability": 0.9400000000000001
+        },
+        "form": {
+          "value": "aeat-303",
+          "confidence": 1,
+          "probability": 1
+        }
+      }
+    }
+  ]
+}
