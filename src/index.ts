@@ -6,6 +6,8 @@ export { jevBackend, JevError } from './jev.js';
 export type { JevOptions } from './jev.js';
 export { readPdfPages } from './pdf.js';
 export type { PdfPage } from './pdf.js';
+export { classifyPageWithContext, planContext } from './context.js';
+export type { TextPage, ContextualPageResult } from './context.js';
 export { aeatModels, pgcAccounts, catalogVersion } from './catalog.js';
 export { DEFAULT_GATE } from './decisions.js';
 export type * from './types.js';

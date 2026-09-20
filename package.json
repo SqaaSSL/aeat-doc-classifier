@@ -4,15 +4,36 @@
   "description": "Jev-powered Spanish tax document classification and reviewable PGC account suggestions.",
   "license": "MIT",
   "type": "module",
-  "engines": { "node": ">=22" },
-  "repository": { "type": "git", "url": "https://github.com/SqaaSSL/aeat-doc-classifier.git" },
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SqaaSSL/aeat-doc-classifier.git"
+  },
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
     "./data/aeat-models.json": "./data/aeat-models.json",
     "./data/pgc-accounts.json": "./data/pgc-accounts.json"
   },
-  "bin": { "aeat-classify": "dist/cli.js" },
-  "files": ["dist", "data", "docs", "skills", "examples", "LICENSE", "README.md", "DATA-LICENSE.md", "CONTRIBUTING.md", "SECURITY.md"],
+  "bin": {
+    "aeat-classify": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "data",
+    "docs",
+    "skills",
+    "examples",
+    "LICENSE",
+    "README.md",
+    "DATA-LICENSE.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
@@ -25,7 +46,12 @@
     "eval:report": "node --import tsx eval/public-report.ts",
     "eval:typecheck": "tsc -p tsconfig.eval.json",
     "catalog:check": "node --import tsx scripts/check-catalog.ts",
-    "prepublishOnly": "npm run check && npm run catalog:check"
+    "prepublishOnly": "npm run check && npm run catalog:check",
+    "eval:context": "node --import tsx eval/context.ts"
   },
-  "devDependencies": { "@types/node": "^22.0.0", "tsx": "^4.20.0", "typescript": "^5.9.0" }
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
 }

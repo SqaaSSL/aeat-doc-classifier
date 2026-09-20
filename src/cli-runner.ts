@@ -2,7 +2,7 @@ import { execFile } from 'node:child_process';
 import { createReadStream, readFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { parseArgs, promisify } from 'node:util';
-import { aeatModels, pgcAccounts, catalogVersion, classifyPage, readPdfPages, suggestAccount, jevBackend, JevError } from './index.js';
+import { aeatModels, pgcAccounts, catalogVersion, classifyPage, classifyPageWithContext, planContext, readPdfPages, suggestAccount, jevBackend, JevError } from './index.js';
 import { normalizeText } from './decisions.js';
 import type { AccountingContext, Backend } from './index.js';
 
@@ -24,6 +24,7 @@ Usage:
 Classification/account output is JSON. Use - to read UTF-8 text from stdin.
 --compact          Emit single-line JSON.
 --fail-on-review   Exit 2 if any result requires review (including every PGC proposal).
+--experimental-context  PDF only: retry uncertain pages with bounded neighboring-page context.
 --help, -h         Show this help without a key or network access.
 --version, -v      Show package version.
 Use -- before a filename beginning with a dash.
@@ -120,6 +121,7 @@ export async function runCli(args: string[], options: CliOptions = {}): Promise<
     const maxPages = Number(values['max-pages'] ?? '100');
     if (!Number.isInteger(maxPages) || maxPages < 1 || maxPages > 1000) throw new CliError('USAGE_ERROR', 'max-pages must be an integer from 1 to 1000.');
     const isPdf = file!.toLowerCase().endsWith('.pdf');
+    if (values['experimental-context'] && !isPdf) throw new CliError('USAGE_ERROR', '--experimental-context requires a PDF path with ordered pages.');
     let context: AccountingContext | undefined;
     if (command === 'account') {
       if (isPdf) throw new CliError('INVALID_INPUT', 'Extract and review one transaction component as text before requesting an account.');
@@ -148,8 +150,11 @@ export async function runCli(args: string[], options: CliOptions = {}): Promise<
       output(result);
       return values['fail-on-review'] && result.requiresHumanReview ? 2 : 0;
     }
+    if (values['experimental-context']) for (const page of pages) planContext(pages, page.page);
     const results = [];
-    for (const page of pages) results.push({ page: page.page, result: await classifyPage(page.text, { gate, backend }) });
+    for (const page of pages) results.push(values['experimental-context']
+      ? await classifyPageWithContext(pages, page.page, { gate, backend })
+      : { page: page.page, result: await classifyPage(page.text, { gate, backend }) });
     output(results);
     return values['fail-on-review'] && results.some(r => r.result.status !== 'accepted') ? 2 : 0;
   } catch (error) {
@@ -170,9 +175,10 @@ const optionDefinitions = {
   compact: { type: 'boolean' }, 'fail-on-review': { type: 'boolean' },
   direction: { type: 'string' }, plan: { type: 'string' }, activity: { type: 'string' },
   threshold: { type: 'string' }, 'max-pages': { type: 'string' }, pdf: { type: 'boolean' },
+  'experimental-context': { type: 'boolean' },
 } as const;
 const commandOptions: Record<string, string[]> = {
-  classify: ['threshold', 'max-pages', 'fail-on-review'],
+  classify: ['threshold', 'max-pages', 'fail-on-review', 'experimental-context'],
   account: ['threshold', 'direction', 'plan', 'activity', 'fail-on-review'],
   doctor: ['pdf'], catalog: [], schema: [], skill: [],
 };

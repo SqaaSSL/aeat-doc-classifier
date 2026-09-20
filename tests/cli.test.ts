@@ -62,6 +62,8 @@ test('invalid or irrelevant options fail before reading input', async () => {
     ['classify', '-', '--threshold', 'NaN'], ['classify', '-', '--max-pages', '0'],
     ['classify', '-', '--direction', 'sale'], ['doctor', 'extra'], ['catalog', 'invented'],
     ['classify', '-', '--api-key', 'never-echo-this-secret'],
+    ['classify', '-', '--experimental-context'],
+    ['account', '-', '--direction', 'sale', '--experimental-context'],
   ]) {
     const r = await call(args, '', { stdin: (async function* () { throw new Error('Do not read'); })() });
     assert.equal(r.exit, 64, args.join(' ')); assert.equal(r.stdout, '');

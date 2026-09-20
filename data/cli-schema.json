@@ -1,49 +1,282 @@
 {
-  "contractVersion": 1,
+  "contractVersion": 2,
   "binary": "aeat-classify",
-  "authentication": { "environment": "TYPESAFE_API_KEY", "cliArgumentSupported": false },
+  "authentication": {
+    "environment": "TYPESAFE_API_KEY",
+    "cliArgumentSupported": false
+  },
   "modelEnvironment": "TYPESAFE_MODEL",
-  "transport": { "input": "UTF-8 file, PDF path, or UTF-8 stdin with -", "maxTextBytes": 24000, "success": "JSON on stdout except help/version/skill", "error": "JSON on stderr", "provider": "https://api.typesafe.ai/v1/systemone" },
+  "transport": {
+    "input": "UTF-8 file, PDF path, or UTF-8 stdin with -",
+    "maxTextBytes": 24000,
+    "success": "JSON on stdout except help/version/skill",
+    "error": "JSON on stderr",
+    "provider": "https://api.typesafe.ai/v1/systemone"
+  },
   "commands": {
-    "classify": { "positional": ["file.txt|file.pdf|-"], "options": ["threshold", "max-pages", "compact", "fail-on-review"], "outputSchema": "classificationPages", "network": "Text sent to TypeSafe unless empty" },
-    "account": { "positional": ["file.txt|-"], "requiredOptions": ["direction"], "options": ["direction", "plan", "activity", "threshold", "compact", "fail-on-review"], "outputSchema": "accountSuggestion", "network": "Text and context sent to TypeSafe unless empty or direction unknown" },
-    "doctor": { "positional": [], "options": ["pdf", "compact"], "network": false, "description": "Check key presence, Node and Poppler. Does not validate the credential with the provider." },
-    "catalog": { "positional": ["forms|accounts"], "options": ["compact"], "network": false },
-    "schema": { "positional": [], "options": ["compact"], "network": false, "description": "This command contract, including partial result schemas" },
-    "skill": { "positional": [], "network": false, "description": "Print the portable SKILL.md to stdout; no files are written" }
+    "classify": {
+      "positional": [
+        "file.txt|file.pdf|-"
+      ],
+      "options": [
+        "threshold",
+        "max-pages",
+        "compact",
+        "fail-on-review",
+        "experimental-context"
+      ],
+      "outputSchema": "classificationPages",
+      "network": "Text sent to TypeSafe unless empty"
+    },
+    "account": {
+      "positional": [
+        "file.txt|-"
+      ],
+      "requiredOptions": [
+        "direction"
+      ],
+      "options": [
+        "direction",
+        "plan",
+        "activity",
+        "threshold",
+        "compact",
+        "fail-on-review"
+      ],
+      "outputSchema": "accountSuggestion",
+      "network": "Text and context sent to TypeSafe unless empty or direction unknown"
+    },
+    "doctor": {
+      "positional": [],
+      "options": [
+        "pdf",
+        "compact"
+      ],
+      "network": false,
+      "description": "Check key presence, Node and Poppler. Does not validate the credential with the provider."
+    },
+    "catalog": {
+      "positional": [
+        "forms|accounts"
+      ],
+      "options": [
+        "compact"
+      ],
+      "network": false
+    },
+    "schema": {
+      "positional": [],
+      "options": [
+        "compact"
+      ],
+      "network": false,
+      "description": "This command contract, including partial result schemas"
+    },
+    "skill": {
+      "positional": [],
+      "network": false,
+      "description": "Print the portable SKILL.md to stdout; no files are written"
+    }
   },
   "options": {
-    "direction": { "type": "string", "enum": ["purchase", "sale", "payroll", "finance", "unknown"], "description": "Relative to the entity whose books are prepared" },
-    "plan": { "type": "string", "enum": ["pgc", "pgc-pymes"], "default": "pgc-pymes" },
-    "activity": { "type": "string", "maxLength": 1000 },
-    "threshold": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.95, "description": "Minimum provider confidence AND winning probability" },
-    "max-pages": { "type": "integer", "minimum": 1, "maximum": 1000, "default": 100 },
-    "compact": { "type": "boolean", "default": false },
-    "fail-on-review": { "type": "boolean", "default": false, "description": "Exit 2 for needs_review/needs_ocr or requiresHumanReview=true; normal JSON remains on stdout" },
-    "pdf": { "type": "boolean", "default": false, "description": "doctor also requires PDF readiness" }
+    "direction": {
+      "type": "string",
+      "enum": [
+        "purchase",
+        "sale",
+        "payroll",
+        "finance",
+        "unknown"
+      ],
+      "description": "Relative to the entity whose books are prepared"
+    },
+    "plan": {
+      "type": "string",
+      "enum": [
+        "pgc",
+        "pgc-pymes"
+      ],
+      "default": "pgc-pymes"
+    },
+    "activity": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "threshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "default": 0.95,
+      "description": "Minimum provider confidence AND winning probability"
+    },
+    "max-pages": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000,
+      "default": 100
+    },
+    "compact": {
+      "type": "boolean",
+      "default": false
+    },
+    "fail-on-review": {
+      "type": "boolean",
+      "default": false,
+      "description": "Exit 2 for needs_review/needs_ocr or requiresHumanReview=true; normal JSON remains on stdout"
+    },
+    "pdf": {
+      "type": "boolean",
+      "default": false,
+      "description": "doctor also requires PDF readiness"
+    },
+    "experimental-context": {
+      "type": "boolean",
+      "default": false,
+      "description": "Experimental PDF-only retry of uncertain pages using bounded contiguous neighboring pages. Requires same-document continuity and existing gates; no OCR or packet splitting. Adds pageOnly and context provenance to each result. May increase usage."
+    }
   },
-  "exitCodes": { "0": "Completed; inspect result status", "1": "Runtime, input or provider failure", "2": "Review required with --fail-on-review; result JSON is on stdout", "3": "Configuration/authentication failure or doctor not ready", "64": "Invalid arguments or input format/size" },
+  "exitCodes": {
+    "0": "Completed; inspect result status",
+    "1": "Runtime, input or provider failure",
+    "2": "Review required with --fail-on-review; result JSON is on stdout",
+    "3": "Configuration/authentication failure or doctor not ready",
+    "64": "Invalid arguments or input format/size"
+  },
   "outputSchemas": {
     "classificationPages": {
       "type": "array",
-      "items": { "type": "object", "required": ["page", "result"], "properties": {
-        "page": { "type": "integer", "minimum": 1 },
-        "result": { "type": "object", "required": ["status", "form", "kind", "jurisdiction", "reasons", "audit"], "properties": {
-          "status": { "enum": ["accepted", "needs_review", "needs_ocr"] },
-          "form": { "type": ["string", "null"], "description": "Null unless model identity is accepted" },
-          "kind": { "type": ["string", "null"] }, "jurisdiction": { "type": ["string", "null"] },
-          "reasons": { "type": "array", "items": { "type": "string" } },
-          "audit": { "type": "object" }
-        } }
-      } }
+      "items": {
+        "type": "object",
+        "required": [
+          "page",
+          "result"
+        ],
+        "properties": {
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "result": {
+            "type": "object",
+            "required": [
+              "status",
+              "form",
+              "kind",
+              "jurisdiction",
+              "reasons",
+              "audit"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "accepted",
+                  "needs_review",
+                  "needs_ocr"
+                ]
+              },
+              "form": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Null unless model identity is accepted"
+              },
+              "kind": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "jurisdiction": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "reasons": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "audit": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
     },
-    "accountSuggestion": { "type": "object", "required": ["status", "account", "requiresHumanReview", "reasons", "context", "audit"], "properties": {
-      "status": { "enum": ["suggested", "needs_review"] },
-      "account": { "type": ["object", "null"], "properties": { "code": { "type": "string" }, "title": { "type": "string" } } },
-      "requiresHumanReview": { "const": true },
-      "reasons": { "type": "array", "items": { "type": "string" } },
-      "context": { "type": "object" }, "audit": { "type": "object" }
-    } },
-    "error": { "type": "object", "required": ["error"], "properties": { "error": { "type": "object", "required": ["code", "message"], "properties": { "code": { "type": "string" }, "message": { "type": "string" } } } } }
+    "accountSuggestion": {
+      "type": "object",
+      "required": [
+        "status",
+        "account",
+        "requiresHumanReview",
+        "reasons",
+        "context",
+        "audit"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "suggested",
+            "needs_review"
+          ]
+        },
+        "account": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          }
+        },
+        "requiresHumanReview": {
+          "const": true
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "context": {
+          "type": "object"
+        },
+        "audit": {
+          "type": "object"
+        }
+      }
+    },
+    "error": {
+      "type": "object",
+      "required": [
+        "error"
+      ],
+      "properties": {
+        "error": {
+          "type": "object",
+          "required": [
+            "code",
+            "message"
+          ],
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
   }
 }

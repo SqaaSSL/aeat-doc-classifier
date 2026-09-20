@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": { "rootDir": ".", "noEmit": true },
-  "include": ["src/**/*.ts", "eval/public*.ts", "tests/benchmark.test.ts"]
+  "include": ["src/**/*.ts", "eval/public*.ts", "eval/context*.ts", "tests/benchmark.test.ts", "tests/context.test.ts"]
 }
