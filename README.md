@@ -6,24 +6,127 @@ The classifier identifies a page's document type, tax authority and AEAT model. 
 
 This is a document-routing library and CLI. It does not calculate tax, extract invoice amounts, determine deductibility, create complete journal entries, file returns, or implement SII/VERI*FACTU. No OCR is bundled. Spanish production accuracy is not yet established; see [measured development results](docs/benchmarks/README.md).
 
-## Quick start
+## Install the CLI
 
-Requirements: Node.js 22+, a TypeSafe API key, and [Poppler](https://poppler.freedesktop.org/) (`pdfinfo`, `pdftotext`) if reading PDFs. Text input needs no external binary.
+Requirements: Node.js 22+, npm and a [TypeSafe API key](https://docs.typesafe.ai/). The prebuilt release includes the executable and catalogs; no Git checkout or TypeScript build is needed.
 
 ```sh
-git clone https://github.com/SqaaSSL/aeat-doc-classifier.git
-cd aeat-doc-classifier
-npm ci
-npm run check
+npm install --global https://github.com/SqaaSSL/aeat-doc-classifier/releases/download/v0.2.0/sqaassl-aeat-doc-classifier-0.2.0.tgz
 
-# Set this in your shell or secret manager. Never commit a real key.
+# Set in the environment that will run your agent. Never commit a real key.
 export TYPESAFE_API_KEY="your-key"
-node dist/cli.js classify examples/modelo-303.txt
-node dist/cli.js account examples/factura-asesoria.txt --direction purchase --plan pgc-pymes
-node dist/cli.js classify /path/to/document.pdf --max-pages 100
+aeat-classify doctor
+aeat-classify classify /absolute/path/document.txt
+aeat-classify account /absolute/path/transaction.txt --direction purchase --plan pgc-pymes
 ```
 
-Install Poppler using `brew install poppler` on macOS or `sudo apt-get install poppler-utils` on Debian/Ubuntu. Install the library from GitHub using `npm install github:SqaaSSL/aeat-doc-classifier`. The npm package name is declared in the manifest; this release is distributed through GitHub, not the npm registry.
+For PDF input, install [Poppler](https://poppler.freedesktop.org/) with `brew install poppler` on macOS or `sudo apt-get install poppler-utils` on Debian/Ubuntu, then run `aeat-classify doctor --pdf`. Text input needs no external binary. All keys remain in the executing environment; there is no `--api-key` argument. A configured key is not proof that it is valid: `doctor` makes no API call.
+
+Run without a global installation:
+
+```sh
+npx --yes --package=https://github.com/SqaaSSL/aeat-doc-classifier/releases/download/v0.2.0/sqaassl-aeat-doc-classifier-0.2.0.tgz aeat-classify --help
+```
+
+The release is distributed through [GitHub Releases](https://github.com/SqaaSSL/aeat-doc-classifier/releases), not the npm registry. Install the library locally using the same tarball URL without `--global`, or build from a Git checkout as described under [Development](#development-and-evaluation). Global installation is recommended for the agent skill below so `aeat-classify` is on the agent's `PATH`.
+
+## CLI examples
+
+```sh
+aeat-classify classify /absolute/path/return.pdf --max-pages 20 --compact
+aeat-classify classify - --compact < /absolute/path/extracted-page.txt
+aeat-classify account - --direction sale --plan pgc --activity "Asesoría fiscal" < /absolute/path/transaction.txt
+aeat-classify catalog forms
+aeat-classify catalog accounts
+aeat-classify schema
+aeat-classify --help
+```
+
+Results are JSON on stdout; errors are `{ "error": { "code": "...", "message": "..." } }` on stderr. `classify` returns an array of `{page, result}`; `account` returns one suggestion object. `--compact` makes the JSON one line. `-` reads UTF-8 text from stdin, bounded at 24,000 bytes; supply PDFs by file path. Quote paths, or use `--` before a filename beginning with a dash.
+
+| Exit | Meaning |
+| --- | --- |
+| 0 | Execution completed; still inspect `status` and review fields |
+| 1 | Runtime, file or provider failure |
+| 2 | `--fail-on-review` found a review requirement; normal result JSON remains on stdout |
+| 3 | Missing configuration, authentication failure, or `doctor` not ready |
+| 64 | Invalid arguments or invalid/oversized text input |
+
+`--fail-on-review` applies to `needs_review`, `needs_ocr`, **and every PGC proposal**, because all proposals require human review. Without that flag, these valid results exit 0. Discovery commands (`doctor`, `catalog`, `schema`, `skill`, help, version) work offline; `skill` prints Markdown, and help/version print text. See [the full command contract](data/cli-schema.json) for agent integration.
+
+## Use with agents
+
+Install the CLI and set `TYPESAFE_API_KEY` **in the agent's execution environment**, then give it the [portable skill](skills/aeat-doc-classifier/SKILL.md). The skill is shipped inside the package, so no repository clone is needed. The commands below create a new skill file; preserve any existing local customization before replacing it.
+
+### Claude Code
+
+```sh
+mkdir -p ~/.claude/skills/aeat-doc-classifier
+aeat-classify skill > ~/.claude/skills/aeat-doc-classifier/SKILL.md
+claude
+```
+
+Ask Claude:
+
+```text
+/aeat-doc-classifier Classify /absolute/path/taxes.pdf and show any pages needing review.
+```
+
+For a project-only installation, use `.claude/skills/aeat-doc-classifier/SKILL.md` in that project. Claude still applies its normal terminal/tool permissions. Personal skills are local to that machine; configure the CLI and secret separately for remote execution. [Claude Code skills documentation](https://code.claude.com/docs/en/skills).
+
+### ChatGPT / Codex
+
+For Codex CLI or a local ChatGPT/Codex workspace with terminal access:
+
+```sh
+mkdir -p ~/.agents/skills/aeat-doc-classifier
+aeat-classify skill > ~/.agents/skills/aeat-doc-classifier/SKILL.md
+codex
+```
+
+Ask the agent:
+
+```text
+Use $aeat-doc-classifier to classify /absolute/path/taxes.pdf.
+Summarize accepted model identities and preserve every review or OCR requirement.
+```
+
+For a project-only installation, use `.agents/skills/aeat-doc-classifier/SKILL.md`. The CLI, key, input files and network access must exist wherever the task executes. [Official skill locations and usage](https://learn.chatgpt.com/docs/build-skills).
+
+In a ChatGPT session **without a terminal connected to your files**, pasting a command does not execute this local CLI. You can run the CLI yourself and share its result JSON. Direct tool access from ChatGPT developer mode requires a remote MCP integration; this release does not ship or host an MCP server. [Official ChatGPT developer-mode integration](https://developers.openai.com/api/docs/guides/developer-mode).
+
+### OpenClaw
+
+Run these commands from your configured OpenClaw workspace:
+
+```sh
+mkdir -p skills/aeat-doc-classifier
+aeat-classify skill > skills/aeat-doc-classifier/SKILL.md
+```
+
+The skill declares the `aeat-classify` binary and `TYPESAFE_API_KEY` dependency. Set the key in the Gateway/agent environment, or use OpenClaw's `skills.entries["aeat-doc-classifier"].apiKey` secret configuration. Start a new session if needed to refresh the skill list, then ask:
+
+```text
+Use aeat-doc-classifier to classify /absolute/path/taxes.pdf.
+For /absolute/path/transaction.txt, propose a PGC-PYMES account from the buyer's perspective.
+Keep the accounting proposal for human review.
+```
+
+If execution is sandboxed, install the binary/Poppler and provide the files and secret **inside the sandbox**. Host-only skill environment injection does not automatically cross that boundary. [OpenClaw skills](https://docs.openclaw.ai/tools/skills), [sandbox environment configuration](https://docs.openclaw.ai/tools/skills-config).
+
+### Other terminal-enabled agents
+
+Cursor, Cline, OpenCode and custom agents can invoke the same executable through their terminal/process tool when permitted. Give the agent this instruction, or adapt the portable skill to its supported skill format:
+
+```text
+Use aeat-classify for AEAT document triage and PGC account proposals.
+Read aeat-classify schema for the command/output contract. Send extracted text on stdin
+or pass an absolute file path. Parse JSON stdout; check stderr and exit codes separately.
+Keep TYPESAFE_API_KEY in the environment. Preserve review requirements and do not
+infer a completed tax filing, deductibility or a posted accounting entry from a result.
+```
+
+For a custom agent, use an argument array and stdin, not a shell string containing the document. This executable [Node.js adapter example](examples/agent-tool.mjs) preserves result JSON on exit 2 and parses failures separately. Skill instructions do not add capabilities: the agent still needs a working terminal/tool runtime and its normal permissions.
 
 ## Library
 
@@ -90,11 +193,15 @@ The examples and committed tests contain synthetic material. Optional PDF evalua
 ## Development and evaluation
 
 ```sh
+git clone https://github.com/SqaaSSL/aeat-doc-classifier.git
+cd aeat-doc-classifier
+npm ci
 npm run check           # Types, unit tests and build; no API key required
 npm run catalog:check   # Catalog integrity and Choice option limits
 npm run eval            # 39 synthetic development cases; uses TYPESAFE_API_KEY
 npm run eval:pdf        # Four public reference PDF pages; requires Poppler and key
 npm pack --dry-run      # Inspect the distributable package
+node dist/cli.js --help # Run the local build
 ```
 
 Live reports are written to ignored `eval/results/`; [published summaries](docs/benchmarks/README.md) distinguish raw identity, acceptance, abstention and wrong accepted results. The synthetic set is a development set, not a held-out benchmark. Only one model is represented in the small PDF smoke test.

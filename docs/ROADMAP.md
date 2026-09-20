@@ -7,7 +7,14 @@
 - Selected PGC/PGC-PYMES principal-account suggestions with explicit caller context and review status.
 - Text and PDF ingestion, synthetic evaluation, public PDF smoke test, offline CI and source documentation.
 
-## 0.2 — trustworthy document coverage
+## 0.2 — delivered agent CLI
+
+- Prebuilt CLI distribution, bounded UTF-8 stdin, JSON errors, explicit exit codes and optional review failure status.
+- Offline setup checks, catalogs and a machine-readable command contract.
+- Portable skill with documented Claude Code, ChatGPT/Codex, OpenClaw and generic subprocess setup.
+- No hosted MCP service; terminal-capable agents use the CLI directly.
+
+## 0.3 — trustworthy document coverage
 
 1. Build a permissioned and redacted Spanish document corpus with expert labels; keep issuer/document families disjoint across development and test splits.
 2. Add OCR as an explicit adapter with provenance and page quality, then compare scans against text-bearing versions.
@@ -17,7 +24,7 @@
 
 Exit criterion: documented performance on a held-out representative corpus, not a target invented from the US reference project.
 
-## 0.3 — accounting assistance
+## 0.4 — accounting assistance
 
 1. Extract invoice fields with evidence spans and immutable source links; exact decimal arithmetic, document totals and identifier checks belong in code.
 2. Split multi-category invoices and payrolls into reviewed components, introduce entity-specific charts, and collect explicit capitalization and business-use policy.

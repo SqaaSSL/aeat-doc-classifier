@@ -1,6 +1,6 @@
 # Development evaluation — 2026-09-20
 
-Live model: `jev-1.13.0`. Both provider confidence and selected-option probability must reach 0.95. [Machine-readable results, individual outcomes and hashes](2026-09-20.json) accompany this report. No real taxpayer documents were used.
+Live model: `jev-1.13.0`. This report records the v0.1.0 model evaluation; v0.2.0 adds agent CLI integration without changing those classification criteria. Both provider confidence and selected-option probability must reach 0.95. [Machine-readable results, individual outcomes and hashes](2026-09-20.json) accompany this report. No real taxpayer documents were used.
 
 | Set | Cases | Outcome |
 | --- | ---: | --- |

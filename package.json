@@ -1,6 +1,6 @@
 {
   "name": "@sqaassl/aeat-doc-classifier",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Jev-powered Spanish tax document classification and reviewable PGC account suggestions.",
   "license": "MIT",
   "type": "module",
@@ -12,7 +12,7 @@
     "./data/pgc-accounts.json": "./data/pgc-accounts.json"
   },
   "bin": { "aeat-classify": "dist/cli.js" },
-  "files": ["dist", "data", "docs", "LICENSE", "README.md", "DATA-LICENSE.md"],
+  "files": ["dist", "data", "docs", "skills", "examples", "LICENSE", "README.md", "DATA-LICENSE.md", "CONTRIBUTING.md", "SECURITY.md"],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
