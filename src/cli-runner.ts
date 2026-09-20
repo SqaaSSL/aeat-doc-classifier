@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { parseArgs, promisify } from 'node:util';
 import { aeatModels, pgcAccounts, catalogVersion, classifyPage, classifyPageWithContext, planContext, readPdfPages, suggestAccount, jevBackend, JevError } from './index.js';
 import { normalizeText } from './decisions.js';
+import { OCR_LANGUAGES, ocrReadiness, readPdfWithOcr, type OcrDocument, type OcrLanguage } from './ocr.js';
 import type { AccountingContext, Backend } from './index.js';
 
 const VERSION = (JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')) as { version: string }).version;
@@ -13,15 +14,18 @@ const HELP = `aeat-classify ${VERSION} — AEAT documents and PGC account sugges
 
 Usage:
   aeat-classify classify <file.txt|file.pdf|-> [--threshold 0.95] [--max-pages 100]
+  aeat-classify parse <file.pdf> [--ocr] [--ocr-language spa] [--max-pages 100]
   aeat-classify account <file.txt|-> --direction purchase|sale|payroll|finance|unknown
                         [--plan pgc|pgc-pymes] [--activity "Business activity"]
-  aeat-classify doctor [--pdf]
+  aeat-classify doctor [--pdf] [--ocr]
   aeat-classify catalog <forms|accounts>
   aeat-classify schema
   aeat-classify skill
   aeat-classify --version
 
 Classification/account output is JSON. Use - to read UTF-8 text from stdin.
+--ocr              PDF only: local LiteParse OCR, default language Spanish (spa).
+--ocr-language     spa, cat, eus, glg or eng; requires --ocr.
 --compact          Emit single-line JSON.
 --fail-on-review   Exit 2 if any result requires review (including every PGC proposal).
 --experimental-context  PDF only: retry uncertain pages with bounded neighboring-page context.
@@ -30,7 +34,9 @@ Classification/account output is JSON. Use - to read UTF-8 text from stdin.
 Use -- before a filename beginning with a dash.
 
 TYPESAFE_API_KEY supplies the credential; TYPESAFE_MODEL optionally selects the model.
-Text is sent to TypeSafe. No OCR or tax filing is performed. PDF input requires Poppler.
+Classification text is sent to TypeSafe. No tax filing is performed.
+PDFs use Poppler by default; --ocr uses optional LiteParse. parse makes no Jev calls.
+OCR runs locally; first use may download language data.
 doctor, catalog, schema, skill and help are local and make no API calls.
 Errors are JSON on stderr. Exit codes: 0 completed, 1 runtime, 2 review, 3 setup, 64 usage.
 `;
@@ -109,9 +115,11 @@ export async function runCli(args: string[], options: CliOptions = {}): Promise<
       const [pdfinfo, pdftotext] = await Promise.all([check('pdfinfo'), check('pdftotext')]);
       const nodeSupported = Number(process.versions.node.split('.')[0]) >= 22;
       const apiKeyConfigured = Boolean(env.TYPESAFE_API_KEY?.trim());
+      const ocr = ocrReadiness();
       const textReady = nodeSupported && apiKeyConfigured, pdfReady = textReady && pdfinfo && pdftotext;
-      const ready = values.pdf ? pdfReady : textReady;
-      output({ version: VERSION, node: process.versions.node, nodeSupported, apiKeyConfigured, pdf: { pdfinfo, pdftotext }, textReady, pdfReady, ready, networkChecked: false });
+      const ocrReady = nodeSupported && ocr.ready;
+      const ready = values.ocr ? textReady && ocrReady : values.pdf ? pdfReady : textReady;
+      output({ version: VERSION, node: process.versions.node, nodeSupported, apiKeyConfigured, pdf: { pdfinfo, pdftotext }, ocr, ocrReady, textReady, pdfReady, ready, networkChecked: false });
       return ready ? 0 : 3;
     }
     assertArity(2);
@@ -121,6 +129,10 @@ export async function runCli(args: string[], options: CliOptions = {}): Promise<
     const maxPages = Number(values['max-pages'] ?? '100');
     if (!Number.isInteger(maxPages) || maxPages < 1 || maxPages > 1000) throw new CliError('USAGE_ERROR', 'max-pages must be an integer from 1 to 1000.');
     const isPdf = file!.toLowerCase().endsWith('.pdf');
+    if ((values.ocr || values['ocr-language'] || command === 'parse') && !isPdf) throw new CliError('USAGE_ERROR', 'parse and OCR options require a PDF path.');
+    if (values['ocr-language'] && !values.ocr) throw new CliError('USAGE_ERROR', '--ocr-language requires --ocr.');
+    const ocrLanguage = values['ocr-language'] ?? 'spa';
+    if (!OCR_LANGUAGES.includes(ocrLanguage as OcrLanguage)) throw new CliError('USAGE_ERROR', 'Choose OCR language spa, cat, eus, glg or eng.');
     if (values['experimental-context'] && !isPdf) throw new CliError('USAGE_ERROR', '--experimental-context requires a PDF path with ordered pages.');
     let context: AccountingContext | undefined;
     if (command === 'account') {
@@ -136,15 +148,18 @@ export async function runCli(args: string[], options: CliOptions = {}): Promise<
       return jevBackend({ apiKey: env.TYPESAFE_API_KEY, model: env.TYPESAFE_MODEL }).ask(state, questions);
     } };
     let pages: Array<{ page: number; text: string }>;
+    let extraction: OcrDocument['extraction'] | undefined;
     if (isPdf) {
-      pages = await readPdfPages(file!, { maxPages });
+      if (values.ocr) ({ pages, extraction } = await readPdfWithOcr(file!, { maxPages, ocrLanguage: ocrLanguage as OcrLanguage }));
+      else pages = await readPdfPages(file!, { maxPages });
       // Validate all pages before incurring API usage on the first page.
-      for (const page of pages) normalizeText(page.text);
+      if (command !== 'parse') for (const page of pages) normalizeText(page.text);
     } else {
       if (file === '-' && (options.stdinIsTTY ?? process.stdin.isTTY)) throw new CliError('USAGE_ERROR', 'Pipe UTF-8 text to stdin or provide a file path. Interactive input is not supported.');
       const input = file === '-' ? options.stdin ?? process.stdin : createReadStream(file!);
       pages = [{ page: 1, text: await readText(input) }];
     }
+    if (command === 'parse') { output({ parser: extraction?.parser ?? 'poppler', ...(extraction ? { extraction } : {}), pages }); return 0; }
     if (command === 'account') {
       const result = await suggestAccount(pages[0]!.text, { context: context!, gate, backend });
       output(result);
@@ -155,7 +170,7 @@ export async function runCli(args: string[], options: CliOptions = {}): Promise<
     for (const page of pages) results.push(values['experimental-context']
       ? await classifyPageWithContext(pages, page.page, { gate, backend })
       : { page: page.page, result: await classifyPage(page.text, { gate, backend }) });
-    output(results);
+    output(extraction ? results.map(r => ({ ...r, extraction })) : results);
     return values['fail-on-review'] && results.some(r => r.result.status !== 'accepted') ? 2 : 0;
   } catch (error) {
     let code = 'RUNTIME_ERROR', message = 'Operation failed. Check the input and run aeat-classify doctor.', exitCode = 1;
@@ -164,6 +179,8 @@ export async function runCli(args: string[], options: CliOptions = {}): Promise<
       code = 'PROVIDER_ERROR'; message = error.message;
       if (error.status === 401 || error.status === 403) { code = 'AUTHENTICATION_ERROR'; exitCode = 3; }
     } else if ((error as NodeJS.ErrnoException)?.code === 'ENOENT') { code = 'INPUT_NOT_FOUND'; message = 'Input file not found.'; }
+    else if (error instanceof Error && error.message.startsWith('Install @llamaindex')) { code = 'MISSING_OCR'; message = error.message; exitCode = 3; }
+    else if (error instanceof Error && error.message.startsWith('Local OCR failed')) { code = 'OCR_FAILED'; message = error.message; }
     else if (error instanceof Error && error.message.startsWith('Install Poppler')) { code = 'MISSING_POPPLER'; message = error.message; exitCode = 3; }
     stderr(JSON.stringify({ error: { code, message } }) + '\n');
     return exitCode;
@@ -175,10 +192,11 @@ const optionDefinitions = {
   compact: { type: 'boolean' }, 'fail-on-review': { type: 'boolean' },
   direction: { type: 'string' }, plan: { type: 'string' }, activity: { type: 'string' },
   threshold: { type: 'string' }, 'max-pages': { type: 'string' }, pdf: { type: 'boolean' },
-  'experimental-context': { type: 'boolean' },
+  'experimental-context': { type: 'boolean' }, ocr: { type: 'boolean' }, 'ocr-language': { type: 'string' },
 } as const;
 const commandOptions: Record<string, string[]> = {
-  classify: ['threshold', 'max-pages', 'fail-on-review', 'experimental-context'],
+  classify: ['threshold', 'max-pages', 'fail-on-review', 'experimental-context', 'ocr', 'ocr-language'],
+  parse: ['max-pages', 'ocr', 'ocr-language'],
   account: ['threshold', 'direction', 'plan', 'activity', 'fail-on-review'],
-  doctor: ['pdf'], catalog: [], schema: [], skill: [],
+  doctor: ['pdf', 'ocr'], catalog: [], schema: [], skill: [],
 };

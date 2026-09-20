@@ -8,7 +8,7 @@ Reviewed 2026-09-20 at [jerryjliu/docjev revision 9ed0fe0](https://github.com/je
 | --- | --- | --- |
 | Ordered page context, with bounded requests | Restores missing model titles and issuer headers on continuations | Implemented as an **opt-in experimental retry**, with a separate continuity gate |
 | Explicit document boundaries | Prevents a preceding AEAT form from contaminating another taxpayer, authority or model | Continuity guard implemented; a full packet segmenter is still needed |
-| Parser/OCR adapters with provenance | Native PDF text alone misses scanned forms and some dynamic PDFs | Planned; no OCR or parser replacement claimed in this release |
+| Parser/OCR adapters with provenance | Native PDF text alone misses scanned forms and some dynamic PDFs | Implemented in v0.4.0 as optional Spanish LiteParse OCR; [regression report](benchmarks/ocr-2026-09-20.md) |
 | Separate extraction, decision and total usage metrics | A retry can improve answers while increasing cost; reused extraction must not be counted as a model speedup | Paired experiment reports extraction separately and totals both attempts |
 | A second-engine baseline on identical input | Establishes whether errors come from extraction, prompts, missing context or Jev itself | Planned; no second model was evaluated here |
 | Reviewable evidence and preserved original artifacts | Makes errors inspectable and prevents improved-looking reports from hiding old results | Source hashes, original benchmark and per-page paired results retained |
@@ -29,7 +29,7 @@ The 0.95 defaults were conservative policy choices, not fitted Spanish threshold
 
 `classifyPageWithContext` first applies the existing isolated-page classifier. Accepted and empty-text results are preserved. An uncertain page with enough text may be retried with up to two predecessor pages and one successor, constrained to a contiguous window and a conservative request-size limit. It adds a same-document continuity decision and applies the existing routing rules and default 0.95 gates. Neither source filenames nor source URLs nor gold labels are sent to Jev. The result preserves both attempts and hashes every context page.
 
-The CLI exposes this through `--experimental-context` for PDFs. It does **not** split PDFs into documents, perform OCR or prove that neighboring pages have a common taxpayer. The continuity decision is itself model-based and can be wrong. A short target with only a scanned-page header cannot acquire a form identity just from its neighbors. One uncertainty can therefore remain even after the raw form becomes correct.
+The CLI exposes this through `--experimental-context` for PDFs. The context option itself does **not** split PDFs into documents, perform OCR or prove that neighboring pages have a common taxpayer. The continuity decision is itself model-based and can be wrong. A short target with only a scanned-page header cannot acquire a form identity just from its neighbors. One uncertainty can therefore remain even after the raw form becomes correct.
 
 In the [first paired experiment](benchmarks/context-2026-09-20.md), isolated attempts scored **24/27** for model + kind and accepted **8/27** eligible pages. Context scored **27/27**, accepted **10/27**, and held all **17/17** controls, with no wrong acceptance observed. The original first run remains **23/27 and 9/27**; the difference between isolated runs demonstrates hosted-model variation.
 
@@ -45,3 +45,7 @@ This is a development ablation on the already inspected corpus, with additional 
 6. **Validate accounting independently.** Build PGC ground truth around entity activity, purchase/sale direction, capitalization policy, tax territory and transaction components. A public invoice without that context is not a sufficient account-allocation label. Do not use better document recognition to claim better PGC advice.
 
 The near-term target is a useful increase in supported-document acceptance **at a measured acceptable error rate on new data**. No production accuracy or automation target is promised from this small development comparison. Keeping filing, tax arithmetic and posting outside this classifier remains deliberate.
+
+## Follow-up: Spanish OCR and candidate data
+
+The [v0.4 OCR adapter](OCR.md) uses LiteParse directly from TypeScript, with Spanish OCR, complete-page checks, a bounded subprocess and extraction provenance. The original Python adapter was not copied. The [fresh sample research](SPANISH-SAMPLES.md) adds a source-hashed 42-page candidate corpus with separate calibration and reserved-validation partitions. No thresholds have been changed and independent annotation review remains outstanding.

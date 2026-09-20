@@ -1,0 +1,624 @@
+{
+  "schemaVersion": 1,
+  "id": "spanish-calibration-candidates-v1",
+  "frozenAt": "2026-09-20T20:29:59.762902+00:00",
+  "status": "candidate corpus; no classifier inference or threshold fitting performed",
+  "labelStatus": "provisional assistant annotations; independent Spanish tax/accounting review pending",
+  "splitPolicy": "Whole PDF and declared model/source family stay in one partition. Selected AEAT model families do not cross partitions. This is a small source-disjoint seed, not a representative or template-independent production sample. Official template styles and BOE publisher recur. Unknown overlap with provider training data.",
+  "extractionFingerprint": "Poppler 26.05.0, pdftotext -layout -enc UTF-8, NFC and trim; diagnostic native text hashes only. OCR inputs must be frozen separately before a future live evaluation.",
+  "excludedPriorCorpus": "public-v1 and original two Modelo 303 development PDFs; exact source URL/SHA overlap checked. 036 source contains unselected 030 annexes; never use those as unseen validation.",
+  "sources": [
+    {
+      "id": "036-order",
+      "url": "https://www.boe.es/boe/dias/2025/01/09/pdfs/BOE-A-2025-410.pdf",
+      "sha256": "82009dd9378c9528d0d366cd6f1edad6ed1fb7de1978e7f81426d05459735ff5",
+      "bytes": 1711379,
+      "pageCount": 34,
+      "split": "calibration",
+      "familyGroup": "aeat-036",
+      "note": "2025 model 036 annex only; exclude duplicate copies and model 030 annex. Native text. This BOE order also contains already-seen 030 layouts, which are not selected.",
+      "cases": [
+        {
+          "page": 7,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "nativeInputSha256": "925d581417ed4ecca88dd86da4118af838e90da83838f16985d9424e91013d45",
+          "nativeInputBytes": 6176,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 8,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "nativeInputSha256": "479eccddf8a83b938492ddf5623a4f31d8ff011ce1a5c35412280d5341ed54e1",
+          "nativeInputBytes": 12372,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 13,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "nativeInputSha256": "c74440aaae62743b14e002375b769d716e99e0ad779d1491f1bc7dbe8522f95d",
+          "nativeInputBytes": 15146,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 15,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "nativeInputSha256": "6450dadf534d6a4037d79ab29e92c5f3c09e9dc66207eee1186085755c69b7c5",
+          "nativeInputBytes": 10894,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 18,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "nativeInputSha256": "a64fe6b51a211a96401a2e46bc8361457c95e8eff912e7bef67a353b87f0eeaf",
+          "nativeInputBytes": 5847,
+          "requiresOcrForVisualContent": false
+        }
+      ]
+    },
+    {
+      "id": "111-order",
+      "url": "https://www.boe.es/buscar/pdf/2011/BOE-A-2011-4948-consolidado.pdf",
+      "sha256": "d082dfa133ce258b49b6aa689de9f7b10d680ef2d6eeeb06f9379009e31f7dae",
+      "bytes": 495375,
+      "pageCount": 16,
+      "split": "calibration",
+      "familyGroup": "aeat-111",
+      "note": "Scanned model 111 declaration and bank copy; rendered and visually inspected. Exclude near-duplicate declaration copy and mailing envelope.",
+      "cases": [
+        {
+          "page": 13,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-111"
+          },
+          "nativeInputSha256": "bc8ab47a8b4b92e0074c9b0a289f211aa9bae102ce623c604c2fd699e77f0407",
+          "nativeInputBytes": 79,
+          "requiresOcrForVisualContent": true
+        },
+        {
+          "page": 14,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-111"
+          },
+          "nativeInputSha256": "c6eff7cfe256192ce3c2ad9d34aa3eb1eb55e029c77f1952626aecc729029a6b",
+          "nativeInputBytes": 79,
+          "requiresOcrForVisualContent": true
+        }
+      ]
+    },
+    {
+      "id": "123-order",
+      "url": "https://www.boe.es/buscar/pdf/2007/BOE-A-2007-20485-consolidado.pdf",
+      "sha256": "3924ce2c1d2648e4e497a3b8a6abcd05f2147c244e1823c03fab747be3f55253",
+      "bytes": 4238771,
+      "pageCount": 19,
+      "split": "validation-reserved",
+      "familyGroup": "boe-117-123-124-126-128-300",
+      "note": "Scanned annexes: unsupported 117 and 124 flank supported 123. Visually inspected. Keep the entire multi-model source in one split.",
+      "cases": [
+        {
+          "page": 9,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": null
+          },
+          "nativeInputSha256": "72ed7c57c68e51bf7d6b67e67a25eaf66b77ef35032741c6ed56ba21bce8b090",
+          "nativeInputBytes": 99,
+          "requiresOcrForVisualContent": true
+        },
+        {
+          "page": 10,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-123"
+          },
+          "nativeInputSha256": "93e85119535f6635cf72e020377a6cc2d046429ad92db9d13e31ef7a76e5b59e",
+          "nativeInputBytes": 147,
+          "requiresOcrForVisualContent": true
+        },
+        {
+          "page": 11,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": null
+          },
+          "nativeInputSha256": "9020ba5d7c09ecde615d62da76e6f89fad97dd4bde8988e98d56e4e172c5c75d",
+          "nativeInputBytes": 101,
+          "requiresOcrForVisualContent": true
+        }
+      ]
+    },
+    {
+      "id": "202-form",
+      "url": "https://sede.agenciatributaria.gob.es/static_files/Sede/Biblioteca/Manual/Practicos/Sociedades/Sociedades_2022/Imagenes/AnexoII_Mod202-2022_es_es.pdf",
+      "sha256": "154f28e1e4408e269aeb797caca575ee97ccc6a55b00d86d421162404cd4886f",
+      "bytes": 715672,
+      "pageCount": 4,
+      "split": "calibration",
+      "familyGroup": "aeat-202",
+      "note": "2022 native-text form and additional-data annex, including continuations. Historical sample, not current filing guidance.",
+      "cases": [
+        {
+          "page": 1,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "nativeInputSha256": "92c4f5fde96b4a9e60f10d0a63a31496ff45e4f35112f26cb9a7518beb17c9b3",
+          "nativeInputBytes": 9067,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 2,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "nativeInputSha256": "60e4e0157358fb46dc2c3e86e346b27a0a4a68c02d796cb7dd98a0beecac8463",
+          "nativeInputBytes": 6290,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 3,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "nativeInputSha256": "bc7867c9751ea58c878c2ddfdd37a142763c3d44e3db7a4542f6fefbf7a090af",
+          "nativeInputBytes": 9712,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 4,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "nativeInputSha256": "c415bc6bc3140b36485dbf8bbce6dcaf04f8336564c6c5d8ff67e8315bc7a16c",
+          "nativeInputBytes": 1568,
+          "requiresOcrForVisualContent": false
+        }
+      ]
+    },
+    {
+      "id": "210-211-order",
+      "url": "https://www.boe.es/buscar/pdf/2010/BOE-A-2010-19707-consolidado.pdf",
+      "sha256": "6700c1cca8c86f93b4986407fffd58c6d952e22d8eeae0cea59c170e32e3de44",
+      "bytes": 6706326,
+      "pageCount": 47,
+      "split": "validation-reserved",
+      "familyGroup": "boe-210-211-213",
+      "note": "Scanned nonresident form annexes; visually inspected. Exclude duplicate recipient copies. Two supported models in one source remain together.",
+      "cases": [
+        {
+          "page": 25,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "nativeInputSha256": "87cdb95d1efc467c34725df5b021eaa3e82bea651fee7539950409d7dcb72a22",
+          "nativeInputBytes": 134,
+          "requiresOcrForVisualContent": true
+        },
+        {
+          "page": 27,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "nativeInputSha256": "f171fbd58ac7080762ab4a9d98c7d32917833c7865365263296a0ea4123163a4",
+          "nativeInputBytes": 79,
+          "requiresOcrForVisualContent": true
+        },
+        {
+          "page": 29,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "nativeInputSha256": "5e6f37003d85e08279f32c5485904cf05e23d721c25408d2f76bfa77ed79efbd",
+          "nativeInputBytes": 79,
+          "requiresOcrForVisualContent": true
+        },
+        {
+          "page": 31,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "nativeInputSha256": "22411eabe88bf4172148b1df74a2612a841dffb42bbef0655e122dc920043124",
+          "nativeInputBytes": 100,
+          "requiresOcrForVisualContent": true
+        },
+        {
+          "page": 32,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "nativeInputSha256": "89d923eca31845bd32e85ce1672ba50693b01402d0290be1cfc52a0995468556",
+          "nativeInputBytes": 79,
+          "requiresOcrForVisualContent": true
+        },
+        {
+          "page": 34,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "nativeInputSha256": "8f3c3f30defba4724c324095138f23f7065c846fdbc73aa31210fe73d42a5009",
+          "nativeInputBytes": 79,
+          "requiresOcrForVisualContent": true
+        },
+        {
+          "page": 36,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "nativeInputSha256": "5edfb3872aaa7807015d67de52cb5273f71bf6b3bcc492b6309fa8f9e81f9846",
+          "nativeInputBytes": 79,
+          "requiresOcrForVisualContent": true
+        }
+      ]
+    },
+    {
+      "id": "309-order",
+      "url": "https://www.boe.es/buscar/pdf/2003/BOE-A-2003-23809-consolidado.pdf",
+      "sha256": "38c358e07c43c3d8daa8533ea2e9588fd0e2ffb2d6dfcac3215c46ec9c13a926",
+      "bytes": 1147705,
+      "pageCount": 7,
+      "split": "calibration",
+      "familyGroup": "aeat-309",
+      "note": "Scanned model 309 declaration and partial bank copy; visually inspected. Mailing envelope excluded.",
+      "cases": [
+        {
+          "page": 5,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-309"
+          },
+          "nativeInputSha256": "ae1f537ff2ed9b3e7796e390f96c9ff87815f85e4ddf4b8667d1c9295fe5c33d",
+          "nativeInputBytes": 230,
+          "requiresOcrForVisualContent": true
+        },
+        {
+          "page": 6,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-309"
+          },
+          "nativeInputSha256": "37032921dfd962df9ec5a979183f97335ec619509ebb84f78df18a5988e74e37",
+          "nativeInputBytes": 78,
+          "requiresOcrForVisualContent": true
+        }
+      ]
+    },
+    {
+      "id": "347-order",
+      "url": "https://www.boe.es/buscar/pdf/2008/BOE-A-2008-16973-consolidado.pdf",
+      "sha256": "77cf75eca19fdda97cacc446c1616d42610b252fef23da0c61dc47d0180c3f09",
+      "bytes": 1571757,
+      "pageCount": 20,
+      "split": "validation-reserved",
+      "familyGroup": "aeat-347",
+      "note": "Record-layout instructions, not a completed return; page-kind interpretation needs independent review.",
+      "cases": [
+        {
+          "page": 6,
+          "proposed": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-347"
+          },
+          "nativeInputSha256": "dfed2439c9017f95248274c64c9fa1e9b331aafa1952738aece0b13d3122931e",
+          "nativeInputBytes": 5390,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 7,
+          "proposed": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-347"
+          },
+          "nativeInputSha256": "a060c367d4e46c73ee1cf6ae744ad27eb395fdac715016aa426c053798b45d11",
+          "nativeInputBytes": 6077,
+          "requiresOcrForVisualContent": false
+        }
+      ]
+    },
+    {
+      "id": "369-order",
+      "url": "https://www.boe.es/boe/dias/2021/06/18/pdfs/BOE-A-2021-10161.pdf",
+      "sha256": "5ec990d839f8505bda2862c3b27b22f120df6b0e02edf345e726f006618eec12",
+      "bytes": 1109062,
+      "pageCount": 22,
+      "split": "validation-reserved",
+      "familyGroup": "aeat-369",
+      "note": "Native-text annex: non-Union, Union, import and prior-declaration-payment layouts; representative headers visually inspected. Keep all variants in one split.",
+      "cases": [
+        {
+          "page": 10,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "nativeInputSha256": "6f6d4f967c45f161a77770bef807c461416e5348f6266649d092a93aa113542e",
+          "nativeInputBytes": 2798,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 11,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "nativeInputSha256": "6c46f2d0270c6febc34eb0033524186e37803a4f831d4093a46947642b6d2246",
+          "nativeInputBytes": 1356,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 13,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "nativeInputSha256": "e78c833d6c0188a38ff1aefd60177d8cdca29eb5ad2fa95cd6d5c08322b8f04e",
+          "nativeInputBytes": 3272,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 14,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "nativeInputSha256": "f731a9fc8dd7c9d85c7972d8878fd3a64304ae913b309c0a805ad519abd8c1ec",
+          "nativeInputBytes": 1540,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 19,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "nativeInputSha256": "59745b16550612cc6442d90d1993e16e21dd186c9766179bd4ee1fbb4df10d47",
+          "nativeInputBytes": 3443,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 20,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "nativeInputSha256": "5afbb5f40de09910e5d2b6771e1f9d180ae2a3287dec71c36dc42258672c152d",
+          "nativeInputBytes": 1369,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 22,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "nativeInputSha256": "b03f70f42296332d12a001c18b60abc98d3029c8eff54cb548675a7970494cda",
+          "nativeInputBytes": 3612,
+          "requiresOcrForVisualContent": false
+        }
+      ]
+    },
+    {
+      "id": "catalonia-650-form",
+      "url": "https://atc.gencat.cat/web/.content/documents/05_doc_models/arxius/650_es.pdf",
+      "sha256": "2aa478427ceb21744658ad90e2eb33524f33205ed9460d065f372de8bd0f7040",
+      "bytes": 1458078,
+      "pageCount": 7,
+      "split": "validation-reserved",
+      "familyGroup": "atc-650-660",
+      "note": "Spanish-language ATC 650 form and continuation; visually inspected. Regional scope control. Native extraction misses some title/header content.",
+      "cases": [
+        {
+          "page": 1,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": null
+          },
+          "nativeInputSha256": "f02895ac24a16f8802c4f97f768fc973512e57d891b25486ade0a193da63dcfd",
+          "nativeInputBytes": 3734,
+          "requiresOcrForVisualContent": true
+        },
+        {
+          "page": 5,
+          "proposed": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": null
+          },
+          "nativeInputSha256": "4d20d044b1a98e6a20865c6c155b01fb40ff8766201138ab8ad707cbbac2529b",
+          "nativeInputBytes": 2113,
+          "requiresOcrForVisualContent": true
+        }
+      ]
+    },
+    {
+      "id": "catalonia-650-instructions",
+      "url": "https://atc.gencat.cat/web/.content/documents/05_doc_models/arxius/660_instruccions_es.pdf",
+      "sha256": "b4afce7e01e8e97013aa383683eb824ddab6ac57dfc5cd25144db2ad99ef5bb4",
+      "bytes": 1166874,
+      "pageCount": 27,
+      "split": "validation-reserved",
+      "familyGroup": "atc-650-660",
+      "note": "Spanish-language joint 650/660 instructions; same family and split as the ATC form. Regional controls.",
+      "cases": [
+        {
+          "page": 1,
+          "proposed": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": null
+          },
+          "nativeInputSha256": "14db5f506600ec33dcd7c7a17da76a76efb76046316053dbc6e616c4e05a56cc",
+          "nativeInputBytes": 2547,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 2,
+          "proposed": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": null
+          },
+          "nativeInputSha256": "84f59479d98f01fc9f74abae1ebce78a94c40b35e1db699e4dc50a37d19821ee",
+          "nativeInputBytes": 2081,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 15,
+          "proposed": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": null
+          },
+          "nativeInputSha256": "2074a298b83dd00993e9fbc34939921d098cfe51f30f2eb0a2195f0a5d4d6ca1",
+          "nativeInputBytes": 985,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 16,
+          "proposed": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": null
+          },
+          "nativeInputSha256": "3e77339a6b6649f1feb21e13deff256b5096d4c9835ad319c009ce81f999344b",
+          "nativeInputBytes": 2407,
+          "requiresOcrForVisualContent": false
+        }
+      ]
+    },
+    {
+      "id": "tgss-receipt",
+      "url": "https://www.seg-social.es/wps/wcm/connect/wss/941db335-fa29-4d82-9d49-54092f71c4e5/ACC_40822.pdf?MOD=AJPERES",
+      "sha256": "72e650c2ee12e434cbcb6e0d4c323a9acf98314a28880b96e2c7e5ef1eebaf11",
+      "bytes": 23998,
+      "pageCount": 1,
+      "split": "calibration",
+      "familyGroup": "tgss-rlc-2008",
+      "note": "Public TGSS example linked as recibo (2008); visually inspected. Non-tax-authority routing control, not an AEAT filing receipt.",
+      "cases": [
+        {
+          "page": 1,
+          "proposed": {
+            "kind": "social_security",
+            "jurisdiction": "not_applicable",
+            "form": null
+          },
+          "nativeInputSha256": "a566e53321a1651e99ccc9282278773c4d53ecea221b4006032be9a272e39efd",
+          "nativeInputBytes": 4702,
+          "requiresOcrForVisualContent": false
+        }
+      ],
+      "discoveryUrl": "https://www.seg-social.es/descarga/es/40822"
+    },
+    {
+      "id": "facturae-examples",
+      "url": "https://www.facturae.gob.es/content/dam/facturae/formato/documents/EspanolFacturae3_0.pdf",
+      "sha256": "c6e2a7ac6eab0611d92daab4428f7e06415abff6da069907096b1ee91023f485",
+      "bytes": 297582,
+      "pageCount": 33,
+      "split": "calibration",
+      "familyGroup": "facturae-3-0-guide",
+      "note": "Official Facturae 3.0 teaching guide with two worked examples and embedded XML. These pages are instructions, not real invoice PDFs; no PGC target or invoice-accuracy credit.",
+      "cases": [
+        {
+          "page": 1,
+          "proposed": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": null
+          },
+          "nativeInputSha256": "8aefedf3d6d09761a369b7632e9e319692749677368a1019b3a2c1709689d078",
+          "nativeInputBytes": 3890,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 4,
+          "proposed": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": null
+          },
+          "nativeInputSha256": "21b1817a5a5073f345ece7a6e23d854acabeb51464954b9f0a64721c788389cb",
+          "nativeInputBytes": 1208,
+          "requiresOcrForVisualContent": false
+        },
+        {
+          "page": 18,
+          "proposed": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": null
+          },
+          "nativeInputSha256": "31cdc6acbc4d1aec7cd8083dfc73235f7a5e2bce491e8be8fbf59d271f48c64f",
+          "nativeInputBytes": 2010,
+          "requiresOcrForVisualContent": false
+        }
+      ]
+    }
+  ],
+  "acquisitionNotes": [
+    "Two attempted consolidated BOE URLs returned 404; resolved to official original-edition PDFs linked from the BOE record.",
+    "Facturae download required a TLS-capable client; verified successfully with curl. No source failed acquisition in the frozen list.",
+    "TGSS short download URL redirects; manifest pins the canonical same-host PDF URL so redirects remain disabled."
+  ]
+}

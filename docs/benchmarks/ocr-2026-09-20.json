@@ -1,0 +1,965 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-09-20T20:28:43.143Z",
+  "model": "jev-1.13.0",
+  "gate": {
+    "minConfidence": 0.95,
+    "minProbability": 0.95
+  },
+  "corpus": "public-v1 extraction subset; inspected regression data, not independent validation",
+  "rows": [
+    {
+      "sourceId": "130-131-order",
+      "page": 10,
+      "expectedForm": "aeat-130",
+      "extraction": {
+        "sourceSha256": "9f9810e7908a11795573319b24fd71d398ecf91b0142946bf9ec62f2b1f9399b",
+        "parser": "liteparse",
+        "version": "2.14.6",
+        "ocrEnabled": true,
+        "ocrLanguage": "spa",
+        "normalization": "nfc-trim-v1"
+      },
+      "documentExtractionMs": 5661,
+      "results": [
+        {
+          "parser": "poppler",
+          "inputBytes": 100,
+          "inputSha256": "1556d492208457fd599ef622f34c4a5123f0031962225c905403072e0c896858",
+          "result": {
+            "status": "needs_review",
+            "kind": "other",
+            "jurisdiction": null,
+            "form": null,
+            "formDefinition": null,
+            "candidates": {
+              "kind": {
+                "value": "other",
+                "confidence": 0.99,
+                "probability": 0.99,
+                "alternatives": [
+                  {
+                    "value": "notification",
+                    "probability": 0.01
+                  },
+                  {
+                    "value": "credit_note",
+                    "probability": 0
+                  },
+                  {
+                    "value": "social_security",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "credit_note": 0,
+                  "social_security": 0,
+                  "filing_receipt": 0,
+                  "simplified_invoice": 0,
+                  "invoice": 0,
+                  "payroll": 0,
+                  "instructions": 0,
+                  "bank_statement": 0,
+                  "accounting_report": 0,
+                  "notification": 0.01,
+                  "tax_form": 0,
+                  "other": 0.99
+                }
+              },
+              "jurisdiction": {
+                "value": "unknown",
+                "confidence": 0.87,
+                "probability": 0.89,
+                "alternatives": [
+                  {
+                    "value": "not_applicable",
+                    "probability": 0.08
+                  },
+                  {
+                    "value": "aeat",
+                    "probability": 0.03
+                  },
+                  {
+                    "value": "foreign",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "foreign": 0,
+                  "aeat": 0.03,
+                  "unknown": 0.89,
+                  "canary": 0,
+                  "not_applicable": 0.08,
+                  "regional": 0,
+                  "foral": 0
+                }
+              },
+              "form": {
+                "value": "none",
+                "confidence": 1,
+                "probability": 1,
+                "alternatives": [
+                  {
+                    "value": "aeat-390",
+                    "probability": 0
+                  },
+                  {
+                    "value": "aeat-369",
+                    "probability": 0
+                  },
+                  {
+                    "value": "aeat-714",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "aeat-390": 0,
+                  "aeat-369": 0,
+                  "aeat-714": 0,
+                  "aeat-718": 0,
+                  "aeat-180": 0,
+                  "aeat-200": 0,
+                  "aeat-216": 0,
+                  "aeat-721": 0,
+                  "none": 1,
+                  "aeat-100": 0,
+                  "aeat-303": 0,
+                  "aeat-193": 0,
+                  "aeat-130": 0,
+                  "aeat-232": 0,
+                  "aeat-030": 0,
+                  "aeat-131": 0,
+                  "aeat-115": 0,
+                  "aeat-037": 0,
+                  "aeat-347": 0,
+                  "aeat-102": 0,
+                  "aeat-211": 0,
+                  "aeat-184": 0,
+                  "aeat-848": 0,
+                  "aeat-720": 0,
+                  "aeat-190": 0,
+                  "aeat-202": 0,
+                  "aeat-210": 0,
+                  "aeat-296": 0,
+                  "aeat-309": 0,
+                  "aeat-349": 0,
+                  "aeat-036": 0,
+                  "aeat-123": 0,
+                  "aeat-840": 0,
+                  "aeat-111": 0
+                }
+              }
+            },
+            "reasons": [
+              "low_jurisdiction_confidence",
+              "unsupported_or_unclear_document",
+              "outside_national_aeat_scope"
+            ],
+            "gate": {
+              "minConfidence": 0.95,
+              "minProbability": 0.95
+            },
+            "audit": {
+              "model": "jev-1.13.0",
+              "catalogVersion": "2026-09-20/2026-09-20",
+              "inputSha256": "1556d492208457fd599ef622f34c4a5123f0031962225c905403072e0c896858",
+              "usage": {
+                "input_tokens": 3293,
+                "output_tokens": 604
+              }
+            }
+          },
+          "elapsedMs": 1275
+        },
+        {
+          "parser": "liteparse",
+          "inputBytes": 8342,
+          "inputSha256": "0a09fc829d0449812ceb6d3f669377ba8785170f69df84df0d9b3fb1969ff270",
+          "result": {
+            "status": "accepted",
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-130",
+            "formDefinition": {
+              "id": "aeat-130",
+              "number": "130",
+              "title": "Pago fraccionado IRPF: estimación directa",
+              "family": "irpf",
+              "description": "Quarterly personal business income tax prepayment under direct estimation; not objective estimation 131.",
+              "status": "current",
+              "sources": [
+                "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/G601.shtml"
+              ]
+            },
+            "candidates": {
+              "kind": {
+                "value": "tax_form",
+                "confidence": 1,
+                "probability": 1,
+                "alternatives": [
+                  {
+                    "value": "other",
+                    "probability": 0
+                  },
+                  {
+                    "value": "notification",
+                    "probability": 0
+                  },
+                  {
+                    "value": "social_security",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "other": 0,
+                  "notification": 0,
+                  "social_security": 0,
+                  "filing_receipt": 0,
+                  "bank_statement": 0,
+                  "accounting_report": 0,
+                  "simplified_invoice": 0,
+                  "credit_note": 0,
+                  "invoice": 0,
+                  "instructions": 0,
+                  "payroll": 0,
+                  "tax_form": 1
+                }
+              },
+              "jurisdiction": {
+                "value": "aeat",
+                "confidence": 0.99,
+                "probability": 1,
+                "alternatives": [
+                  {
+                    "value": "unknown",
+                    "probability": 0
+                  },
+                  {
+                    "value": "foral",
+                    "probability": 0
+                  },
+                  {
+                    "value": "regional",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "unknown": 0,
+                  "foral": 0,
+                  "regional": 0,
+                  "foreign": 0,
+                  "not_applicable": 0,
+                  "aeat": 1,
+                  "canary": 0
+                }
+              },
+              "form": {
+                "value": "aeat-130",
+                "confidence": 1,
+                "probability": 1,
+                "alternatives": [
+                  {
+                    "value": "aeat-200",
+                    "probability": 0
+                  },
+                  {
+                    "value": "aeat-303",
+                    "probability": 0
+                  },
+                  {
+                    "value": "aeat-202",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "aeat-200": 0,
+                  "aeat-303": 0,
+                  "aeat-202": 0,
+                  "aeat-721": 0,
+                  "aeat-720": 0,
+                  "aeat-102": 0,
+                  "aeat-714": 0,
+                  "aeat-131": 0,
+                  "aeat-193": 0,
+                  "aeat-369": 0,
+                  "aeat-210": 0,
+                  "aeat-848": 0,
+                  "aeat-347": 0,
+                  "none": 0,
+                  "aeat-190": 0,
+                  "aeat-180": 0,
+                  "aeat-840": 0,
+                  "aeat-184": 0,
+                  "aeat-309": 0,
+                  "aeat-211": 0,
+                  "aeat-130": 1,
+                  "aeat-349": 0,
+                  "aeat-390": 0,
+                  "aeat-037": 0,
+                  "aeat-123": 0,
+                  "aeat-036": 0,
+                  "aeat-111": 0,
+                  "aeat-115": 0,
+                  "aeat-232": 0,
+                  "aeat-216": 0,
+                  "aeat-718": 0,
+                  "aeat-296": 0,
+                  "aeat-030": 0,
+                  "aeat-100": 0
+                }
+              }
+            },
+            "reasons": [],
+            "gate": {
+              "minConfidence": 0.95,
+              "minProbability": 0.95
+            },
+            "audit": {
+              "model": "jev-1.13.0",
+              "catalogVersion": "2026-09-20/2026-09-20",
+              "inputSha256": "0a09fc829d0449812ceb6d3f669377ba8785170f69df84df0d9b3fb1969ff270",
+              "usage": {
+                "input_tokens": 4659,
+                "output_tokens": 611
+              }
+            }
+          },
+          "elapsedMs": 1493
+        }
+      ]
+    },
+    {
+      "sourceId": "130-131-order",
+      "page": 12,
+      "expectedForm": "aeat-131",
+      "extraction": {
+        "sourceSha256": "9f9810e7908a11795573319b24fd71d398ecf91b0142946bf9ec62f2b1f9399b",
+        "parser": "liteparse",
+        "version": "2.14.6",
+        "ocrEnabled": true,
+        "ocrLanguage": "spa",
+        "normalization": "nfc-trim-v1"
+      },
+      "documentExtractionMs": 5661,
+      "results": [
+        {
+          "parser": "poppler",
+          "inputBytes": 100,
+          "inputSha256": "1f2c08e3c2e6f8ab6993c0e9a9789fb1cca65f8a633dda5c77ac3199d5d4c4ec",
+          "result": {
+            "status": "needs_review",
+            "kind": "other",
+            "jurisdiction": null,
+            "form": null,
+            "formDefinition": null,
+            "candidates": {
+              "kind": {
+                "value": "other",
+                "confidence": 0.99,
+                "probability": 1,
+                "alternatives": [
+                  {
+                    "value": "invoice",
+                    "probability": 0
+                  },
+                  {
+                    "value": "filing_receipt",
+                    "probability": 0
+                  },
+                  {
+                    "value": "instructions",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "invoice": 0,
+                  "filing_receipt": 0,
+                  "other": 1,
+                  "instructions": 0,
+                  "tax_form": 0,
+                  "social_security": 0,
+                  "notification": 0,
+                  "simplified_invoice": 0,
+                  "credit_note": 0,
+                  "bank_statement": 0,
+                  "payroll": 0,
+                  "accounting_report": 0
+                }
+              },
+              "jurisdiction": {
+                "value": "unknown",
+                "confidence": 0.86,
+                "probability": 0.88,
+                "alternatives": [
+                  {
+                    "value": "not_applicable",
+                    "probability": 0.09
+                  },
+                  {
+                    "value": "aeat",
+                    "probability": 0.03
+                  },
+                  {
+                    "value": "regional",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "regional": 0,
+                  "foreign": 0,
+                  "canary": 0,
+                  "unknown": 0.88,
+                  "foral": 0,
+                  "aeat": 0.03,
+                  "not_applicable": 0.09
+                }
+              },
+              "form": {
+                "value": "none",
+                "confidence": 1,
+                "probability": 1,
+                "alternatives": [
+                  {
+                    "value": "aeat-184",
+                    "probability": 0
+                  },
+                  {
+                    "value": "aeat-036",
+                    "probability": 0
+                  },
+                  {
+                    "value": "aeat-840",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "aeat-184": 0,
+                  "aeat-036": 0,
+                  "aeat-840": 0,
+                  "aeat-131": 0,
+                  "aeat-718": 0,
+                  "aeat-296": 0,
+                  "aeat-180": 0,
+                  "aeat-202": 0,
+                  "aeat-102": 0,
+                  "aeat-216": 0,
+                  "aeat-309": 0,
+                  "aeat-193": 0,
+                  "aeat-347": 0,
+                  "aeat-369": 0,
+                  "aeat-111": 0,
+                  "aeat-210": 0,
+                  "aeat-123": 0,
+                  "aeat-100": 0,
+                  "aeat-037": 0,
+                  "aeat-848": 0,
+                  "aeat-390": 0,
+                  "aeat-190": 0,
+                  "aeat-115": 0,
+                  "aeat-721": 0,
+                  "aeat-200": 0,
+                  "aeat-211": 0,
+                  "none": 1,
+                  "aeat-349": 0,
+                  "aeat-720": 0,
+                  "aeat-232": 0,
+                  "aeat-130": 0,
+                  "aeat-303": 0,
+                  "aeat-714": 0,
+                  "aeat-030": 0
+                }
+              }
+            },
+            "reasons": [
+              "low_jurisdiction_confidence",
+              "unsupported_or_unclear_document",
+              "outside_national_aeat_scope"
+            ],
+            "gate": {
+              "minConfidence": 0.95,
+              "minProbability": 0.95
+            },
+            "audit": {
+              "model": "jev-1.13.0",
+              "catalogVersion": "2026-09-20/2026-09-20",
+              "inputSha256": "1f2c08e3c2e6f8ab6993c0e9a9789fb1cca65f8a633dda5c77ac3199d5d4c4ec",
+              "usage": {
+                "input_tokens": 3293,
+                "output_tokens": 604
+              }
+            }
+          },
+          "elapsedMs": 395
+        },
+        {
+          "parser": "liteparse",
+          "inputBytes": 5991,
+          "inputSha256": "d5b0af938dc1fd9b4b7782fcb003fcfc549877f72cc645607db1f579f6570939",
+          "result": {
+            "status": "needs_review",
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": null,
+            "formDefinition": null,
+            "candidates": {
+              "kind": {
+                "value": "tax_form",
+                "confidence": 1,
+                "probability": 1,
+                "alternatives": [
+                  {
+                    "value": "credit_note",
+                    "probability": 0
+                  },
+                  {
+                    "value": "filing_receipt",
+                    "probability": 0
+                  },
+                  {
+                    "value": "other",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "credit_note": 0,
+                  "tax_form": 1,
+                  "filing_receipt": 0,
+                  "other": 0,
+                  "social_security": 0,
+                  "invoice": 0,
+                  "instructions": 0,
+                  "payroll": 0,
+                  "bank_statement": 0,
+                  "notification": 0,
+                  "accounting_report": 0,
+                  "simplified_invoice": 0
+                }
+              },
+              "jurisdiction": {
+                "value": "aeat",
+                "confidence": 0.99,
+                "probability": 1,
+                "alternatives": [
+                  {
+                    "value": "unknown",
+                    "probability": 0
+                  },
+                  {
+                    "value": "canary",
+                    "probability": 0
+                  },
+                  {
+                    "value": "not_applicable",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "aeat": 1,
+                  "unknown": 0,
+                  "canary": 0,
+                  "not_applicable": 0,
+                  "foreign": 0,
+                  "regional": 0,
+                  "foral": 0
+                }
+              },
+              "form": {
+                "value": "aeat-131",
+                "confidence": 0.92,
+                "probability": 0.93,
+                "alternatives": [
+                  {
+                    "value": "none",
+                    "probability": 0.07
+                  },
+                  {
+                    "value": "aeat-130",
+                    "probability": 0
+                  },
+                  {
+                    "value": "aeat-848",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "aeat-130": 0,
+                  "aeat-848": 0,
+                  "aeat-309": 0,
+                  "aeat-714": 0,
+                  "aeat-369": 0,
+                  "aeat-184": 0,
+                  "aeat-840": 0,
+                  "aeat-190": 0,
+                  "aeat-721": 0,
+                  "aeat-202": 0,
+                  "aeat-347": 0,
+                  "aeat-232": 0,
+                  "aeat-349": 0,
+                  "aeat-303": 0,
+                  "aeat-200": 0,
+                  "aeat-296": 0,
+                  "aeat-210": 0,
+                  "aeat-211": 0,
+                  "aeat-030": 0,
+                  "aeat-037": 0,
+                  "aeat-102": 0,
+                  "aeat-193": 0,
+                  "aeat-718": 0,
+                  "aeat-180": 0,
+                  "aeat-720": 0,
+                  "none": 0.07,
+                  "aeat-123": 0,
+                  "aeat-111": 0,
+                  "aeat-036": 0,
+                  "aeat-100": 0,
+                  "aeat-115": 0,
+                  "aeat-131": 0.93,
+                  "aeat-390": 0,
+                  "aeat-216": 0
+                }
+              }
+            },
+            "reasons": [
+              "low_form_confidence"
+            ],
+            "gate": {
+              "minConfidence": 0.95,
+              "minProbability": 0.95
+            },
+            "audit": {
+              "model": "jev-1.13.0",
+              "catalogVersion": "2026-09-20/2026-09-20",
+              "inputSha256": "d5b0af938dc1fd9b4b7782fcb003fcfc549877f72cc645607db1f579f6570939",
+              "usage": {
+                "input_tokens": 4390,
+                "output_tokens": 611
+              }
+            }
+          },
+          "elapsedMs": 432
+        }
+      ]
+    },
+    {
+      "sourceId": "102-form",
+      "page": 2,
+      "expectedForm": null,
+      "extraction": {
+        "sourceSha256": "89057ad5b5ce4028c91d9a9aa76f1412df80cf2f6a88d35ecd3a63797df0279a",
+        "parser": "liteparse",
+        "version": "2.14.6",
+        "ocrEnabled": true,
+        "ocrLanguage": "spa",
+        "normalization": "nfc-trim-v1"
+      },
+      "documentExtractionMs": 1923,
+      "results": [
+        {
+          "parser": "poppler",
+          "inputBytes": 0,
+          "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "result": {
+            "status": "needs_ocr",
+            "kind": null,
+            "jurisdiction": null,
+            "form": null,
+            "formDefinition": null,
+            "candidates": null,
+            "reasons": [
+              "no_extractable_text"
+            ],
+            "gate": {
+              "minConfidence": 0.95,
+              "minProbability": 0.95
+            },
+            "audit": {
+              "model": null,
+              "catalogVersion": "2026-09-20/2026-09-20",
+              "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "usage": {
+                "input_tokens": 0,
+                "output_tokens": 0
+              }
+            }
+          },
+          "elapsedMs": 0
+        },
+        {
+          "parser": "liteparse",
+          "inputBytes": 0,
+          "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "result": {
+            "status": "needs_ocr",
+            "kind": null,
+            "jurisdiction": null,
+            "form": null,
+            "formDefinition": null,
+            "candidates": null,
+            "reasons": [
+              "no_extractable_text"
+            ],
+            "gate": {
+              "minConfidence": 0.95,
+              "minProbability": 0.95
+            },
+            "audit": {
+              "model": null,
+              "catalogVersion": "2026-09-20/2026-09-20",
+              "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "usage": {
+                "input_tokens": 0,
+                "output_tokens": 0
+              }
+            }
+          },
+          "elapsedMs": 0
+        }
+      ]
+    },
+    {
+      "sourceId": "200-payment",
+      "page": 1,
+      "expectedForm": null,
+      "extraction": {
+        "sourceSha256": "470bfe181e486c57f3556b8532978049c666a65deb8b712d68615b7440e43b12",
+        "parser": "liteparse",
+        "version": "2.14.6",
+        "ocrEnabled": true,
+        "ocrLanguage": "spa",
+        "normalization": "nfc-trim-v1"
+      },
+      "documentExtractionMs": 1195,
+      "results": [
+        {
+          "parser": "poppler",
+          "inputBytes": 0,
+          "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "result": {
+            "status": "needs_ocr",
+            "kind": null,
+            "jurisdiction": null,
+            "form": null,
+            "formDefinition": null,
+            "candidates": null,
+            "reasons": [
+              "no_extractable_text"
+            ],
+            "gate": {
+              "minConfidence": 0.95,
+              "minProbability": 0.95
+            },
+            "audit": {
+              "model": null,
+              "catalogVersion": "2026-09-20/2026-09-20",
+              "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "usage": {
+                "input_tokens": 0,
+                "output_tokens": 0
+              }
+            }
+          },
+          "elapsedMs": 0
+        },
+        {
+          "parser": "liteparse",
+          "inputBytes": 2765,
+          "inputSha256": "575b22be6adba090eccc8d8b9e0e012c46d88480beb5f6f90f1488d9200401e8",
+          "result": {
+            "status": "needs_review",
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": null,
+            "formDefinition": null,
+            "candidates": {
+              "kind": {
+                "value": "tax_form",
+                "confidence": 1,
+                "probability": 1,
+                "alternatives": [
+                  {
+                    "value": "instructions",
+                    "probability": 0
+                  },
+                  {
+                    "value": "accounting_report",
+                    "probability": 0
+                  },
+                  {
+                    "value": "other",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "instructions": 0,
+                  "accounting_report": 0,
+                  "other": 0,
+                  "filing_receipt": 0,
+                  "notification": 0,
+                  "social_security": 0,
+                  "invoice": 0,
+                  "bank_statement": 0,
+                  "tax_form": 1,
+                  "payroll": 0,
+                  "credit_note": 0,
+                  "simplified_invoice": 0
+                }
+              },
+              "jurisdiction": {
+                "value": "aeat",
+                "confidence": 1,
+                "probability": 1,
+                "alternatives": [
+                  {
+                    "value": "foral",
+                    "probability": 0
+                  },
+                  {
+                    "value": "foreign",
+                    "probability": 0
+                  },
+                  {
+                    "value": "canary",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "foral": 0,
+                  "foreign": 0,
+                  "canary": 0,
+                  "unknown": 0,
+                  "regional": 0,
+                  "not_applicable": 0,
+                  "aeat": 1
+                }
+              },
+              "form": {
+                "value": "aeat-200",
+                "confidence": 0.94,
+                "probability": 0.95,
+                "alternatives": [
+                  {
+                    "value": "none",
+                    "probability": 0.03
+                  },
+                  {
+                    "value": "aeat-202",
+                    "probability": 0.02
+                  },
+                  {
+                    "value": "aeat-390",
+                    "probability": 0
+                  }
+                ],
+                "probabilities": {
+                  "aeat-390": 0,
+                  "aeat-100": 0,
+                  "none": 0.03,
+                  "aeat-216": 0,
+                  "aeat-202": 0.02,
+                  "aeat-131": 0,
+                  "aeat-303": 0,
+                  "aeat-180": 0,
+                  "aeat-309": 0,
+                  "aeat-721": 0,
+                  "aeat-111": 0,
+                  "aeat-714": 0,
+                  "aeat-232": 0,
+                  "aeat-193": 0,
+                  "aeat-030": 0,
+                  "aeat-036": 0,
+                  "aeat-102": 0,
+                  "aeat-123": 0,
+                  "aeat-115": 0,
+                  "aeat-347": 0,
+                  "aeat-718": 0,
+                  "aeat-840": 0,
+                  "aeat-720": 0,
+                  "aeat-349": 0,
+                  "aeat-200": 0.95,
+                  "aeat-369": 0,
+                  "aeat-848": 0,
+                  "aeat-130": 0,
+                  "aeat-184": 0,
+                  "aeat-211": 0,
+                  "aeat-210": 0,
+                  "aeat-037": 0,
+                  "aeat-296": 0,
+                  "aeat-190": 0
+                }
+              }
+            },
+            "reasons": [
+              "low_form_confidence"
+            ],
+            "gate": {
+              "minConfidence": 0.95,
+              "minProbability": 0.95
+            },
+            "audit": {
+              "model": "jev-1.13.0",
+              "catalogVersion": "2026-09-20/2026-09-20",
+              "inputSha256": "575b22be6adba090eccc8d8b9e0e012c46d88480beb5f6f90f1488d9200401e8",
+              "usage": {
+                "input_tokens": 3889,
+                "output_tokens": 611
+              }
+            }
+          },
+          "elapsedMs": 365
+        }
+      ]
+    },
+    {
+      "sourceId": "206-unsupported",
+      "page": 1,
+      "expectedForm": null,
+      "extraction": {
+        "sourceSha256": "c6cafb7acab4fc4cc9f7949547119f32059495fda77ad31b067d19887e759834",
+        "parser": "liteparse",
+        "version": "2.14.6",
+        "ocrEnabled": true,
+        "ocrLanguage": "spa",
+        "normalization": "nfc-trim-v1"
+      },
+      "documentExtractionMs": 1354,
+      "results": [
+        {
+          "parser": "poppler",
+          "inputBytes": 0,
+          "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "result": {
+            "status": "needs_ocr",
+            "kind": null,
+            "jurisdiction": null,
+            "form": null,
+            "formDefinition": null,
+            "candidates": null,
+            "reasons": [
+              "no_extractable_text"
+            ],
+            "gate": {
+              "minConfidence": 0.95,
+              "minProbability": 0.95
+            },
+            "audit": {
+              "model": null,
+              "catalogVersion": "2026-09-20/2026-09-20",
+              "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "usage": {
+                "input_tokens": 0,
+                "output_tokens": 0
+              }
+            }
+          },
+          "elapsedMs": 0
+        },
+        {
+          "parser": "liteparse",
+          "inputBytes": 2928,
+          "inputSha256": "1b359a34a3e240b30e54167b5cdf09d5a0fac8a09e176448c5749463ba2d8617",
+          "error": "classification_failed"
+        }
+      ]
+    }
+  ]
+}

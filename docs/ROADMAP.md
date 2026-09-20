@@ -21,14 +21,20 @@ Delivered in v0.3.0: an opt-in experimental context retry with continuity gates,
 Initial public baseline delivered: [44 pages from 21 official PDFs](benchmarks/public-2026-09-20.md), a frozen source/input-hashed manifest, separate recognition/acceptance/review metrics, and reproducible evaluation. The first run accepted 9/44 pages with no incorrect acceptance observed; continuation pages and missing issuer evidence remain key limitations. This does not meet the representative-corpus exit criterion below.
 
 1. Build a permissioned and redacted Spanish document corpus with expert labels; keep issuer/document families disjoint across development and test splits.
-2. Add OCR as an explicit adapter with provenance and page quality, then compare scans against text-bearing versions.
+2. Delivered in v0.4.0: optional Spanish LiteParse OCR with provenance and a five-page regression report. Broader scan quality, co-official-language and dynamic-form evaluation remain open.
 3. Add packet segmentation and page-to-document grouping without inheriting labels across unrelated attachments or taxpayers.
 4. Expand AEAT models from primary sources, preserve historical revisions, hash downloaded references, and publish reviewed catalog diffs.
 5. Calibrate type, jurisdiction and form gates separately. Report precision among accepted decisions, total coverage, abstention and confusion matrices; evaluate adversarial content and co-official languages.
 
 Exit criterion: documented performance on a held-out representative corpus, not a target invented from the US reference project.
 
-## 0.4 — accounting assistance
+## Delivered in 0.4 — local OCR and sample acquisition
+
+- Optional Spanish LiteParse OCR, local parse command and agent-facing provenance.
+- Five-page extraction regression report with failures retained.
+- 42 fresh candidate pages from 12 official PDFs, split 17/25 for calibration/reserved validation; independent labels still pending.
+
+## Next — accounting assistance
 
 1. Extract invoice fields with evidence spans and immutable source links; exact decimal arithmetic, document totals and identifier checks belong in code.
 2. Split multi-category invoices and payrolls into reviewed components, introduce entity-specific charts, and collect explicit capitalization and business-use policy.

@@ -1,5 +1,5 @@
 {
-  "contractVersion": 2,
+  "contractVersion": 3,
   "binary": "aeat-classify",
   "authentication": {
     "environment": "TYPESAFE_API_KEY",
@@ -23,7 +23,9 @@
         "max-pages",
         "compact",
         "fail-on-review",
-        "experimental-context"
+        "experimental-context",
+        "ocr",
+        "ocr-language"
       ],
       "outputSchema": "classificationPages",
       "network": "Text sent to TypeSafe unless empty"
@@ -50,10 +52,11 @@
       "positional": [],
       "options": [
         "pdf",
-        "compact"
+        "compact",
+        "ocr"
       ],
       "network": false,
-      "description": "Check key presence, Node and Poppler. Does not validate the credential with the provider."
+      "description": "Check key presence, Node, Poppler and optional LiteParse package version. No native OCR, language-data download or credential validation."
     },
     "catalog": {
       "positional": [
@@ -76,6 +79,19 @@
       "positional": [],
       "network": false,
       "description": "Print the portable SKILL.md to stdout; no files are written"
+    },
+    "parse": {
+      "positional": [
+        "file.pdf"
+      ],
+      "options": [
+        "max-pages",
+        "ocr",
+        "ocr-language",
+        "compact"
+      ],
+      "network": "No Jev calls; first OCR use may download language data. Documents processed locally.",
+      "description": "Return ordered extracted pages without classification or an API key."
     }
   },
   "options": {
@@ -133,6 +149,24 @@
       "type": "boolean",
       "default": false,
       "description": "Experimental PDF-only retry of uncertain pages using bounded contiguous neighboring pages. Requires same-document continuity and existing gates; no OCR or packet splitting. Adds pageOnly and context provenance to each result. May increase usage."
+    },
+    "ocr": {
+      "type": "boolean",
+      "default": false,
+      "description": "PDF only: local LiteParse 2.14.6 native text plus selective OCR; separate optional dependency. Includes extraction provenance. First use may download language data."
+    },
+    "ocr-language": {
+      "type": "string",
+      "enum": [
+        "spa",
+        "cat",
+        "eus",
+        "glg",
+        "eng"
+      ],
+      "default": "spa",
+      "requires": "ocr",
+      "description": "Spanish is tested; additional languages depend on installed Tesseract data and need separate evaluation."
     }
   },
   "exitCodes": {
@@ -203,6 +237,10 @@
                 "type": "object"
               }
             }
+          },
+          "extraction": {
+            "type": "object",
+            "description": "With --ocr: sourceSha256, parser, version, ocrEnabled, ocrLanguage, normalization. OCR enabled does not mean every page required OCR."
           }
         }
       }

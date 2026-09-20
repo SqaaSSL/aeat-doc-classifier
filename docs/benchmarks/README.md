@@ -35,3 +35,8 @@ The first live run met 21/39 expectations, with 18 conservative misses and zero 
 These examples are small, manually authored and mostly unambiguous. They do not establish population accuracy, confidence calibration, legal correctness, scan/OCR performance, robustness to adversarial content, or coverage across the 33-model/40-account catalogs. The PDF test covers only one model and two documents. Zero observed wrong acceptances in a small set does not imply zero risk.
 
 Run `npm run eval` with `TYPESAFE_API_KEY` for the synthetic set and `npm run eval:pdf` for the PDF set (Poppler required). Outputs go to ignored `eval/results/`. Pin the same model and compare fixture, source and PDF hashes. Hosted-model runs may differ. Build a much larger independent corpus and expert review process before using acceptance to drive consequential actions.
+
+## Spanish OCR regression and new candidate corpus
+
+- [Five-page OCR comparison, 2026-09-20 UTC](ocr-2026-09-20.md): two scanned identities recovered, one newly accepted; one classification failure retained. Reuses known extraction cases.
+- [42 fresh Spanish candidate pages](../SPANISH-SAMPLES.md): downloaded and fingerprinted; no classifier predictions or calibration results yet.
