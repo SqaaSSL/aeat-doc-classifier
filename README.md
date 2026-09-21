@@ -71,7 +71,7 @@ The **42 new Spanish pages** have now completed visual review and the three-cond
 Requirements: Node.js 22+, npm and a [TypeSafe API key](https://docs.typesafe.ai/). The prebuilt release includes the executable and catalogs; no Git checkout or TypeScript build is needed.
 
 ```sh
-npm install --global https://github.com/SqaaSSL/aeat-doc-classifier/releases/download/v0.4.0/sqaassl-aeat-doc-classifier-0.4.0.tgz
+npm install --global https://github.com/SqaaSSL/aeat-doc-classifier/releases/download/v0.5.0/sqaassl-aeat-doc-classifier-0.5.0.tgz
 
 # Set in the environment that will run your agent. Never commit a real key.
 export TYPESAFE_API_KEY="your-key"
@@ -85,7 +85,7 @@ For PDF input, install [Poppler](https://poppler.freedesktop.org/) with `brew in
 Run without a global installation:
 
 ```sh
-npx --yes --package=https://github.com/SqaaSSL/aeat-doc-classifier/releases/download/v0.4.0/sqaassl-aeat-doc-classifier-0.4.0.tgz aeat-classify --help
+npx --yes --package=https://github.com/SqaaSSL/aeat-doc-classifier/releases/download/v0.5.0/sqaassl-aeat-doc-classifier-0.5.0.tgz aeat-classify --help
 ```
 
 The release is distributed through [GitHub Releases](https://github.com/SqaaSSL/aeat-doc-classifier/releases), not the npm registry. Install the library locally using the same tarball URL without `--global`, or build from a Git checkout as described under [Development](#development-and-evaluation). Global installation is recommended for the agent skill below so `aeat-classify` is on the agent's `PATH`.
@@ -105,11 +105,11 @@ aeat-classify parse /absolute/path/scanned-return.pdf --ocr --ocr-language spa
 aeat-classify classify /absolute/path/scanned-return.pdf --ocr --fail-on-review
 ```
 
-`--ocr` selects LiteParse's native-text extraction plus local Tesseract OCR where needed. The default is Spanish (`spa`); `cat`, `eus`, `glg` and `eng` can be selected but have not been benchmarked here. First use may download language data; documents are processed locally for OCR. Classification subsequently sends the extracted text to TypeSafe. There is no cloud OCR account, OCR API key or per-page OCR API fee. Hardware/runtime costs still apply.
+`--ocr` selects LiteParse's native-text extraction plus local Tesseract OCR. In v0.5, automatic extraction also renders image-heavy pages with sparse native text for a full-page OCR retry, recovering content that the selective engine can miss. The default is Spanish (`spa`); `cat`, `eus`, `glg` and `eng` can be selected but have not been benchmarked here. First use may download language data; documents are processed locally for OCR. Classification subsequently sends the extracted text to TypeSafe. There is no cloud OCR account, OCR API key or per-page OCR API fee. Hardware/runtime costs still apply.
 
 This path does not require Poppler. Without `--ocr`, PDF extraction still uses Poppler, preserving the published baseline. `doctor --ocr` checks the optional package version and classification setup, not native-binary operation or cached language data. An actual `parse --ocr` is the readiness smoke test. For a local library installation, install `@llamaindex/liteparse@2.14.6` in the same project and call `readPdfWithOcr(path)`.
 
-OCR results include a source SHA-256, parser version, language and normalization identifier. The process has a two-minute limit; incomplete/reordered output and reported page failures are rejected before inference. Empty pages remain unresolved (`needs_ocr` during classification); empty text alone does not prove a page is visually blank. Small or poorly scanned text may still be wrong, and dynamic PDF compatibility is not guaranteed. `parse` emits the extracted text, so treat its output as document data. Details: [OCR adapter](docs/OCR.md).
+OCR results include a source SHA-256, parser version, language, strategy and per-page diagnostics showing the chosen extraction, attempted resolution and remaining warnings. Use `--ocr-mode selective` for the original v0.4 pipeline or `--ocr-mode raster` to OCR every page from rendered pixels. The default is `auto`. The process has a two-minute limit; incomplete/reordered output and reported page failures are rejected before inference. Empty pages remain unresolved (`needs_ocr` during classification); empty text alone does not prove a page is visually blank. Small or poorly scanned text may still be wrong, and dynamic PDF compatibility is not guaranteed. `parse` emits the extracted text, so treat its output as document data. Details: [OCR adapter](docs/OCR.md).
 
 ## CLI examples
 
@@ -289,7 +289,9 @@ npm run eval:public     # 44 public PDF pages; requires Poppler and key
 npm run eval:context    # Paired development comparison with neighboring-page retries
 npm run samples:verify -- --download # Download the new Spanish source corpus
 npm run eval:spanish -- --prepare # Verify frozen native/OCR inputs without a key
-npm run eval:spanish    # Three-condition evaluation of all 42 reviewed pages
+npm run eval:spanish    # Original three-condition evaluation, with selective OCR
+npm run eval:extraction -- --prepare # Verify/regenerate frozen adaptive extraction
+npm run eval:extraction # Paired selective vs adaptive OCR, with/without context
 npm pack --dry-run      # Inspect the distributable package
 node dist/cli.js --help # Run the local build
 ```

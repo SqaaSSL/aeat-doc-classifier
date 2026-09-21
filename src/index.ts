@@ -7,7 +7,7 @@ export type { JevOptions } from './jev.js';
 export { readPdfPages } from './pdf.js';
 export type { PdfPage } from './pdf.js';
 export { readPdfWithOcr, ocrReadiness } from './ocr.js';
-export type { OcrDocument, OcrLanguage } from './ocr.js';
+export type { OcrDocument, OcrLanguage, OcrMode, OcrPageDiagnostic } from './ocr.js';
 export { classifyPageWithContext, planContext } from './context.js';
 export type { TextPage, ContextualPageResult } from './context.js';
 export { aeatModels, pgcAccounts, catalogVersion } from './catalog.js';

@@ -33,7 +33,15 @@ Exit criterion: documented performance on a held-out representative corpus, not 
 - Optional Spanish LiteParse OCR, local parse command and agent-facing provenance.
 - Five-page extraction regression report with failures retained.
 - 42 fresh pages from 12 official PDFs, split 17/25; [Codex review and three-condition benchmark completed](benchmarks/spanish-reviewed-2026-09-21.md), with unchanged gates and per-page adjudication.
-- Next: repair header-only and missing-header OCR, improve annex grouping, and add safe response-validator diagnostics. Use a new holdout after these reviewed results inform changes.
+- The reviewed extraction failures inform the v0.5 work below. Use a new holdout after these reviewed results inform changes.
+
+## Delivered in 0.5 — adaptive extraction
+
+- Detect substantial scanned content behind sparse native text and retry the whole page as a raster.
+- Bounded 300-DPI OCR and a conditional 450-DPI retry for unresolved model headers, with explicit per-page provenance and warnings.
+- Automatic, original selective, and explicit raster modes in the CLI/library; no additional OCR dependency or service.
+- Preserve the earlier benchmarks and compare both extraction paths against the same frozen, reviewed labels.
+- Next: improve annex grouping and response-validator diagnostics, then evaluate a new holdout. Broader scan quality and character/amount accuracy remain unmeasured.
 
 ## Next — accounting assistance
 

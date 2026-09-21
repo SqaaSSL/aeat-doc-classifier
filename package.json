@@ -1,6 +1,6 @@
 {
   "name": "@sqaassl/aeat-doc-classifier",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Jev-powered Spanish tax document classification and reviewable PGC account suggestions.",
   "license": "MIT",
   "type": "module",
@@ -52,7 +52,9 @@
     "eval:ocr": "node --import tsx eval/ocr.ts",
     "samples:verify": "node --import tsx eval/calibration.ts",
     "eval:spanish": "node --import tsx eval/spanish.ts",
-    "eval:spanish-report": "node --import tsx eval/spanish-report.ts"
+    "eval:spanish-report": "node --import tsx eval/spanish-report.ts",
+    "eval:extraction": "node --import tsx eval/extraction.ts",
+    "eval:extraction-report": "node --import tsx eval/extraction-report.ts"
   },
   "devDependencies": {
     "@llamaindex/liteparse": "2.14.6",

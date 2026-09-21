@@ -33,7 +33,7 @@ for (const source of acquisition.sources) {
   try { parsed = JSON.parse(await readFile(cached, 'utf8')) as OcrDocument; }
   catch (error) {
     if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
-    parsed = await readPdfWithOcr(fileURLToPath(pdf));
+    parsed = await readPdfWithOcr(fileURLToPath(pdf), { ocrMode: 'selective' });
     await writeFile(cached, JSON.stringify(parsed), { flag: 'wx' });
   }
   const frozen = inputs.sources.find(s => s.id === source.id);

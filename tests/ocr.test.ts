@@ -5,6 +5,42 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { validateOcrPages } from '../src/ocr.js';
 import { runCli } from '../src/cli-runner.js';
+import { fallbackReasons, boundedDpi, MAX_RASTER_PIXELS, hasHeaderIdentifier, needsHeaderRetry, usableReplacement } from '../src/ocr-quality.js';
+
+test('adaptive OCR distinguishes a scanned body behind a text header from a native-text document', () => {
+  assert.deepEqual(fallbackReasons({ textLength: 61, imageCoverage: 0.43, isGarbled: false }, 'auto'), ['substantial_image_with_sparse_native_text']);
+  assert.deepEqual(fallbackReasons({ textLength: 6000, imageCoverage: 0.43, isGarbled: false }, 'auto'), []);
+  assert.deepEqual(fallbackReasons({ textLength: 61, imageCoverage: 0.02, isGarbled: false }, 'auto'), []);
+  assert.deepEqual(fallbackReasons({ textLength: 0, imageCoverage: 0, isGarbled: false }, 'auto'), []);
+  assert.deepEqual(fallbackReasons(undefined, 'selective'), []);
+  assert.deepEqual(fallbackReasons(undefined, 'raster'), ['raster_mode_requested']);
+  assert.throws(() => fallbackReasons(undefined, 'auto'), /complexity/);
+});
+
+test('model-header quality checks use nearby printed digits, not box numbers or a catalog whitelist', () => {
+  const p = { width: 600, height: 840, text: 'Autoliquidación', textItems: [
+    { text: 'Modelo', x: 500, y: 100, width: 40, height: 12 },
+    { text: '9 9 9', x: 500, y: 120, width: 40, height: 24 },
+  ] };
+  assert.equal(hasHeaderIdentifier(p), true); assert.equal(needsHeaderRetry(p), false);
+  assert.equal(hasHeaderIdentifier({ ...p, textItems: [p.textItems[0]!, { ...p.textItems[1]!, y: 600 }] }), false);
+  assert.equal(hasHeaderIdentifier({ ...p, textItems: [p.textItems[0]!, { ...p.textItems[1]!, x: 80 }] }), false);
+  assert.equal(needsHeaderRetry({ ...p, textItems: [] }), true);
+  assert.equal(needsHeaderRetry({ ...p, text: 'Ordinary letter', textItems: [] }), false);
+});
+
+test('raster allocation is bounded before rendering and sparse replacement cannot erase usable text', () => {
+  for (const [w, h] of [[595, 842], [2000, 2000], [4000, 3000]]) {
+    const dpi = boundedDpi(w!, h!, 450);
+    assert.ok(Math.ceil(w! * dpi / 72) * Math.ceil(h! * dpi / 72) <= MAX_RASTER_PIXELS);
+  }
+  assert.throws(() => boundedDpi(100_000, 100_000, 300));
+  assert.throws(() => boundedDpi(NaN, 842, 300));
+  assert.equal(usableReplacement('BOE header', 'Recovered form body with readable fields and identifier'), true);
+  assert.equal(usableReplacement('Readable native text '.repeat(100), 'BOE header'), false);
+  assert.equal(usableReplacement('Readable form', ''), false);
+  assert.equal(usableReplacement('', '   ---   '), false);
+});
 
 test('OCR preserves complete ordered pages, including empty pages, and normalizes Unicode', () => {
   assert.deepEqual(validateOcrPages({ totalPages: 2, pageErrors: [], pages: [

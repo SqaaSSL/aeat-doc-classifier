@@ -1,5 +1,5 @@
 {
-  "contractVersion": 3,
+  "contractVersion": 4,
   "binary": "aeat-classify",
   "authentication": {
     "environment": "TYPESAFE_API_KEY",
@@ -25,7 +25,8 @@
         "fail-on-review",
         "experimental-context",
         "ocr",
-        "ocr-language"
+        "ocr-language",
+        "ocr-mode"
       ],
       "outputSchema": "classificationPages",
       "network": "Text sent to TypeSafe unless empty"
@@ -88,7 +89,8 @@
         "max-pages",
         "ocr",
         "ocr-language",
-        "compact"
+        "compact",
+        "ocr-mode"
       ],
       "network": "No Jev calls; first OCR use may download language data. Documents processed locally.",
       "description": "Return ordered extracted pages without classification or an API key."
@@ -153,7 +155,7 @@
     "ocr": {
       "type": "boolean",
       "default": false,
-      "description": "PDF only: local LiteParse 2.14.6 native text plus selective OCR; separate optional dependency. Includes extraction provenance. First use may download language data."
+      "description": "PDF only: optional LiteParse 2.14.6 with local Spanish OCR and adaptive full-page raster fallback. Includes per-page extraction diagnostics. First use may download language data."
     },
     "ocr-language": {
       "type": "string",
@@ -167,6 +169,17 @@
       "default": "spa",
       "requires": "ocr",
       "description": "Spanish is tested; additional languages depend on installed Tesseract data and need separate evaluation."
+    },
+    "ocr-mode": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "selective",
+        "raster"
+      ],
+      "default": "auto",
+      "requires": "ocr",
+      "description": "auto retries image-heavy pages with sparse native text as full-page rasters; selective preserves the v0.4 pipeline; raster requests full-page OCR on every page. Local processing, bounded resolution and time."
     }
   },
   "exitCodes": {
@@ -240,7 +253,7 @@
           },
           "extraction": {
             "type": "object",
-            "description": "With --ocr: sourceSha256, parser, version, ocrEnabled, ocrLanguage, normalization. OCR enabled does not mean every page required OCR."
+            "description": "With --ocr: sourceSha256, parser, version, ocrEnabled, ocrLanguage, normalization, mode, strategy and the matching pageDiagnostics entry. Diagnostics record fallback reasons, hashes, render attempts and warnings. OCR enabled does not imply complete or correct text."
           }
         }
       }

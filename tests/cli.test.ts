@@ -67,6 +67,9 @@ test('invalid or irrelevant options fail before reading input', async () => {
     ['classify', '-', '--ocr'], ['classify', 'file.pdf', '--ocr-language', 'spa'],
     ['classify', 'file.pdf', '--ocr', '--ocr-language', 'invalid'], ['parse', '-'],
     ['parse', 'file.pdf', '--experimental-context'], ['account', '-', '--ocr'],
+    ['parse', 'file.pdf', '--ocr-mode', 'raster'],
+    ['parse', 'file.pdf', '--ocr', '--ocr-mode', 'invalid'],
+    ['classify', '-', '--ocr', '--ocr-mode', 'auto'],
   ]) {
     const r = await call(args, '', { stdin: (async function* () { throw new Error('Do not read'); })() });
     assert.equal(r.exit, 64, args.join(' ')); assert.equal(r.stdout, '');
@@ -100,7 +103,9 @@ test('catalog and machine-readable command contract need no API credentials', as
   assert.equal(JSON.parse((await call(['catalog', 'forms'])).stdout).forms.length, 33);
   assert.equal(JSON.parse((await call(['catalog', 'accounts'])).stdout).accounts.length, 40);
   const schema = JSON.parse((await call(['schema'])).stdout);
-  assert.equal(schema.contractVersion, 3); assert.equal(schema.authentication.cliArgumentSupported, false);
+  assert.equal(schema.contractVersion, 4); assert.equal(schema.authentication.cliArgumentSupported, false);
+  assert.deepEqual(schema.options['ocr-mode'].enum, ['auto', 'selective', 'raster']);
+  assert.equal(schema.options['ocr-mode'].default, 'auto');
   assert.equal(schema.options['experimental-context'].default, false);
   assert.ok(schema.commands.classify.options.includes('experimental-context'));
   assert.equal(schema.outputSchemas.accountSuggestion.properties.requiresHumanReview.const, true);
