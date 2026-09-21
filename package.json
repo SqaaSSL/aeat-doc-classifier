@@ -54,7 +54,8 @@
     "eval:spanish": "node --import tsx eval/spanish.ts",
     "eval:spanish-report": "node --import tsx eval/spanish-report.ts",
     "eval:extraction": "node --import tsx eval/extraction.ts",
-    "eval:extraction-report": "node --import tsx eval/extraction-report.ts"
+    "eval:extraction-report": "node --import tsx eval/extraction-report.ts",
+    "eval:luna": "node --import tsx eval/luna.ts"
   },
   "devDependencies": {
     "@llamaindex/liteparse": "2.14.6",

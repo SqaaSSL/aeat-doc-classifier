@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-09-21T06:04:23.922Z",
+  "implementationSha256": "2c66c7ca544d8db6c4117e220df5d3b0c5fc8d1e1a662cb3be5e05c6b09da7f7",
+  "judgmentsSha256": "5119a476eab9cc04f2a5fa458c7381c278c47fdea23c3ae9316abed18fb04bcc",
+  "inputsSha256": "71b29352b7d34a650e227fb672a8e2f0848964a8a0e95362c0714fe080931139",
+  "imageManifestSha256": "4741978810136817061459ca7dc64cc111661ed849225ce45fbf023f86ad7a67",
+  "models": {
+    "jev": "jev-1.13.0",
+    "luna": "gpt-5.6-luna"
+  },
+  "lunaReasoningEffort": "low",
+  "lunaInstructionsSha256": "45d7e0a46b297f14587c6c754ad23252857c1c063da11dbd0e7e093f53d09d80",
+  "disabledFeatures": [
+    "apps",
+    "plugins",
+    "memories",
+    "shell_tool",
+    "unified_exec",
+    "multi_agent",
+    "code_mode_host",
+    "browser_use",
+    "computer_use",
+    "view_image",
+    "image_generation",
+    "goals",
+    "sleep_tool",
+    "skill_search",
+    "hooks"
+  ],
+  "conditions": [
+    "jev/ocr",
+    "jev/context",
+    "luna/ocr",
+    "luna/context",
+    "luna/image"
+  ],
+  "method": "Single prespecified run; 42 reviewed development targets; five outcomes each. Identical adaptive OCR and Choice criteria for both text backends, existing optional neighbor retry and unchanged 0.95 policy. Fresh isolated decisions reused within each contextual pair. Provider order alternates by page; image-only runs last. Image-only uses a complete 300-DPI PNG with no OCR text or source filename. No gold labels or earlier predictions enter inference. Codex CLI overhead and self-reported confidence preclude raw API price/confidence equivalence. No performance-based reruns or label changes."
+}

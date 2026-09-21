@@ -16,6 +16,8 @@
     "tests/calibration.test.ts",
     "eval/spanish*.ts",
     "tests/spanish.test.ts",
-    "eval/extraction*.ts"
+    "eval/extraction*.ts",
+    "eval/luna*.ts",
+    "tests/luna.test.ts"
   ]
 }
