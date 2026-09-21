@@ -1,0 +1,1809 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Codex (AI assistant, same agent as implementation author)",
+  "completedAt": "2026-09-21T03:44:23.371102+00:00",
+  "sourceRunSha256": "e6bdead874caa06dd08e50c0214b2be2547fded23db78ed586906ca0d2b0619f",
+  "judgmentsSha256": "5119a476eab9cc04f2a5fa458c7381c278c47fdea23c3ae9316abed18fb04bcc",
+  "reviewedPages": 42,
+  "reviewedConditionOutcomes": 126,
+  "referenceLabelChangesAfterInference": 0,
+  "policy": "Reviewer resolutions are separate from automatic classifier outputs. They do not alter model scores or make the automation benchmark 100%. All targets and all errors were reviewed; no external reviewer is pending for this requested review.",
+  "cases": [
+    {
+      "sourceId": "036-order",
+      "page": 7,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "Native routing was correct. OCR kept the right identity but held the authority; context correctly restored acceptance.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "036-order",
+      "page": 8,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "The native authority was unknown. OCR identified AEAT but did not pass its gate; context correctly accepted 036.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "036-order",
+      "page": 13,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes identified 036 and tax_form. OCR/context fixed the native unknown authority; the correct contextual identity still failed the authority gate.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "036-order",
+      "page": 15,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All three modes had the complete correct identity. Authority confidence alone kept the page in review.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "036-order",
+      "page": 18,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "Context correctly recovered the national issuer of the printed 036 continuation. Authority and continuity gates still held it.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            }
+          },
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "111-order",
+      "page": 13,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes missed the visible 111 form. Both extraction pipelines returned only a 79-byte BOE wrapper; the OCR context retry correctly refused a sparse target. Reviewer resolves tax_form / aeat / aeat-111 from the image.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-111"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-111"
+            }
+          },
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-111"
+            }
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "111-order",
+      "page": 14,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "Same 79-byte BOE-only extraction failure as page 13; reviewer confirms the printed 111 bank-copy form, not a receipt.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-111"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-111"
+            }
+          },
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-111"
+            }
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "123-order",
+      "page": 9,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": null
+      },
+      "catalogAction": "retain_scope_review",
+      "reviewerFinding": "Reviewer confirms unsupported national model 117. Native output lacked its identity; the OCR response was invalid, which also prevents the paired context condition. Retain this as an error, not a successful review.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "error",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": null,
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": null,
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": null,
+              "reviewed": "none"
+            }
+          },
+          "error": "Invalid Jev response; no classification accepted."
+        },
+        "context": {
+          "classifierStatus": "error",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": null,
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": null,
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": null,
+              "reviewed": "none"
+            }
+          },
+          "error": "Invalid Jev response; no classification accepted."
+        }
+      }
+    },
+    {
+      "sourceId": "123-order",
+      "page": 10,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-123"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "OCR restored national authority and correctly accepted 123. Accepted isolated output was preserved in context, avoiding inheritance from adjacent 117/124.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "123-order",
+      "page": 11,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": null
+      },
+      "catalogAction": "retain_scope_review",
+      "reviewerFinding": "OCR correctly identified an unsupported national form and held it. The contextual response failed validation; retain the correct OCR result separately. Reviewer confirms printed model 124, outside the catalog.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "error",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": null,
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": null,
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": null,
+              "reviewed": "none"
+            }
+          },
+          "error": "Invalid Jev response; no classification accepted."
+        }
+      }
+    },
+    {
+      "sourceId": "202-form",
+      "page": 1,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes correctly accepted the national 202 form despite foral option boxes.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "202-form",
+      "page": 2,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes had the correct full identity. Context resolved classification confidence but insufficient continuity confidence prevented acceptance.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "202-form",
+      "page": 3,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes had the correct full identity. The form gate held isolated attempts; the continuity gate alone held the contextual attempt.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "202-form",
+      "page": 4,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes had the correct full identity; authority/form uncertainty and then authority/continuity uncertainty held the continuation.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 25,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "Both extraction pipelines omitted the body and retained a short BOE/210 title. Model and kind happened to be correct but authority confidence was weak; the sparse target skipped context. This is an extraction-quality defect even though recognition received credit.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 27,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "Native BOE-only text missed the form; OCR correctly recognized and accepted the 210 dividend annex. Context preserved it.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-210"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 29,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "Native text missed the form; OCR correctly recognized and accepted the 210 expenses annex. Context preserved it.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-210"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 31,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes missed printed 211. OCR retained only 98 bytes of BOE/annex text, so context was skipped. Reviewer resolves tax_form / aeat / aeat-211.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-211"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-211"
+            }
+          },
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-211"
+            }
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 32,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "OCR correctly recovered and accepted the 211 bank-copy form missed by native extraction. It was not confused with a filing receipt.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-211"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 34,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes missed printed 211. OCR retained only a 79-byte BOE wrapper; reviewer confirms the acquirer annex and 211 identity.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-211"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-211"
+            }
+          },
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-211"
+            }
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 36,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes missed printed 211. OCR retained only a 79-byte BOE wrapper; reviewer confirms the transferor annex and 211 identity.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-211"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-211"
+            }
+          },
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-211"
+            }
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "309-order",
+      "page": 5,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "Native form/kind were right but authority was unknown; OCR restored the complete identity and correctly accepted 309.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "309-order",
+      "page": 6,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "OCR recovered the form body and national issuer but omitted the visible 309 model number. Both OCR conditions returned model none. Reviewer resolves 309 from the rendered header; the blank bank copy is a tax form.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "other",
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-309"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-309"
+            }
+          },
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-309"
+            }
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "347-order",
+      "page": 6,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes identified the correct 347 instructions. Kind confidence remained below threshold, so review was conservative despite a correct identity.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "347-order",
+      "page": 7,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "Native/OCR could not identify the model on the continuation. Context correctly recovered 347 from the adjacent specification page, although kind/authority/form gates still held it.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-347"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "form": {
+              "predicted": "none",
+              "reviewed": "aeat-347"
+            }
+          },
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 10,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes correctly accepted the national 369 non-Union form.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 11,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "The native response was invalid. OCR identified the correct 369 continuation; context raised the applicable decisions above all gates and correctly accepted it.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "error",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": null,
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": null,
+              "reviewed": "aeat"
+            },
+            "form": {
+              "predicted": null,
+              "reviewed": "aeat-369"
+            }
+          },
+          "error": "Invalid Jev response; no classification accepted."
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 13,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes correctly accepted the national 369 Union-regime form.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 14,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "OCR fixed native unknown authority. Context retained the correct identity but authority/continuity gates still held the continuation.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 19,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes correctly accepted the national 369 import-regime form.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 20,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "OCR fixed native unknown authority. The correct identity still failed authority/form/continuity gates in context.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "aeat"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 22,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes correctly accepted this additional-payment form as tax_form, not as a receipt.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "catalonia-650-form",
+      "page": 1,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "catalogAction": "retain_scope_review",
+      "reviewerFinding": "All modes correctly recognized the regional form and kept it out of national AEAT routing; OCR strengthened the authority evidence.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "catalonia-650-form",
+      "page": 5,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "catalogAction": "retain_scope_review",
+      "reviewerFinding": "Native incorrectly suggested national AEAT authority, but its gates held it. The OCR reply was invalid; both paired OCR conditions remain errors. Reviewer resolves regional 650 from the source form.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "jurisdiction": {
+              "predicted": "aeat",
+              "reviewed": "regional"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "error",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": null,
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": null,
+              "reviewed": "regional"
+            },
+            "form": {
+              "predicted": null,
+              "reviewed": "none"
+            }
+          },
+          "error": "Invalid Jev response; no classification accepted."
+        },
+        "context": {
+          "classifierStatus": "error",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": null,
+              "reviewed": "tax_form"
+            },
+            "jurisdiction": {
+              "predicted": null,
+              "reviewed": "regional"
+            },
+            "form": {
+              "predicted": null,
+              "reviewed": "none"
+            }
+          },
+          "error": "Invalid Jev response; no classification accepted."
+        }
+      }
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 1,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "catalogAction": "retain_scope_review",
+      "reviewerFinding": "All modes had the correct regional instructional identity and held it under scope policy.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 2,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "catalogAction": "retain_scope_review",
+      "reviewerFinding": "Native lacked the issuer; OCR mistook an embedded form example for tax_form. Context correctly restored instructions / regional / none. All modes remained held.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "regional"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "tax_form",
+              "reviewed": "instructions"
+            }
+          },
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 15,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "catalogAction": "retain_scope_review",
+      "reviewerFinding": "Native mistook guidance for a national form. OCR/context fixed the issuer but still mistook the illustrated checklist and form excerpt for tax_form. Reviewer confirms regional instructions from the surrounding completion prose.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "tax_form",
+              "reviewed": "instructions"
+            },
+            "jurisdiction": {
+              "predicted": "aeat",
+              "reviewed": "regional"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "tax_form",
+              "reviewed": "instructions"
+            }
+          },
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "tax_form",
+              "reviewed": "instructions"
+            }
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 16,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "catalogAction": "retain_scope_review",
+      "reviewerFinding": "Native had correct kind but unknown issuer. OCR/context recovered regional authority but changed kind incorrectly to tax_form. Reviewer confirms instructions; all modes remained held.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "jurisdiction": {
+              "predicted": "unknown",
+              "reviewed": "regional"
+            }
+          },
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "tax_form",
+              "reviewed": "instructions"
+            }
+          },
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": false,
+          "corrections": {
+            "kind": {
+              "predicted": "tax_form",
+              "reviewed": "instructions"
+            }
+          },
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "tgss-receipt",
+      "page": 1,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "social_security",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "catalogAction": "identity_resolved_for_routing",
+      "reviewerFinding": "All modes correctly accepted the example as social_security / not_applicable / none. Its receipt title did not cause AEAT or bank-statement confusion.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "accepted",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 1,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "catalogAction": "retain_scope_review",
+      "reviewerFinding": "All modes correctly identified technical instructions and no applicable tax authority/model. Scope policy correctly held the guidance; it is not an invoice.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 4,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "catalogAction": "retain_scope_review",
+      "reviewerFinding": "All modes correctly identified the worked-example introduction as instructions; no invoice routing was accepted.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 18,
+      "reviewStatus": "completed",
+      "reviewedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "catalogAction": "retain_scope_review",
+      "reviewerFinding": "All modes correctly identified the second example introduction as instructions despite illustrative amounts in the header table. Required review was preserved.",
+      "conditions": {
+        "native": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "ocr": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        },
+        "context": {
+          "classifierStatus": "needs_review",
+          "identityCorrect": true,
+          "corrections": {},
+          "error": null
+        }
+      }
+    }
+  ]
+}

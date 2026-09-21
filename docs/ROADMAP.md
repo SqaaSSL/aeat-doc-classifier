@@ -32,7 +32,8 @@ Exit criterion: documented performance on a held-out representative corpus, not 
 
 - Optional Spanish LiteParse OCR, local parse command and agent-facing provenance.
 - Five-page extraction regression report with failures retained.
-- 42 fresh candidate pages from 12 official PDFs, split 17/25 for calibration/reserved validation; independent labels still pending.
+- 42 fresh pages from 12 official PDFs, split 17/25; [Codex review and three-condition benchmark completed](benchmarks/spanish-reviewed-2026-09-21.md), with unchanged gates and per-page adjudication.
+- Next: repair header-only and missing-header OCR, improve annex grouping, and add safe response-validator diagnostics. Use a new holdout after these reviewed results inform changes.
 
 ## Next — accounting assistance
 

@@ -4,9 +4,30 @@ Spanish tax document classification and reviewable Plan General de Contabilidad 
 
 The classifier identifies a page's document type, tax authority and AEAT model. A separate accounting function proposes one principal PGC account for a transaction whose direction and accounting plan the caller supplies. It returns candidates, probabilities, provider confidence, review reasons, source references and an audit hash.
 
-This is a document-routing library and CLI. It does not calculate tax, extract invoice amounts, determine deductibility, create complete journal entries, file returns, or implement SII/VERI*FACTU. Local OCR is available through an optional LiteParse adapter. Spanish production accuracy is not yet established; see the [public PDF benchmark](docs/benchmarks/public-2026-09-20.md).
+This is a document-routing library and CLI. It does not calculate tax, extract invoice amounts, determine deductibility, create complete journal entries, file returns, or implement SII/VERI*FACTU. Local OCR is available through an optional LiteParse adapter. Spanish production accuracy is not yet established; see the [reviewed Spanish benchmark](docs/benchmarks/spanish-reviewed-2026-09-21.md).
 
 ## Public benchmark
+
+### Completed Spanish review — 2026-09-21
+
+**42 pages from 12 new official PDFs**, visually reviewed by Codex before inference, then checked against all **126 classifier outcomes**. The review is complete: [per-page findings and corrections](docs/benchmarks/spanish-reviewed-2026-09-21-review.json) accompany the [full report](docs/benchmarks/spanish-reviewed-2026-09-21.md). Reviewer: Codex, the AI assistant and implementation author. The same frozen labels, model and 0.95 gates apply to all three conditions; no threshold fitting or post-prediction label changes occurred.
+
+| Measure on the same new samples | Native text | Spanish OCR | OCR + context |
+| --- | ---: | ---: | ---: |
+| Correct AEAT model + page kind | 19/30 (63.3%) | 23/30 (76.7%) | **24/30 (80.0%)** |
+| Correct automatic routing, eligible pages | 7/31 (22.6%) | 11/31 (35.5%) | **14/31 (45.2%)** |
+| Correct among automatically accepted | 7/7 | 11/11 | **14/14** |
+| Wrong automatic acceptances observed | 0 | 0 | **0** |
+| Required-review controls handled correctly | 11/11 | 9/11 | **8/11** |
+| Failed page outcomes | 1 | 2 | **3** |
+
+The 31 eligible pages comprise 30 supported AEAT pages and one TGSS document; 11 other pages require review under the catalog policy. Errors stay in the denominators. The final condition accepts 14/42 pages overall and leaves 25 under review plus three errors. On the separately reported **25-page reserved partition**, it recognizes **14/17 AEAT pages (82.4%)** and correctly accepts **9/17 eligible pages (52.9%)**. The 17 calibration pages are reported separately; neither partition was used to tune this run.
+
+The review found a concrete extraction problem: five scanned AEAT pages still produce only BOE headers, and a sixth loses its printed model number. These account for all six remaining AEAT recognition misses. Correct continuation identities are also held by authority/continuity gates, and some illustrated guidance is mistaken for forms. **Improve extraction and document grouping before lowering thresholds.** Three final outcomes fail response validation and are not counted as successful reviews.
+
+This is a harder, different corpus from the original 85.2% result below; the three columns above provide the paired comparison. It remains a small, correlated public-template set, reviewed by the same AI agent that developed the implementation. It does not establish production or PGC accuracy. [Full results](docs/benchmarks/spanish-reviewed-2026-09-21.json) · [Frozen reviewed labels](eval/spanish-v1-judged.json) · [Source documents](docs/SPANISH-SAMPLES.md) · [Reproduce](docs/benchmarks/spanish-reviewed-2026-09-21.md#reproduce).
+
+### Original public benchmark — 2026-09-20
 
 Evaluated **44 pages from 21 official public PDFs** on **2026-09-20**, with `jev-1.13.0` and the unchanged 0.95 confidence/probability gates. The corpus includes AEAT/BOE forms and instructions, Canary Islands, Catalan, Bizkaia and IRS scope checks, and PDFs with missing text. Sources, page selections and labels were frozen before the first run; the previous four-page Modelo 303 development test is excluded.
 
@@ -43,7 +64,7 @@ Inspired by [DocJev's document-context approach](https://github.com/jerryjliu/do
 
 The optional local OCR adapter uses **LiteParse 2.14.6**, the same underlying engine used by DocJev, configured for Spanish. On a separate **five-page regression check**, it recovered the scanned Modelo 130 and 131 identities; one passed the unchanged acceptance gates. A blank page remained empty, model 200 remained under review, and one classification failed. This is a small extraction experiment on known documents, **not a replacement for the 44-page baseline or a new accuracy estimate**. [OCR report and all outcomes](docs/benchmarks/ocr-2026-09-20.md).
 
-We also collected and fingerprinted **42 candidate pages from 12 new official PDFs**: **17 calibration / 25 reserved validation**. They cover nine AEAT models, scanned annexes, unsupported-model controls, Catalan tax documents, a TGSS sample receipt and Facturae teaching material. No classifier calls or threshold fitting have been performed on these samples. Proposed labels still require independent review; public documents do not establish representative production or PGC accuracy. [Source links, page selections and usage plan](docs/SPANISH-SAMPLES.md) · [Frozen candidate manifest](eval/calibration-v1.json).
+The **42 new Spanish pages** have now completed visual review and the three-condition benchmark above, including scanned annexes, unsupported-model controls, Catalan tax documents, a TGSS receipt and Facturae guidance. The original [candidate manifest](eval/calibration-v1.json) remains an unchanged acquisition snapshot; the [reviewed labels](eval/spanish-v1-judged.json) and [completed review](docs/benchmarks/spanish-reviewed-2026-09-21-review.json) record the current status.
 
 ## Install the CLI
 
@@ -266,6 +287,9 @@ npm run eval:pdf        # Four public reference PDF pages; requires Poppler and 
 npm run eval:public -- --download-only # Fetch and verify the frozen corpus; no key
 npm run eval:public     # 44 public PDF pages; requires Poppler and key
 npm run eval:context    # Paired development comparison with neighboring-page retries
+npm run samples:verify -- --download # Download the new Spanish source corpus
+npm run eval:spanish -- --prepare # Verify frozen native/OCR inputs without a key
+npm run eval:spanish    # Three-condition evaluation of all 42 reviewed pages
 npm pack --dry-run      # Inspect the distributable package
 node dist/cli.js --help # Run the local build
 ```

@@ -1,8 +1,8 @@
-# Fresh Spanish calibration candidates
+# Reviewed Spanish sample corpus
 
-Research completed 2026-09-21 (Dubai). **42 selected pages from 12 downloaded, fingerprinted official PDFs**: **17 calibration pages and 25 reserved validation pages**. No Jev calls, threshold fitting or classifier-driven sample selection have been performed on this corpus. These are source-disjoint candidates, not independently reviewed ground truth or a production validation set.
+Research and review completed **2026-09-21**. **42 selected pages from 12 official PDFs**, with the original **17 calibration / 25 reserved-validation** split preserved. Codex visually reviewed every selected page, froze the reference identities before inference, ran the unchanged classifier in three conditions, and completed the revision of all 126 predictions. [Full benchmark](benchmarks/spanish-reviewed-2026-09-21.md) · [Completed per-page review](benchmarks/spanish-reviewed-2026-09-21-review.json).
 
-The [manifest](../eval/calibration-v1.json) freezes URLs, complete PDF SHA-256/size/page count, physical page selections, declared family groups, proposed labels and diagnostic native-text fingerprints. No PDF or extracted text is committed. The verification command checks all 42 selections without a model key.
+The [original candidate manifest](../eval/calibration-v1.json) remains an immutable acquisition snapshot, including its historical “review pending” status. The [reviewed-label manifest](../eval/spanish-v1-judged.json) supersedes that status and records evidence for all 42 pages; all proposed identities were confirmed. [OCR fingerprints](../eval/spanish-v1-inputs.json) freeze all 237 source pages used for extraction/context. No PDF or extracted text is committed. The reviewer is Codex (AI assistant and implementation author), not a separately recruited human accountant. The requested review is complete, with no external-review prerequisite outstanding.
 
 ## Verified sample documents
 
@@ -14,8 +14,8 @@ The [manifest](../eval/calibration-v1.json) freezes URLs, complete PDF SHA-256/s
 | [AEAT: Modelo 202 (2022)](https://sede.agenciatributaria.gob.es/static_files/Sede/Biblioteca/Manual/Practicos/Sociedades/Sociedades_2022/Imagenes/AnexoII_Mod202-2022_es_es.pdf) | 1, 2, 3, 4 | calibration | 2022 native-text form and additional-data annex, including continuations. Historical sample, not current filing guidance. |
 | [BOE: Modelos 210 / 211](https://www.boe.es/buscar/pdf/2010/BOE-A-2010-19707-consolidado.pdf) | 25, 27, 29, 31, 32, 34, 36 | validation-reserved | Scanned nonresident form annexes; visually inspected. Exclude duplicate recipient copies. Two supported models in one source remain together. |
 | [BOE: Modelo 309](https://www.boe.es/buscar/pdf/2003/BOE-A-2003-23809-consolidado.pdf) | 5, 6 | calibration | Scanned model 309 declaration and partial bank copy; visually inspected. Mailing envelope excluded. |
-| [BOE: Modelo 347 record-layout instructions](https://www.boe.es/buscar/pdf/2008/BOE-A-2008-16973-consolidado.pdf) | 6, 7 | validation-reserved | Record-layout instructions, not a completed return; page-kind interpretation needs independent review. |
-| [BOE: Modelo 369](https://www.boe.es/boe/dias/2021/06/18/pdfs/BOE-A-2021-10161.pdf) | 10, 11, 13, 14, 19, 20, 22 | validation-reserved | Native-text annex: non-Union, Union, import and prior-declaration-payment layouts; representative headers visually inspected. Keep all variants in one split. |
+| [BOE: Modelo 347 record-layout instructions](https://www.boe.es/buscar/pdf/2008/BOE-A-2008-16973-consolidado.pdf) | 6, 7 | validation-reserved | Record-layout instructions, not a completed return; review confirms these are instructions, not return pages. |
+| [BOE: Modelo 369](https://www.boe.es/boe/dias/2021/06/18/pdfs/BOE-A-2021-10161.pdf) | 10, 11, 13, 14, 19, 20, 22 | validation-reserved | Native-text annex: non-Union, Union, import and prior-declaration-payment layouts; all seven selected pages visually inspected. Keep all variants in one split. |
 | [ATC: Modelo 650 in Spanish](https://atc.gencat.cat/web/.content/documents/05_doc_models/arxius/650_es.pdf) | 1, 5 | validation-reserved | Spanish-language ATC 650 form and continuation; visually inspected. Regional scope control. Native extraction misses some title/header content. |
 | [ATC: 650 / 660 instructions in Spanish](https://atc.gencat.cat/web/.content/documents/05_doc_models/arxius/660_instruccions_es.pdf) | 1, 2, 15, 16 | validation-reserved | Spanish-language joint 650/660 instructions; same family and split as the ATC form. Regional controls. |
 | [TGSS: public RLC example](https://www.seg-social.es/wps/wcm/connect/wss/941db335-fa29-4d82-9d49-54092f71c4e5/ACC_40822.pdf?MOD=AJPERES) | 1 | calibration | Public TGSS example linked as recibo (2008); visually inspected. Non-tax-authority routing control, not an AEAT filing receipt. |
@@ -32,23 +32,24 @@ npm run samples:verify -- --download
 npm run samples:verify
 ```
 
-Downloads use only the government hosts listed in the verifier, with bounded responses, no redirects and no provider credentials. Cached PDFs live in ignored `eval/corpus/calibration-v1/`. Changes in file hashes, page counts or native extraction fail verification; never silently refresh the frozen manifest. Native fingerprints were generated with Poppler 26.05.0. An OCR condition needs its own frozen extraction hashes/version/options before a live evaluation.
+Downloads use only the government hosts listed in the verifier, with bounded responses, no redirects and no provider credentials. Cached PDFs live in ignored `eval/corpus/calibration-v1/`. Changes in file hashes, page counts or native extraction fail verification; never silently refresh the frozen manifest. Native fingerprints were generated with Poppler 26.05.0. The completed OCR condition has separate frozen extraction hashes, version and options in `eval/spanish-v1-inputs.json`; verify them with `npm run eval:spanish -- --prepare`.
 
 ## What independent means here
 
 - None of these PDF URLs/hashes appears in public-v1. The original Modelo 303 development sources are also excluded. This removes exact-source reuse, not all resemblance between tax templates.
 - Whole PDFs and declared model/source families stay in one partition. The ATC form and its instructions remain together; all 210/211 annexes remain together. Selected supported AEAT model families do not cross partitions. These sparse model-disjoint groups support an initial generalization check, not per-model threshold fitting for all 33 models.
-- The existing public-v1 corpus is regression/development data. The new 25-page partition is reserved from model tuning, but has been inspected for curation. It is not a blind annotation study. BOE/AEAT styles recur across sets, and overlap with Jev pretraining is unknown.
+- The existing public-v1 corpus is regression/development data. The 25-page partition was reserved from model tuning and has now been evaluated once in the frozen three-condition experiment. It is not a blind annotation study. BOE/AEAT styles recur across sets, and overlap with Jev pretraining is unknown.
 - The 036 source also contains unselected 030 annexes, a previously used model family. Those pages must not be called unseen validation. Do not automatically classify whole mixed BOE orders as a single document or let unrelated annexes provide context.
-- Labels are proposed by the assistant from official provenance, text and visual inspection of scanned/special pages. An independent Spanish tax/accounting reviewer has not checked them. Retain disagreements and ambiguous cases; do not substitute model predictions for gold labels.
+- Labels were completed by Codex using official provenance, source context and visual inspection of all selected pages before predictions. The same agent subsequently checked all outcomes and recorded corrections separately. This is AI adjudication, not independent human annotation. No reference label was changed to match a prediction.
 
-## Calibration protocol before claiming an improvement
+## Completed protocol and what comes next
 
-1. Independently review each selected page and its permitted document context. Finalize page kind, source authority, form identity, visual blank/illegible status and required-review policy. Record reviewer identity, rationale and adjudication; version label corrections separately.
-2. Add permissioned, de-identified completed filings and filing receipts from multiple years, document generators and businesses. Include real invoices, rectifying invoices, payroll/RNT, rotated/low-quality scans and mixed packets. These public templates are a useful seed, not a replacement for that distribution.
-3. Freeze extraction options and hashes, prompt/catalog versions, model and scoring rules. Keep classification errors and extraction failures in end-to-end denominators. Compare native-only and OCR conditions separately.
-4. Fit per-head thresholds on the 17-page calibration partition only, or preferably a larger reviewed extension grouped by source/template family. Report accepted precision versus coverage, uncertainty intervals, type/authority/form confusions, and macro results by source rather than treating correlated pages as independent. This seed is too small to substantiate a high production precision target.
-5. Evaluate the reserved 25 pages once after decisions are frozen; report the complete run, including errors. Once outcomes influence changes, retire that partition into regression data and acquire a new holdout. Do not lower thresholds until these pages pass.
+1. **Completed:** visually review all 42 selected pages; record kind, source authority, supported model, required-review policy and evidence. Codex is the named reviewer.
+2. **Completed:** freeze source and extraction hashes, labels, prompts/catalog, model and scoring before inference. Commit `09b594a` contains the frozen experiment. Keep extraction and classification failures in end-to-end denominators.
+3. **Completed:** evaluate native text, Spanish OCR and that same OCR decision with optional context. Preserve all outcomes and the unchanged 0.95 gates. No threshold fitting was performed on either partition.
+4. **Completed:** inspect every prediction, record corrections separately, publish per-page outcomes, source-macro recognition and both partitions. The original classifier outputs and frozen labels remain intact.
+5. **Next engineering priorities:** detect and repair header-only OCR, recover missing model identifiers, improve annex grouping and distinguish form illustrations from instructional pages. These evaluated samples now provide regression cases; use a new holdout for subsequent changes.
+6. **Broader validation:** add permissioned, de-identified completed filings, filing receipts, real invoices, rectifying invoices, payroll, rotated/low-quality scans and mixed packets across generators and businesses. Fit any thresholds on reviewed calibration data and report coverage versus accepted precision. The current public seed is too small to substantiate a high production precision target.
 
 ## PGC sources and remaining gap
 

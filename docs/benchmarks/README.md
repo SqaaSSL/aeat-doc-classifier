@@ -1,8 +1,10 @@
 # Benchmark reports
 
+The latest [completed Spanish review](spanish-reviewed-2026-09-21.md) covers **42 new pages / 12 official PDFs**, with **all 126 condition outcomes checked by Codex**. AEAT model + kind recognition improves from **19/30** with native text to **23/30** with Spanish OCR and **24/30** with OCR/context. Correct eligible automatic routing improves from **7/31** to **11/31** and **14/31**, with zero wrong automatic acceptances observed. The final condition retains **three errors** and correctly holds **8/11** required-review controls. [Full JSON](spanish-reviewed-2026-09-21.json) and [per-page reviewer findings/corrections](spanish-reviewed-2026-09-21-review.json) preserve the full record. This is a new corpus, not a direct replacement of the old 85.2% score.
+
 The [context retry experiment](context-2026-09-20.md) reuses this corpus as a **development comparison**: paired raw model/kind recognition improved from 24/27 to 27/27; eligible automatic acceptance improved from 8/27 to 10/27. All 17 controls stayed held. It adds neighboring evidence, costs more API usage and does not replace the original benchmark with a new accuracy claim.
 
-The latest [public PDF benchmark](public-2026-09-20.md) evaluates **44 pages from 21 official PDFs** with labels frozen before inference: **23/27** AEAT pages have the correct raw model and page kind; **9/44** pages are automatically accepted, all nine correctly; **17/17** required review/OCR checks are held. It includes per-page outcomes, source links, hashes and [complete JSON results](public-2026-09-20.json). See [reproduction and metric definitions](../../eval/PUBLIC-BENCHMARK.md). It is a small source-based benchmark, not a production accuracy estimate.
+The original [public PDF benchmark](public-2026-09-20.md) evaluates **44 pages from 21 official PDFs** with labels frozen before inference: **23/27** AEAT pages have the correct raw model and page kind; **9/44** pages are automatically accepted, all nine correctly; **17/17** required review/OCR checks are held. It includes per-page outcomes, source links, hashes and [complete JSON results](public-2026-09-20.json). See [reproduction and metric definitions](../../eval/PUBLIC-BENCHMARK.md). It is a small source-based benchmark, not a production accuracy estimate.
 
 The earlier development evaluation below is kept unchanged for comparison. It includes tuned synthetic cases and a four-page Modelo 303 smoke test; those source PDFs are excluded from the newer public benchmark.
 
@@ -39,4 +41,4 @@ Run `npm run eval` with `TYPESAFE_API_KEY` for the synthetic set and `npm run ev
 ## Spanish OCR regression and new candidate corpus
 
 - [Five-page OCR comparison, 2026-09-20 UTC](ocr-2026-09-20.md): two scanned identities recovered, one newly accepted; one classification failure retained. Reuses known extraction cases.
-- [42 fresh Spanish candidate pages](../SPANISH-SAMPLES.md): downloaded and fingerprinted; no classifier predictions or calibration results yet.
+- [42 reviewed Spanish pages](../SPANISH-SAMPLES.md): labels and OCR inputs frozen before inference; the [completed benchmark and review](spanish-reviewed-2026-09-21.md) report all outcomes. No threshold fitting was performed.
