@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-09-21T06:40:19.081Z",
+  "model": "gpt-5.6-luna",
+  "reasoningEffort": "low",
+  "method": "Post-hoc output-format ablation motivated by failures in the separately preserved Choice-contract run. All 42 targets receive identical isolated OCR evidence and Choice criteria, but Luna returns only three labels. No confidence, probabilities, context, images or acceptance/routing claims. One run, no repaired answers or best-of reruns. Labels unchanged; development data, not a new holdout.",
+  "judgmentsSha256": "5119a476eab9cc04f2a5fa458c7381c278c47fdea23c3ae9316abed18fb04bcc",
+  "inputsSha256": "71b29352b7d34a650e227fb672a8e2f0848964a8a0e95362c0714fe080931139",
+  "baseProtocolSha256": "99c7a78a80a55d23f1453def2341c43c18731ace289592b89242960581b6ccb4",
+  "instructionsSha256": "1c510bf55a90ae31f5e758283b2331885c3b98b6d895edd138c73f8f90aaa5c8",
+  "questionsSha256": "055d5c7b44472f62e468d1754b12545b733a4fc945ead1ebbe49f575710ac743",
+  "schemaSha256": "cac24f03cb227a0abaf427d4d5a8c04f4e2e287213d9a6d20d5d7bc0d82221e2",
+  "implementationSha256": "7be8e08a7fa48f7342528568aa919f14af7f2d8477ca5b8d71a62948d8126632"
+}

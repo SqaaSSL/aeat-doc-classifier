@@ -85,7 +85,7 @@ const markdown = `# Jev versus GPT-5.6 Luna — ${run.startedAt.slice(0, 10)}
 
 ${table('all')}
 
-There are 30 supported AEAT pages, one eligible TGSS example, and 11 controls that require review. Errors stay in denominators. **Luna's confidence values are self-reported, not equivalent to Jev confidence.** Acceptance under the same numerical 0.95 policy is descriptive and is not a calibrated equal-risk comparison. Raw identity is the primary model comparison. Both models use our catalog and routing code, so this measures backend substitution rather than an unconfigured chatbot versus the full product.
+There are 30 supported AEAT pages, one eligible TGSS example, and 11 controls that require review. Errors stay in denominators. **Luna's confidence values are self-reported, not equivalent to Jev confidence.** Acceptance under the same numerical 0.95 policy is descriptive and is not a calibrated equal-risk comparison. Valid-output identity is the primary model comparison. Invalid replies are counted as failures; their potentially correct unvalidated guesses are not salvaged. This therefore measures recognition through the shared output contract, not each model’s maximum classification ability. Both models use our catalog and routing code, so this measures backend substitution rather than an unconfigured chatbot versus the full product.
 
 ## Controls and limits
 

@@ -29,3 +29,11 @@ Use Node.js 22+, the repository dependencies, authenticated Codex CLI with acces
 4. From a clean checkout, run `npm run eval:luna`. The runner verifies all inputs before model calls. Complete and partial runs go to ignored `eval/results/`; failures do not disappear from the report.
 
 Only hashes, predictions, metrics and review findings are published. Source PDFs and image/text caches retain their publishers' terms and are not redistributed under MIT.
+
+## Separate follow-up: labels without probability distributions
+
+After observing structured-response failures in the first run, we froze an additional **post-hoc output-format ablation** in `luna-labels-v1-protocol.json`. It requests only `kind`, `jurisdiction` and `form` from Luna on the same 42 isolated OCR inputs and unchanged Choice criteria. It does not supply previous predictions or reference answers. There are no probabilities, confidence estimates, context, images or automatic-acceptance claims in this follow-up.
+
+This tests recognition through a simpler output contract; it does not replace or repair the original run. Its results must be shown separately, including every failure, and identified as a follow-up designed after seeing the first experiment. Compare it with the isolated OCR columns, not with contextual or image-only evidence. No general claim about maximum model capability follows from either prompt.
+
+Reproduce with `node --import tsx eval/luna-labels.ts` from a clean source checkout with the existing adaptive OCR cache and a signed-in Codex CLI. The committed protocol pins prompts, schema, source fingerprints and labels before this follow-up's first model call. The `--prepare` option only creates a new protocol and refuses to overwrite one.
