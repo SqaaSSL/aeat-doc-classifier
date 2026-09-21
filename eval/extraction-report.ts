@@ -14,7 +14,7 @@ const run = JSON.parse(raw.toString()) as {
   calls: Array<Call & { variant: string; cacheHit: boolean }>;
   rows: Array<{ sourceId: string; page: number; selective: { ocr: Outcome; context: Outcome }; adaptive: { ocr: Outcome; context: Outcome }; extraction: OcrPageDiagnostic }>;
 };
-const jb = await readFile(new URL('./spanish-v1-judged.json', import.meta.url)), oldb = await readFile(new URL('./spanish-v1-inputs.json', import.meta.url)), newb = await readFile(new URL('./extraction-v2-inputs.json', import.meta.url));
+const jb = await readFile(new URL('./spanish-v1-judged.json', import.meta.url)), oldb = await readFile(new URL('./spanish-v1-inputs.json', import.meta.url)), newb = await readFile(new URL('./extraction-v3-inputs.json', import.meta.url));
 const judgments = JSON.parse(jb.toString()) as Judgments, oldInputs = JSON.parse(oldb.toString()) as Inputs, newInputs = JSON.parse(newb.toString()) as Inputs;
 if (sha(jb) !== run.judgmentsSha256 || sha(oldb) !== run.baselineInputsSha256 || sha(newb) !== run.inputsSha256
     || run.rows.length !== judgments.cases.length || run.gate.minConfidence !== 0.95 || run.gate.minProbability !== 0.95
@@ -75,7 +75,7 @@ const report = { ...run, summary, usage, sourceRunSha256: sha(raw),
 await writeFile(`${prefix}.json`, JSON.stringify(report, null, 2) + '\n', { flag: 'wx' });
 const markdown = `# Adaptive extraction development comparison — ${run.startedAt.slice(0, 10)}
 
-**A paired development comparison on the same 42 reviewed pages, not a new holdout.** The extraction change was designed after inspecting the previous failures. Codex's [frozen reference labels](../../eval/spanish-v1-judged.json) and [completed source-page review](spanish-reviewed-2026-09-21-review.json) remain unchanged. No classifier prompts, catalog definitions or 0.95 gates were changed. [Full results and all request outcomes](${basename(prefix)}.json) · [New extraction fingerprints](../../eval/extraction-v2-inputs.json) · [Original reviewed benchmark](spanish-reviewed-2026-09-21.md).
+**A paired development comparison on the same 42 reviewed pages, not a new holdout.** The extraction change was designed after inspecting the previous failures. A [first development iteration](extraction-2026-09-21.md) recovered all six original misses but introduced a 210-to-216 header regression; this separate run tests the added preservation guard. Codex's [frozen reference labels](../../eval/spanish-v1-judged.json) and [completed source-page review](spanish-reviewed-2026-09-21-review.json) remain unchanged. No classifier prompts, catalog definitions or 0.95 gates were changed. [Full results and all request outcomes](${basename(prefix)}.json) · [New extraction fingerprints](../../eval/extraction-v3-inputs.json) · [Original reviewed benchmark](spanish-reviewed-2026-09-21.md).
 
 ## Same-run comparison — all 42 pages
 
@@ -85,7 +85,7 @@ The corpus contains 30 supported AEAT pages, one routable TGSS example, and 11 c
 
 ## What changed
 
-The old selective engine sometimes extracts a BOE text header while leaving the scanned form unread. The adapter now inspects native-text/image signals. An image covering at least 15% of the page with fewer than 500 native characters (or garbled native text) triggers full-page raster OCR. Native-text-rich pages keep their existing extraction. This uses the same optional LiteParse 2.14.6 engine with Spanish Tesseract; no new service, credential or dependency was introduced.
+The old selective engine sometimes extracts a BOE text header while leaving the scanned form unread. The adapter now inspects native-text/image signals. An image covering at least 15% of the page with fewer than 500 native characters (or garbled native text) triggers full-page raster OCR. Native-text-rich pages keep their existing extraction. The revised guard also preserves a selective result with at least 200 letters/digits and a readable model header, avoiding unnecessary replacement of useful OCR evidence. This uses the same optional LiteParse 2.14.6 engine with Spanish Tesseract; no new service, credential or dependency was introduced.
 
 The fallback starts at 300 DPI. If the extracted page contains a form cue but has no readable model header with nearby 2–4 digit text, it tries 450 DPI. It selects that retry only when header evidence is recovered without severe text loss. Header checks accept any printed number, including unsupported models; no expected label, filename or catalog lookup is used. Digits are not corrected or invented. The second pass is a whole-page raster pass, not a crop or character-accuracy guarantee. Development probes used 300, 450 and 600 DPI; 600 was not consistently better and is not a production retry.
 
@@ -107,7 +107,7 @@ ${table('validation-reserved')}
 
 ${table('calibration')}
 
-## Every selected fallback page
+## Every selected page considered for fallback
 
 | Page | UTF-8 bytes before → after | Attempted DPI | Chosen extraction | Warnings |
 | --- | --- | --- | --- | --- |

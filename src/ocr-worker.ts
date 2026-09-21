@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import { LiteParse } from '@llamaindex/liteparse';
 import { OCR_LANGUAGES, validateOcrPages, type OcrLanguage } from './ocr.js';
-import { OCR_MODES, MAX_RASTER_PIXELS, boundedDpi, fallbackReasons, hasHeaderIdentifier, needsHeaderRetry, usableReplacement, contentLength,
+import { OCR_MODES, MAX_RASTER_PIXELS, boundedDpi, fallbackReasons, hasHeaderIdentifier, needsHeaderRetry, preserveSelectiveHeader, usableReplacement, contentLength,
   type OcrMode, type OcrPageDiagnostic } from './ocr-quality.js';
 
 const hash = (data: string | Uint8Array) => createHash('sha256').update(data).digest('hex');
@@ -28,13 +28,15 @@ async function main() {
   for (const page of parsed.pages) {
     const original = normalize(page.text), signals = page.complexity;
     const reasons = fallbackReasons(signals, mode as OcrMode);
+    const preserve = mode === 'auto' && reasons.length > 0 && preserveSelectiveHeader(page);
+    if (preserve) reasons.push('selective_model_header_preserved');
     const diagnostic: OcrPageDiagnostic = {
       page: page.pageNum, method: 'selective', reasons, warnings: [],
       nativeTextLength: signals?.textLength ?? null, imageCoverage: signals?.imageCoverage ?? null,
       selectiveTextSha256: hash(original), selectiveTextBytes: Buffer.byteLength(original),
       outputTextSha256: hash(original), outputTextBytes: Buffer.byteLength(original), selectedAttempt: null, attempts: [],
     };
-    if (reasons.length) {
+    if (reasons.length && !preserve) {
       const raster = async (requested: number) => {
         const dpi = boundedDpi(page.width, page.height, requested);
         const engine = new LiteParse({ ...config, dpi });

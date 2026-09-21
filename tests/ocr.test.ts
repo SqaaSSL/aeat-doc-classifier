@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { validateOcrPages } from '../src/ocr.js';
 import { runCli } from '../src/cli-runner.js';
-import { fallbackReasons, boundedDpi, MAX_RASTER_PIXELS, hasHeaderIdentifier, needsHeaderRetry, usableReplacement } from '../src/ocr-quality.js';
+import { fallbackReasons, boundedDpi, MAX_RASTER_PIXELS, hasHeaderIdentifier, needsHeaderRetry, preserveSelectiveHeader, usableReplacement } from '../src/ocr-quality.js';
 
 test('adaptive OCR distinguishes a scanned body behind a text header from a native-text document', () => {
   assert.deepEqual(fallbackReasons({ textLength: 61, imageCoverage: 0.43, isGarbled: false }, 'auto'), ['substantial_image_with_sparse_native_text']);
@@ -27,6 +27,9 @@ test('model-header quality checks use nearby printed digits, not box numbers or 
   assert.equal(hasHeaderIdentifier({ ...p, textItems: [p.textItems[0]!, { ...p.textItems[1]!, x: 80 }] }), false);
   assert.equal(needsHeaderRetry({ ...p, textItems: [] }), true);
   assert.equal(needsHeaderRetry({ ...p, text: 'Ordinary letter', textItems: [] }), false);
+  assert.equal(preserveSelectiveHeader({ ...p, text: 'A form with substantial readable body text. '.repeat(10) }), true);
+  assert.equal(preserveSelectiveHeader({ ...p, text: 'BOE annex Modelo 999' }), false);
+  assert.equal(preserveSelectiveHeader({ ...p, text: 'Readable body. '.repeat(50), textItems: [] }), false);
 });
 
 test('raster allocation is bounded before rendering and sparse replacement cannot erase usable text', () => {

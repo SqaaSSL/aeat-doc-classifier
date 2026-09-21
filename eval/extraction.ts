@@ -26,11 +26,11 @@ for (const file of (await readdir(new URL('../src/', import.meta.url))).filter(f
 for (const file of ['aeat-models.json', 'pgc-accounts.json']) fingerprints.push([`data/${file}`, sha(await readFile(new URL(`../data/${file}`, import.meta.url)))]);
 const implementationSha256 = sha(JSON.stringify(fingerprints));
 const extractionSha256 = sha(JSON.stringify(fingerprints.filter(([file]) => file.startsWith('src/ocr'))));
-const cache = new URL(`./corpus/extraction-v2-${extractionSha256.slice(0, 12)}/`, import.meta.url);
+const cache = new URL(`./corpus/extraction-v3-${extractionSha256.slice(0, 12)}/`, import.meta.url);
 await mkdir(cache, { recursive: true });
 const inputs: Inputs & { extractionImplementationSha256: string; strategy: string } = {
   schemaVersion: 1, frozenAt: new Date().toISOString(), acquisitionSha256: sha(acquisitionBytes),
-  extractionImplementationSha256: extractionSha256, strategy: 'adaptive-raster-v1',
+  extractionImplementationSha256: extractionSha256, strategy: 'adaptive-raster-v2',
   parser: 'LiteParse 2.14.6; adaptive full-page raster fallback', language: 'spa', normalization: 'nfc-trim-v1', sources: [],
 };
 const prepared = new Map<string, { selective: OcrDocument; adaptive: OcrDocument }>();
@@ -50,7 +50,7 @@ for (const source of acquisition.sources) {
   }
   const oldSource = previous.sources.find(s => s.id === source.id)!;
   for (const doc of [selective, adaptive]) if (doc.pages.length !== source.pageCount || doc.extraction.sourceSha256 !== source.sha256) throw new Error('Missing source pages.');
-  if (adaptive.extraction.strategy !== 'adaptive-raster-v1') throw new Error('Wrong extraction strategy.');
+  if (adaptive.extraction.strategy !== 'adaptive-raster-v2') throw new Error('Wrong extraction strategy.');
   for (const [i, page] of selective.pages.entries()) if (page.page !== i + 1 || sha(page.text) !== oldSource.pages[i]!.sha256) throw new Error('Changed baseline extraction.');
   for (const [i, page] of adaptive.pages.entries()) {
     const d = adaptive.extraction.pageDiagnostics[i]!;
@@ -63,7 +63,7 @@ for (const source of acquisition.sources) {
   prepared.set(source.id, { selective, adaptive });
   console.log(`${source.id}: ${source.pageCount} pages verified; ${adaptive.extraction.pageDiagnostics.filter(d => d.method === 'raster').length} raster fallbacks; ${adaptive.extractionMs} ms`);
 }
-const inputFile = new URL('./extraction-v2-inputs.json', import.meta.url);
+const inputFile = new URL('./extraction-v3-inputs.json', import.meta.url);
 const evidence = (value: Inputs) => JSON.stringify(value.sources.map(({ extractionMs: _time, ...source }) => source));
 if (prepareOnly) {
   let existing: typeof inputs | undefined;
@@ -86,7 +86,7 @@ const { stdout: commit } = await exec('git', ['rev-parse', 'HEAD']);
 const model = 'jev-1.13.0', backend = jevBackend({ model }), startedAt = new Date().toISOString();
 type Pair = Awaited<ReturnType<typeof pairedOcr>>;
 const run = {
-  schemaVersion: 1, experiment: 'adaptive-raster-v1', interpretation: 'Development ablation on the reviewed 42-page corpus; not a new holdout. No threshold or classifier prompt changes.',
+  schemaVersion: 1, experiment: 'adaptive-raster-v2', interpretation: 'Development ablation on the reviewed 42-page corpus; not a new holdout. No threshold or classifier prompt changes.',
   startedAt, completedAt: startedAt, commit: commit.trim(), implementationSha256,
   judgmentsSha256: sha(judgeBytes), baselineInputsSha256: sha(previousBytes), inputsSha256: sha(inputBytes),
   acquisitionSha256: sha(acquisitionBytes), model, gate: DEFAULT_GATE,

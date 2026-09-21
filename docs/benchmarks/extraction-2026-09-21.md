@@ -88,7 +88,7 @@ Each rendered image is capped at 24 million pixels, lowering DPI on oversized pa
 
 ## Reproduce
 
-Use a source checkout, Node.js 22+, Poppler for the original corpus verifier, and the optional LiteParse dependency installed by `npm ci`:
+Use a clean source checkout at experiment commit `a0206f6`, Node.js 22+, Poppler for the original corpus verifier, and the optional LiteParse dependency installed by `npm ci`. Later commits contain the revised guard and a different frozen-input manifest:
 
 ```sh
 npm ci

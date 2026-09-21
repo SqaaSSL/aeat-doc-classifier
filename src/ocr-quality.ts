@@ -53,6 +53,10 @@ export function needsHeaderRetry(page: RasterPage): boolean {
   return /\b(?:modelo|autoliquidaci[oó]n|declaraci[oó]n[- ]liquidaci[oó]n)\b/iu.test(page.text)
     && !hasHeaderIdentifier(page);
 }
+/** Avoid replacing substantial existing evidence merely because the PDF's native layer is sparse. */
+export function preserveSelectiveHeader(page: RasterPage): boolean {
+  return contentLength(page.text) >= 200 && hasHeaderIdentifier(page);
+}
 export const contentLength = (text: string) => (text.match(/[\p{L}\p{N}]/gu) ?? []).length;
 
 /** Reject an empty/severely depleted replacement; length is a guard, not an accuracy score. */

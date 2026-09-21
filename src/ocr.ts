@@ -27,7 +27,7 @@ export interface OcrDocument {
     ocrLanguage: OcrLanguage;
     normalization: 'nfc-trim-v1';
     mode: OcrMode;
-    strategy: 'selective-v1' | 'adaptive-raster-v1' | 'raster-v1';
+    strategy: 'selective-v1' | 'adaptive-raster-v2' | 'raster-v1';
     pageDiagnostics: OcrPageDiagnostic[];
   };
 }
@@ -85,7 +85,7 @@ export async function readPdfWithOcr(path: string, options: { maxPages?: number;
     return { pages, extraction: {
       sourceSha256: result.sourceSha256, parser: 'liteparse', version: LITEPARSE_VERSION,
       ocrEnabled: true, ocrLanguage: language, normalization: 'nfc-trim-v1',
-      mode, strategy: mode === 'auto' ? 'adaptive-raster-v1' : mode === 'raster' ? 'raster-v1' : 'selective-v1', pageDiagnostics: result.diagnostics,
+      mode, strategy: mode === 'auto' ? 'adaptive-raster-v2' : mode === 'raster' ? 'raster-v1' : 'selective-v1', pageDiagnostics: result.diagnostics,
     } };
   } catch {
     throw new Error('Local OCR failed or returned incomplete pages. Check the PDF, page limit, LiteParse installation and language data.');
