@@ -50,7 +50,9 @@
     "eval:context": "node --import tsx eval/context.ts",
     "eval:context-report": "node --import tsx eval/context-report.ts",
     "eval:ocr": "node --import tsx eval/ocr.ts",
-    "samples:verify": "node --import tsx eval/calibration.ts"
+    "samples:verify": "node --import tsx eval/calibration.ts",
+    "eval:spanish": "node --import tsx eval/spanish.ts",
+    "eval:spanish-report": "node --import tsx eval/spanish-report.ts"
   },
   "devDependencies": {
     "@llamaindex/liteparse": "2.14.6",

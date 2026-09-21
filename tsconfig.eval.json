@@ -13,6 +13,8 @@
     "eval/ocr.ts",
     "eval/calibration*.ts",
     "tests/ocr.test.ts",
-    "tests/calibration.test.ts"
+    "tests/calibration.test.ts",
+    "eval/spanish*.ts",
+    "tests/spanish.test.ts"
   ]
 }

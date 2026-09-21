@@ -1,0 +1,681 @@
+{
+  "schemaVersion": 1,
+  "frozenAt": "2026-09-21T03:39:13.030665+00:00",
+  "acquisitionSha256": "06d5d99af8b1676dcdec4f0c7b91a8860d04a3788fc0ec116b4065ed8d0c8f74",
+  "reviewer": "Codex (AI assistant), personally reviewing all 42 rendered pages in the project conversation at the user's request. Same agent as implementation author; not a separate human or independently recruited accountant.",
+  "protocol": "Every selected page visually inspected before any Jev inference on this corpus. Source/page context establishes continuation identity and issuer where missing from a standalone page. Kind follows the actual target: blank bank copies and annexes are forms; explanatory guides and worked-example introductions are instructions. Unsupported/regional model numbers map to none in the national catalog. All acquisition-stage proposed labels confirmed. Scoring rules and unchanged 0.95 gates frozen before the run; retain failures and all pages. Review is completed by Codex, not awaiting another reviewer.",
+  "cases": [
+    {
+      "sourceId": "036-order",
+      "page": 7,
+      "split": "calibration",
+      "inputSha256": "925d581417ed4ecca88dd86da4118af838e90da83838f16985d9424e91013d45",
+      "inputBytes": 6176,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "reviewRequired": false,
+      "note": "Printed Modelo 036, national AEAT header and blank census fields identify the form cover.",
+      "visualSha256": "85bb98f906ef732c9c7bc37631b165c4c57e57723a7ce81bc4c8f72b19d9cd8a"
+    },
+    {
+      "sourceId": "036-order",
+      "page": 8,
+      "split": "calibration",
+      "inputSha256": "479eccddf8a83b938492ddf5623a4f31d8ff011ce1a5c35412280d5341ed54e1",
+      "inputBytes": 12372,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "reviewRequired": false,
+      "note": "Printed 036 page 2A with blank identity/address fields; continuation of the national AEAT census form on physical page 7.",
+      "visualSha256": "44a8a464aaaca31d320aa81e51dd1057cdde944876bdab248eb246bd01b10b49"
+    },
+    {
+      "sourceId": "036-order",
+      "page": 13,
+      "split": "calibration",
+      "inputSha256": "c74440aaae62743b14e002375b769d716e99e0ad779d1491f1bc7dbe8522f95d",
+      "inputBytes": 15146,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "reviewRequired": false,
+      "note": "Printed 036 page 5 with VAT registration fields. IVA and references to other models do not change its 036 identity.",
+      "visualSha256": "3e0321fd48875c4b535f6537af2a9a2dac1192ed2163d4599ff8d6794660e6d5"
+    },
+    {
+      "sourceId": "036-order",
+      "page": 15,
+      "split": "calibration",
+      "inputSha256": "6450dadf534d6a4037d79ab29e92c5f3c09e9dc66207eee1186085755c69b7c5",
+      "inputBytes": 10894,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "reviewRequired": false,
+      "note": "Printed 036 page 7 with withholding and other tax-obligation boxes; references to 111/115/123 are obligations within 036.",
+      "visualSha256": "a4b91a7de6097c6e7a1da4153dfd579deb9633431a75a3047b6f98007d4fe2f4"
+    },
+    {
+      "sourceId": "036-order",
+      "page": 18,
+      "split": "calibration",
+      "inputSha256": "a64fe6b51a211a96401a2e46bc8361457c95e8eff912e7bef67a353b87f0eeaf",
+      "inputBytes": 5847,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "reviewRequired": false,
+      "note": "Printed 036 page 10, beneficial-owner identity table; blank form continuation, not an accounting report.",
+      "visualSha256": "df5f25e179efe7a1172263cb3003181ba4029a3ffd5e3bab4e1bcaea70bed8d4"
+    },
+    {
+      "sourceId": "111-order",
+      "page": 13,
+      "split": "calibration",
+      "inputSha256": "bc8ab47a8b4b92e0074c9b0a289f211aa9bae102ce623c604c2fd699e77f0407",
+      "inputBytes": 79,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "reviewRequired": false,
+      "note": "Scanned national AEAT Modelo 111 with blank withholding declaration fields.",
+      "visualSha256": "04f992769dc2b2fa7fd6c704356e1045ac68823ccb6899ffaf0ac7c4e16fbd03"
+    },
+    {
+      "sourceId": "111-order",
+      "page": 14,
+      "split": "calibration",
+      "inputSha256": "c6eff7cfe256192ce3c2ad9d34aa3eb1eb55e029c77f1952626aecc729029a6b",
+      "inputBytes": 79,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "reviewRequired": false,
+      "note": "Scanned Modelo 111 partial bank copy with blank fields. An unfilled bank copy is a tax form, not a filing receipt.",
+      "visualSha256": "f6dcb552b2c67adcad50d8c4e4aaeeea49b73a6b6fb2f636ae27e9d51ce20040"
+    },
+    {
+      "sourceId": "123-order",
+      "page": 9,
+      "split": "validation-reserved",
+      "inputSha256": "72ed7c57c68e51bf7d6b67e67a25eaf66b77ef35032741c6ed56ba21bce8b090",
+      "inputBytes": 99,
+      "group": "scope_control",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": null
+      },
+      "reviewRequired": true,
+      "note": "The scan explicitly prints Modelo 117. It is a national AEAT tax form but 117 is absent from the supported catalog: form none and review required.",
+      "visualSha256": "d156cce8f0e632a938cecb0132275e2adb15ac16d5924c08ca4dfe8db41b9c4d"
+    },
+    {
+      "sourceId": "123-order",
+      "page": 10,
+      "split": "validation-reserved",
+      "inputSha256": "93e85119535f6635cf72e020377a6cc2d046429ad92db9d13e31ef7a76e5b59e",
+      "inputBytes": 147,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-123"
+      },
+      "reviewRequired": false,
+      "note": "The scan explicitly prints national AEAT Modelo 123 with blank declaration fields. Adjacent 117/124 annexes must not override it.",
+      "visualSha256": "bc82445664abee4a29e53150a5853d3bcd34f5047477c16b5e0f3b0ce1bbbcfb"
+    },
+    {
+      "sourceId": "123-order",
+      "page": 11,
+      "split": "validation-reserved",
+      "inputSha256": "9020ba5d7c09ecde615d62da76e6f89fad97dd4bde8988e98d56e4e172c5c75d",
+      "inputBytes": 101,
+      "group": "scope_control",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": null
+      },
+      "reviewRequired": true,
+      "note": "The scan explicitly prints Modelo 124. It is a national AEAT tax form but 124 is unsupported: form none and review required.",
+      "visualSha256": "7312927c1cde17bdb1b64f2218d7e99c19c6169e87fe44d49d094d7c55077997"
+    },
+    {
+      "sourceId": "202-form",
+      "page": 1,
+      "split": "calibration",
+      "inputSha256": "92c4f5fde96b4a9e60f10d0a63a31496ff45e4f35112f26cb9a7518beb17c9b3",
+      "inputBytes": 9067,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "reviewRequired": false,
+      "note": "National AEAT header and printed Modelo 202; blank corporate/nonresident installment-payment form. Foral checkboxes do not change the issuer.",
+      "visualSha256": "ded87c94e914f8293bec6239053b2450a9133ac220a333021ed624542130c94e"
+    },
+    {
+      "sourceId": "202-form",
+      "page": 2,
+      "split": "calibration",
+      "inputSha256": "60e4e0157358fb46dc2c3e86e346b27a0a4a68c02d796cb7dd98a0beecac8463",
+      "inputBytes": 6290,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "reviewRequired": false,
+      "note": "Printed Modelo 202 page 2 with continuation of liquidation boxes; the source cover establishes the national AEAT issuer.",
+      "visualSha256": "8bf55c079481e1eaa7ca4d1581f57f7b46ae134b5fb1c5da7882f07d6653facf"
+    },
+    {
+      "sourceId": "202-form",
+      "page": 3,
+      "split": "calibration",
+      "inputSha256": "bc7867c9751ea58c878c2ddfdd37a142763c3d44e3db7a4542f6fefbf7a090af",
+      "inputBytes": 9712,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "reviewRequired": false,
+      "note": "National AEAT header and Anexo Modelo 202; additional-data communication is a blank form annex, not completion instructions.",
+      "visualSha256": "c1af35be43262f1176990a3e0bf1192b31ff4c1065eff4ea23e01bd9d696a166"
+    },
+    {
+      "sourceId": "202-form",
+      "page": 4,
+      "split": "calibration",
+      "inputSha256": "c415bc6bc3140b36485dbf8bbce6dcaf04f8336564c6c5d8ff67e8315bc7a16c",
+      "inputBytes": 1568,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "reviewRequired": false,
+      "note": "Anexo Modelo 202 page 2; additional-information and supplementary/substitute filing boxes. This is the continuation of physical page 3.",
+      "visualSha256": "96ce100263bef40382a5cfef5043e772226f240154b466001cc52101963bf2a8"
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 25,
+      "split": "validation-reserved",
+      "inputSha256": "87cdb95d1efc467c34725df5b021eaa3e82bea651fee7539950409d7dcb72a22",
+      "inputBytes": 134,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "reviewRequired": false,
+      "note": "Scanned national AEAT Modelo 210, nonresident income-tax self-assessment with blank fields.",
+      "visualSha256": "4e15b371ba0b59fb13247d67fa03852a6c06c84a5390be488552bc51eb1303b6"
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 27,
+      "split": "validation-reserved",
+      "inputSha256": "f171fbd58ac7080762ab4a9d98c7d32917833c7865365263296a0ea4123163a4",
+      "inputBytes": 79,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "reviewRequired": false,
+      "note": "Printed national AEAT Modelo 210 dividend-detail annex; repeated payer/dividend fields are part of the form.",
+      "visualSha256": "defb9024756e2cc8337beced74bd62762fa1df4657e0ce2d5fd375d4d5c74e59"
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 29,
+      "split": "validation-reserved",
+      "inputSha256": "5e6f37003d85e08279f32c5485904cf05e23d721c25408d2f76bfa77ed79efbd",
+      "inputBytes": 79,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "reviewRequired": false,
+      "note": "Printed national AEAT Modelo 210 deductible-expense and amortization annex; a form annex, not a bank refund receipt.",
+      "visualSha256": "e498fb332bb8359305d015689b7bdc1240139d993e53be46b418fde4c102a930"
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 31,
+      "split": "validation-reserved",
+      "inputSha256": "22411eabe88bf4172148b1df74a2612a841dffb42bbef0655e122dc920043124",
+      "inputBytes": 100,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "reviewRequired": false,
+      "note": "Printed national AEAT Modelo 211 property-acquisition withholding self-assessment, blank form.",
+      "visualSha256": "9d6b7b8fdd8568e634930fe85e1eb0c4bf1e2de40fc009fb89367474a15ec606"
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 32,
+      "split": "validation-reserved",
+      "inputSha256": "89d923eca31845bd32e85ce1672ba50693b01402d0290be1cfc52a0995468556",
+      "inputBytes": 79,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "reviewRequired": false,
+      "note": "Printed Modelo 211 partial collaborating-bank copy, with blank payment fields. It is not proof of filing or payment.",
+      "visualSha256": "f3696976b83088a434358ea1d1b8b7d8744e843c46696bf5ac62686e431f773e"
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 34,
+      "split": "validation-reserved",
+      "inputSha256": "8f3c3f30defba4724c324095138f23f7065c846fdbc73aa31210fe73d42a5009",
+      "inputBytes": 79,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "reviewRequired": false,
+      "note": "Printed national AEAT Modelo 211 Anexo I, list of acquirers, blank form fields.",
+      "visualSha256": "f346a147e0ab407d48ec95bea0357b9750ca5818ba62f46a8a7ec83c7d10f67c"
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 36,
+      "split": "validation-reserved",
+      "inputSha256": "5edfb3872aaa7807015d67de52cb5273f71bf6b3bcc492b6309fa8f9e81f9846",
+      "inputBytes": 79,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "reviewRequired": false,
+      "note": "Printed national AEAT Modelo 211 Anexo II, list of nonresident transferors, blank form fields.",
+      "visualSha256": "62bafcc3d250a06170bb5c63b99d5396b35a6db88efa99456d47b318ecd910cf"
+    },
+    {
+      "sourceId": "309-order",
+      "page": 5,
+      "split": "calibration",
+      "inputSha256": "ae1f537ff2ed9b3e7796e390f96c9ff87815f85e4ddf4b8667d1c9295fe5c33d",
+      "inputBytes": 230,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "reviewRequired": false,
+      "note": "Scanned national AEAT Modelo 309 nonperiodic VAT declaration with blank fields.",
+      "visualSha256": "80860f4587ca3ecfea924eba5a84606bad58afc79edf56f16397b5893530ce0d"
+    },
+    {
+      "sourceId": "309-order",
+      "page": 6,
+      "split": "calibration",
+      "inputSha256": "37032921dfd962df9ec5a979183f97335ec619509ebb84f78df18a5988e74e37",
+      "inputBytes": 78,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "reviewRequired": false,
+      "note": "Printed national AEAT Modelo 309 partial bank copy. Blank payment section and absence of validation mean a form, not a filing receipt.",
+      "visualSha256": "c768a868d1d91102a5d0ab4d1b37b8264f6955bf13178babee6cbd61f8a49338"
+    },
+    {
+      "sourceId": "347-order",
+      "page": 6,
+      "split": "validation-reserved",
+      "inputSha256": "dfed2439c9017f95248274c64c9fa1e9b331aafa1952738aece0b13d3122931e",
+      "inputBytes": 5390,
+      "group": "aeat",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      },
+      "reviewRequired": false,
+      "note": "Printed MODELO 347 with field positions, types and completion descriptions (se consignara). This is record-layout guidance, not an actual return; national AEAT URL appears in the table.",
+      "visualSha256": "c8e785f4993ef859664aabbf565626c6a9619022fc27cb464d2175358b223216"
+    },
+    {
+      "sourceId": "347-order",
+      "page": 7,
+      "split": "validation-reserved",
+      "inputSha256": "a060c367d4e46c73ee1cf6ae744ad27eb395fdac715016aa426c053798b45d11",
+      "inputBytes": 6077,
+      "group": "aeat",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      },
+      "reviewRequired": false,
+      "note": "Continuation of the 347 record-layout instruction table on physical page 6, including field positions and Agencia Estatal de Administracion Tributaria reference. Instructions, not a return.",
+      "visualSha256": "c79c0e90fc0e905179dc9e8416e1617c985bb125ea87ae5a6f08f36b2bc59d73"
+    },
+    {
+      "sourceId": "369-order",
+      "page": 10,
+      "split": "validation-reserved",
+      "inputSha256": "6f6d4f967c45f161a77770bef807c461416e5348f6266649d092a93aa113542e",
+      "inputBytes": 2798,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "note": "National AEAT Modelo 369 non-Union regime first page; blank OSS form.",
+      "visualSha256": "814e56f0925b19d2c777b2b2d895c012c5304b1d3132853c155e9ba47cc83c61"
+    },
+    {
+      "sourceId": "369-order",
+      "page": 11,
+      "split": "validation-reserved",
+      "inputSha256": "6c46f2d0270c6febc34eb0033524186e37803a4f831d4093a46947642b6d2246",
+      "inputBytes": 1356,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "note": "Printed Modelo 369 page 2 with prior-period correction rows, continuing the non-Union form on physical page 10.",
+      "visualSha256": "d7ff8308461ad719cc52e417e034673fdca4752ca38b12d8e04d26a697a01452"
+    },
+    {
+      "sourceId": "369-order",
+      "page": 13,
+      "split": "validation-reserved",
+      "inputSha256": "e78c833d6c0188a38ff1aefd60177d8cdca29eb5ad2fa95cd6d5c08322b8f04e",
+      "inputBytes": 3272,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "note": "National AEAT Modelo 369 Union-regime first page, blank form.",
+      "visualSha256": "17b5480a6fccf2430c970a6f125c207226c40e33729e84c90ba824476cf9f0a2"
+    },
+    {
+      "sourceId": "369-order",
+      "page": 14,
+      "split": "validation-reserved",
+      "inputSha256": "f731a9fc8dd7c9d85c7972d8878fd3a64304ae913b309c0a805ad519abd8c1ec",
+      "inputBytes": 1540,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "note": "Printed Modelo 369 page 2 with goods-supply rows, continuing the Union-regime form.",
+      "visualSha256": "4216dba24542f5fe68562901740df373bb2e30bb94dd7abcbd9cac2d9b223384"
+    },
+    {
+      "sourceId": "369-order",
+      "page": 19,
+      "split": "validation-reserved",
+      "inputSha256": "59745b16550612cc6442d90d1993e16e21dd186c9766179bd4ee1fbb4df10d47",
+      "inputBytes": 3443,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "note": "National AEAT Modelo 369 import-regime first page with IOSS and intermediary fields.",
+      "visualSha256": "0bd0d437c76e1608643cef6f214dc3851d4e34609f66c44726769aebcb81b9e8"
+    },
+    {
+      "sourceId": "369-order",
+      "page": 20,
+      "split": "validation-reserved",
+      "inputSha256": "5afbb5f40de09910e5d2b6771e1f9d180ae2a3287dec71c36dc42258672c152d",
+      "inputBytes": 1369,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "note": "Printed Modelo 369 page 2 with prior-period correction rows, continuing the import-regime form.",
+      "visualSha256": "4cb65389dd1fc4493d698c74a4008da374b46930d8655bd80a58b504c1c5afb8"
+    },
+    {
+      "sourceId": "369-order",
+      "page": 22,
+      "split": "validation-reserved",
+      "inputSha256": "b03f70f42296332d12a001c18b60abc98d3029c8eff54cb548675a7970494cda",
+      "inputBytes": 3612,
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "note": "National AEAT Modelo 369 additional-payment form for a previously submitted declaration. Blank fields make this a tax form, not the receipt of that earlier filing.",
+      "visualSha256": "bee4554dd803cf429b071558fddf53747b8622f25c61df22adb25ede65b02f90"
+    },
+    {
+      "sourceId": "catalonia-650-form",
+      "page": 1,
+      "split": "validation-reserved",
+      "inputSha256": "f02895ac24a16f8802c4f97f768fc973512e57d891b25486ade0a193da63dcfd",
+      "inputBytes": 3734,
+      "group": "scope_control",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "note": "Agencia Tributaria de Catalunya header, Generalitat references and printed 650. Regional inheritance-tax form; never national AEAT 650.",
+      "visualSha256": "154227de6c4fefa263a856b3f43c9feb4d0171ad0e7198049efe855d87ec8d49"
+    },
+    {
+      "sourceId": "catalonia-650-form",
+      "page": 5,
+      "split": "validation-reserved",
+      "inputSha256": "4d20d044b1a98e6a20865c6c155b01fb40ff8766201138ab8ad707cbbac2529b",
+      "inputBytes": 2113,
+      "group": "scope_control",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "note": "Printed 650 liquidation continuation of the ATC form. Regional issuer is established by physical page 1; catalog form none even though the model number is visible.",
+      "visualSha256": "f5708494d452a76ba593ba6302a6f3e4041fa785731206b64e57f98d573daee3"
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 1,
+      "split": "validation-reserved",
+      "inputSha256": "14db5f506600ec33dcd7c7a17da76a76efb76046316053dbc6e616c4e05a56cc",
+      "inputBytes": 2547,
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "note": "ATC header and title explicitly identify instructions for regional 660 and 650; model none for the national catalog.",
+      "visualSha256": "f32b0ab1595c0bd175f088bf513e6e7cbb656dd4048cc65e86c70cab4e78e713"
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 2,
+      "split": "validation-reserved",
+      "inputSha256": "84f59479d98f01fc9f74abae1ebce78a94c40b35e1db699e4dc50a37d19821ee",
+      "inputBytes": 2081,
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "note": "ATC header with explanatory prose and illustrative form snippets. The page is instructions, not a blank tax form.",
+      "visualSha256": "c77389dd89bd797365967f8ef4fb29ba01a89537abf7035bb3d8de066bc78b59"
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 15,
+      "split": "validation-reserved",
+      "inputSha256": "2074a298b83dd00993e9fbc34939921d098cfe51f30f2eb0a2195f0a5d4d6ca1",
+      "inputBytes": 985,
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "note": "ATC header; documentation checklist illustration followed by information for filling Modelo 650. Embedded form illustrations do not change the instructional page kind.",
+      "visualSha256": "84954278a464d3bc704f4c4d86521b7212de8cb174257ac51b87ea9ea6384480"
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 16,
+      "split": "validation-reserved",
+      "inputSha256": "3e77339a6b6649f1feb21e13deff256b5096d4c9835ad319c009ce81f999344b",
+      "inputBytes": 2407,
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "note": "ATC header, definitions and completion prose around form illustrations; regional instructions.",
+      "visualSha256": "72c30347750acbfff136255bcb2ce15c446874d048451614bdbfadfc4cdae42d"
+    },
+    {
+      "sourceId": "tgss-receipt",
+      "page": 1,
+      "split": "calibration",
+      "inputSha256": "a566e53321a1651e99ccc9282278773c4d53ecea221b4006032be9a272e39efd",
+      "inputBytes": 4702,
+      "group": "scope_control",
+      "expected": {
+        "kind": "social_security",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "reviewRequired": false,
+      "note": "Tesoreria General de la Seguridad Social header and Recibo de Liquidacion de Cotizaciones with an EMPRESA PRUEBA example. Route as social_security, not an AEAT filing receipt or bank statement.",
+      "visualSha256": "f52cccc59742f08c36ef247c4ebc36cb37a0ba00836878d49efae27036baab52"
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 1,
+      "split": "calibration",
+      "inputSha256": "8aefedf3d6d09761a369b7632e9e319692749677368a1019b3a2c1709689d078",
+      "inputBytes": 3890,
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "reviewRequired": true,
+      "note": "Formato FACTURAE introduction describes required/optional fields and a format table. Technical instructions with no issuing tax authority, not an invoice.",
+      "visualSha256": "0e49d6f28eea78f46da0ca708acabd49972a095d0c166e6a384ce0b8cda984d8"
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 4,
+      "split": "calibration",
+      "inputSha256": "21b1817a5a5073f345ece7a6e23d854acabeb51464954b9f0a64721c788389cb",
+      "inputBytes": 1208,
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "reviewRequired": true,
+      "note": "Ejemplo 1 explains a worked invoice example and its six information blocks. Pedagogical prose and diagram make this instructions, not a transaction invoice.",
+      "visualSha256": "4b51c8946039c0a56abfc661bd451b7fc8a0522a263b831e0f0720d0f0ede718"
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 18,
+      "split": "calibration",
+      "inputSha256": "31cdc6acbc4d1aec7cd8083dfc73235f7a5e2bce491e8be8fbf59d271f48c64f",
+      "inputBytes": 2010,
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "reviewRequired": true,
+      "note": "Ejemplo 2 explains the second worked example and its CABECERA block; illustrative values remain part of technical instructions, not a real invoice.",
+      "visualSha256": "553a3b7d02bb98aed9d254f749dcb541856f57a8ab7be1f1fe2adea21974d90f"
+    }
+  ]
+}
