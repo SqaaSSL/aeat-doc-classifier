@@ -4,6 +4,8 @@ Research and review completed **2026-09-21**. **42 selected pages from 12 offici
 
 The [original candidate manifest](../eval/calibration-v1.json) remains an immutable acquisition snapshot, including its historical “review pending” status. The [reviewed-label manifest](../eval/spanish-v1-judged.json) supersedes that status and records evidence for all 42 pages; all proposed identities were confirmed. [OCR fingerprints](../eval/spanish-v1-inputs.json) freeze all 237 source pages used for extraction/context. No PDF or extracted text is committed. The reviewer is Codex (AI assistant and implementation author), not a separately recruited human accountant. The requested review is complete, with no external-review prerequisite outstanding.
 
+The subsequent [v0.5 extraction comparison and completed review](benchmarks/extraction-guarded-2026-09-21.md) reuse this corpus with unchanged labels. Both partitions are now development data: their earlier results informed the adaptive OCR implementation. A new holdout is needed for a fresh validation estimate.
+
 ## Verified sample documents
 
 | Official source | Physical pages selected | Partition | Why it is useful |
@@ -48,7 +50,7 @@ Downloads use only the government hosts listed in the verifier, with bounded res
 2. **Completed:** freeze source and extraction hashes, labels, prompts/catalog, model and scoring before inference. Commit `09b594a` contains the frozen experiment. Keep extraction and classification failures in end-to-end denominators.
 3. **Completed:** evaluate native text, Spanish OCR and that same OCR decision with optional context. Preserve all outcomes and the unchanged 0.95 gates. No threshold fitting was performed on either partition.
 4. **Completed:** inspect every prediction, record corrections separately, publish per-page outcomes, source-macro recognition and both partitions. The original classifier outputs and frozen labels remain intact.
-5. **Next engineering priorities:** detect and repair header-only OCR, recover missing model identifiers, improve annex grouping and distinguish form illustrations from instructional pages. These evaluated samples now provide regression cases; use a new holdout for subsequent changes.
+5. **Extraction improvement completed in v0.5:** adaptive full-page OCR recovers all six original extraction misses. [Paired comparison](benchmarks/extraction-guarded-2026-09-21.md). Next priorities: annex grouping, unsupported-model handling, response-validation diagnostics and distinguishing form illustrations from instructional pages. These evaluated samples now provide regression cases; use a new holdout for subsequent changes.
 6. **Broader validation:** add permissioned, de-identified completed filings, filing receipts, real invoices, rectifying invoices, payroll, rotated/low-quality scans and mixed packets across generators and businesses. Fit any thresholds on reviewed calibration data and report coverage versus accepted precision. The current public seed is too small to substantiate a high production precision target.
 
 ## PGC sources and remaining gap

@@ -1,0 +1,2810 @@
+{
+  "schemaVersion": 1,
+  "completedAt": "2026-09-21T05:53:35.530145+00:00",
+  "status": "completed",
+  "reviewer": "Codex, AI assistant and implementation author; not independent human annotation",
+  "method": "Reviewed all 168 condition outcomes against the unchanged labels and source evidence from the completed 42-page visual review. Reopened the 111 bank copy, Modelo 210 annex and unsupported Modelo 124 images to verify recovery/regression findings. Corrections are recorded separately; no reference label or original prediction was changed.",
+  "referenceSha256": "5119a476eab9cc04f2a5fa458c7381c278c47fdea23c3ae9316abed18fb04bcc",
+  "reportSha256": "9dd45f3080755c4c52e3f7698419bac99be7a382e8894cac251cc7267a865daa",
+  "reviewedPages": 42,
+  "reviewedOutcomes": 168,
+  "rows": [
+    {
+      "sourceId": "036-order",
+      "page": 7,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed Modelo 036, national AEAT header and blank census fields identify the form cover.",
+      "visualSha256": "85bb98f906ef732c9c7bc37631b165c4c57e57723a7ce81bc4c8f72b19d9cd8a",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "036-order",
+      "page": 8,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed 036 page 2A with blank identity/address fields; continuation of the national AEAT census form on physical page 7.",
+      "visualSha256": "44a8a464aaaca31d320aa81e51dd1057cdde944876bdab248eb246bd01b10b49",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "036-order",
+      "page": 13,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed 036 page 5 with VAT registration fields. IVA and references to other models do not change its 036 identity.",
+      "visualSha256": "3e0321fd48875c4b535f6537af2a9a2dac1192ed2163d4599ff8d6794660e6d5",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        }
+      },
+      "reviewFinding": "The final candidate matches the frozen visual source identity. Preserve the remaining review reasons: low_jurisdiction_confidence."
+    },
+    {
+      "sourceId": "036-order",
+      "page": 15,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed 036 page 7 with withholding and other tax-obligation boxes; references to 111/115/123 are obligations within 036.",
+      "visualSha256": "a4b91a7de6097c6e7a1da4153dfd579deb9633431a75a3047b6f98007d4fe2f4",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        }
+      },
+      "reviewFinding": "The final candidate matches the frozen visual source identity. Preserve the remaining review reasons: low_jurisdiction_confidence."
+    },
+    {
+      "sourceId": "036-order",
+      "page": 18,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed 036 page 10, beneficial-owner identity table; blank form continuation, not an accounting report.",
+      "visualSha256": "df5f25e179efe7a1172263cb3003181ba4029a3ffd5e3bab4e1bcaea70bed8d4",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "unknown",
+            "form": "aeat-036"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "unknown",
+            "form": "aeat-036"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-036"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "The final candidate matches the frozen visual source identity. Preserve the remaining review reasons: low_jurisdiction_confidence, context_continuity_not_established."
+    },
+    {
+      "sourceId": "111-order",
+      "page": 13,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Scanned national AEAT Modelo 111 with blank withholding declaration fields.",
+      "visualSha256": "04f992769dc2b2fa7fd6c704356e1045ac68823ccb6899ffaf0ac7c4e16fbd03",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "other",
+            "jurisdiction": "unknown",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "unsupported_or_unclear_document",
+            "outside_national_aeat_scope"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "other",
+            "jurisdiction": "unknown",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "unsupported_or_unclear_document",
+            "outside_national_aeat_scope"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-111"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-111"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Recovered the form body and printed 111 identifier; the previously header-only page is now correctly accepted."
+    },
+    {
+      "sourceId": "111-order",
+      "page": 14,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Scanned Modelo 111 partial bank copy with blank fields. An unfilled bank copy is a tax form, not a filing receipt.",
+      "visualSha256": "f6dcb552b2c67adcad50d8c4e4aaeeea49b73a6b6fb2f636ae27e9d51ce20040",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "other",
+            "jurisdiction": "unknown",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "unsupported_or_unclear_document",
+            "outside_national_aeat_scope"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "other",
+            "jurisdiction": "unknown",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "unsupported_or_unclear_document",
+            "outside_national_aeat_scope"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-111"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-111"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "Recovered the bank-copy body and 111 identifier at 450 DPI. Identity is correct; the context continuity gate still holds the page."
+    },
+    {
+      "sourceId": "123-order",
+      "page": 9,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": null
+      },
+      "reviewRequired": true,
+      "sourceEvidence": "The scan explicitly prints Modelo 117. It is a national AEAT tax form but 117 is absent from the supported catalog: form none and review required.",
+      "visualSha256": "d156cce8f0e632a938cecb0132275e2adb15ac16d5924c08ca4dfe8db41b9c4d",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "error",
+          "verdict": "failed_outcome",
+          "error": "Invalid Jev response; no classification accepted."
+        },
+        "selective/context": {
+          "status": "error",
+          "verdict": "failed_outcome",
+          "error": "Invalid Jev response; no classification accepted."
+        },
+        "adaptive/ocr": {
+          "status": "error",
+          "verdict": "failed_outcome",
+          "error": "Invalid Jev response; no classification accepted."
+        },
+        "adaptive/context": {
+          "status": "error",
+          "verdict": "failed_outcome",
+          "error": "Invalid Jev response; no classification accepted."
+        }
+      },
+      "reviewFinding": "Source is unsupported Modelo 117, not 123. The unchanged input has one shared invalid provider reply across all conditions. Record a failed outcome, not a completed review decision."
+    },
+    {
+      "sourceId": "123-order",
+      "page": 10,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-123"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "The scan explicitly prints national AEAT Modelo 123 with blank declaration fields. Adjacent 117/124 annexes must not override it.",
+      "visualSha256": "bc82445664abee4a29e53150a5853d3bcd34f5047477c16b5e0f3b0ce1bbbcfb",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-123"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-123"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-123"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-123"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "123-order",
+      "page": 11,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": null
+      },
+      "reviewRequired": true,
+      "sourceEvidence": "The scan explicitly prints Modelo 124. It is a national AEAT tax form but 124 is unsupported: form none and review required.",
+      "visualSha256": "7312927c1cde17bdb1b64f2218d7e99c19c6169e87fe44d49d094d7c55077997",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "unknown_aeat_model",
+            "low_form_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "error",
+          "verdict": "failed_outcome",
+          "error": "Invalid Jev response; no classification accepted."
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-123"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_form_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-123"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_form_confidence",
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "Source visibly says Modelo 124. The adaptive raw candidate 123 is wrong even though review is correctly held. This regresses isolated identity from the selective none candidate. Expected catalog form remains none; do not relabel it 123."
+    },
+    {
+      "sourceId": "202-form",
+      "page": 1,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "National AEAT header and printed Modelo 202; blank corporate/nonresident installment-payment form. Foral checkboxes do not change the issuer.",
+      "visualSha256": "ded87c94e914f8293bec6239053b2450a9133ac220a333021ed624542130c94e",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "202-form",
+      "page": 2,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed Modelo 202 page 2 with continuation of liquidation boxes; the source cover establishes the national AEAT issuer.",
+      "visualSha256": "8bf55c079481e1eaa7ca4d1581f57f7b46ae134b5fb1c5da7882f07d6653facf",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "The final candidate matches the frozen visual source identity. Preserve the remaining review reasons: context_continuity_not_established."
+    },
+    {
+      "sourceId": "202-form",
+      "page": 3,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "National AEAT header and Anexo Modelo 202; additional-data communication is a blank form annex, not completion instructions.",
+      "visualSha256": "c1af35be43262f1176990a3e0bf1192b31ff4c1065eff4ea23e01bd9d696a166",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_form_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_form_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "The final candidate matches the frozen visual source identity. Preserve the remaining review reasons: context_continuity_not_established."
+    },
+    {
+      "sourceId": "202-form",
+      "page": 4,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Anexo Modelo 202 page 2; additional-information and supplementary/substitute filing boxes. This is the continuation of physical page 3.",
+      "visualSha256": "96ce100263bef40382a5cfef5043e772226f240154b466001cc52101963bf2a8",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "low_form_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "low_form_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-202"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "The final candidate matches the frozen visual source identity. Preserve the remaining review reasons: low_jurisdiction_confidence, context_continuity_not_established."
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 25,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Scanned national AEAT Modelo 210, nonresident income-tax self-assessment with blank fields.",
+      "visualSha256": "4e15b371ba0b59fb13247d67fa03852a6c06c84a5390be488552bc51eb1303b6",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Recovered the scanned 210 body; the original short header already suggested 210, but the fuller evidence now supports automatic acceptance."
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 27,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed national AEAT Modelo 210 dividend-detail annex; repeated payer/dividend fields are part of the form.",
+      "visualSha256": "defb9024756e2cc8337beced74bd62762fa1df4657e0ce2d5fd375d4d5c74e59",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_form_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_form_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "Source visibly says Modelo 210. The new preservation guard retains selective text and fixes the first development attempt’s 216 OCR regression. Correct 210 identity remains under the continuity gate in this run."
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 29,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed national AEAT Modelo 210 deductible-expense and amortization annex; a form annex, not a bank refund receipt.",
+      "visualSha256": "e498fb332bb8359305d015689b7bdc1240139d993e53be46b418fde4c102a930",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-210"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 31,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed national AEAT Modelo 211 property-acquisition withholding self-assessment, blank form.",
+      "visualSha256": "9d6b7b8fdd8568e634930fe85e1eb0c4bf1e2de40fc009fb89367474a15ec606",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "other",
+            "jurisdiction": "unknown",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "unsupported_or_unclear_document",
+            "outside_national_aeat_scope"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "other",
+            "jurisdiction": "unknown",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "unsupported_or_unclear_document",
+            "outside_national_aeat_scope"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Recovered the 211 form body and identifier; now correctly accepted."
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 32,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed Modelo 211 partial collaborating-bank copy, with blank payment fields. It is not proof of filing or payment.",
+      "visualSha256": "f3696976b83088a434358ea1d1b8b7d8744e843c46696bf5ac62686e431f773e",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 34,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed national AEAT Modelo 211 Anexo I, list of acquirers, blank form fields.",
+      "visualSha256": "f346a147e0ab407d48ec95bea0357b9750ca5818ba62f46a8a7ec83c7d10f67c",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "other",
+            "jurisdiction": "unknown",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "unsupported_or_unclear_document",
+            "outside_national_aeat_scope"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "other",
+            "jurisdiction": "unknown",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "unsupported_or_unclear_document",
+            "outside_national_aeat_scope"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Recovered the 211 bank-copy body and identifier, using the conditional 450-DPI retry; now correctly accepted."
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 36,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed national AEAT Modelo 211 Anexo II, list of nonresident transferors, blank form fields.",
+      "visualSha256": "62bafcc3d250a06170bb5c63b99d5396b35a6db88efa99456d47b318ecd910cf",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "other",
+            "jurisdiction": "unknown",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "unsupported_or_unclear_document",
+            "outside_national_aeat_scope"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "other",
+            "jurisdiction": "unknown",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "unsupported_or_unclear_document",
+            "outside_national_aeat_scope"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-211"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Recovered the 211 page body and identifier, using the conditional 450-DPI retry; now correctly accepted."
+    },
+    {
+      "sourceId": "309-order",
+      "page": 5,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Scanned national AEAT Modelo 309 nonperiodic VAT declaration with blank fields.",
+      "visualSha256": "80860f4587ca3ecfea924eba5a84606bad58afc79edf56f16397b5893530ce0d",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-309"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-309"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-309"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-309"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "309-order",
+      "page": 6,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed national AEAT Modelo 309 partial bank copy. Blank payment section and absence of validation mean a form, not a filing receipt.",
+      "visualSha256": "c768a868d1d91102a5d0ab4d1b37b8264f6955bf13178babee6cbd61f8a49338",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-303"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_form_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "unknown_aeat_model",
+            "low_form_confidence",
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-309"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-309"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Recovered the printed 309 identity from the partial bank copy; removes the selective 303/none mistakes and now correctly accepts 309."
+    },
+    {
+      "sourceId": "347-order",
+      "page": 6,
+      "reference": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed MODELO 347 with field positions, types and completion descriptions (se consignara). This is record-layout guidance, not an actual return; national AEAT URL appears in the table.",
+      "visualSha256": "c8e785f4993ef859664aabbf565626c6a9619022fc27cb464d2175358b223216",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-347"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-347"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-347"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-347"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence"
+          ]
+        }
+      },
+      "reviewFinding": "This is record-layout guidance, not a return. Adaptive context preserves the correct instructions kind; selective context incorrectly changes it to tax_form. Both remain held."
+    },
+    {
+      "sourceId": "347-order",
+      "page": 7,
+      "reference": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Continuation of the 347 record-layout instruction table on physical page 6, including field positions and Agencia Estatal de Administracion Tributaria reference. Instructions, not a return.",
+      "visualSha256": "c79c0e90fc0e905179dc9e8416e1617c985bb125ea87ae5a6f08f36b2bc59d73",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "unknown_aeat_model",
+            "low_form_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-347"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "low_form_confidence"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "unknown_aeat_model",
+            "low_form_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "aeat",
+            "form": "aeat-347"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "low_form_confidence",
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "Instruction continuation. Isolated extraction still lacks enough evidence to identify 347; context recovers the correct identity but confidence and continuity gates keep review."
+    },
+    {
+      "sourceId": "369-order",
+      "page": 10,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "National AEAT Modelo 369 non-Union regime first page; blank OSS form.",
+      "visualSha256": "814e56f0925b19d2c777b2b2d895c012c5304b1d3132853c155e9ba47cc83c61",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "369-order",
+      "page": 11,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed Modelo 369 page 2 with prior-period correction rows, continuing the non-Union form on physical page 10.",
+      "visualSha256": "d7ff8308461ad719cc52e417e034673fdca4752ca38b12d8e04d26a697a01452",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "unknown",
+            "form": "aeat-369"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "unknown",
+            "form": "aeat-369"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "369-order",
+      "page": 13,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "National AEAT Modelo 369 Union-regime first page, blank form.",
+      "visualSha256": "17b5480a6fccf2430c970a6f125c207226c40e33729e84c90ba824476cf9f0a2",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "369-order",
+      "page": 14,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed Modelo 369 page 2 with goods-supply rows, continuing the Union-regime form.",
+      "visualSha256": "4216dba24542f5fe68562901740df373bb2e30bb94dd7abcbd9cac2d9b223384",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "unknown",
+            "form": "aeat-369"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "unknown",
+            "form": "aeat-369"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "The final candidate matches the frozen visual source identity. Preserve the remaining review reasons: low_jurisdiction_confidence, context_continuity_not_established."
+    },
+    {
+      "sourceId": "369-order",
+      "page": 19,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "National AEAT Modelo 369 import-regime first page with IOSS and intermediary fields.",
+      "visualSha256": "0bd0d437c76e1608643cef6f214dc3851d4e34609f66c44726769aebcb81b9e8",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "369-order",
+      "page": 20,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Printed Modelo 369 page 2 with prior-period correction rows, continuing the import-regime form.",
+      "visualSha256": "4cb65389dd1fc4493d698c74a4008da374b46930d8655bd80a58b504c1c5afb8",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "low_form_confidence"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "low_form_confidence"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "The final candidate matches the frozen visual source identity. Preserve the remaining review reasons: low_jurisdiction_confidence, context_continuity_not_established."
+    },
+    {
+      "sourceId": "369-order",
+      "page": 22,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "National AEAT Modelo 369 additional-payment form for a previously submitted declaration. Blank fields make this a tax form, not the receipt of that earlier filing.",
+      "visualSha256": "bee4554dd803cf429b071558fddf53747b8622f25c61df22adb25ede65b02f90",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "aeat",
+            "form": "aeat-369"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "catalonia-650-form",
+      "page": 1,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "sourceEvidence": "Agencia Tributaria de Catalunya header, Generalitat references and printed 650. Regional inheritance-tax form; never national AEAT 650.",
+      "visualSha256": "154227de6c4fefa263a856b3f43c9feb4d0171ad0e7198049efe855d87ec8d49",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form",
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form",
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "The candidate matches the frozen visual source identity and the required review is preserved."
+    },
+    {
+      "sourceId": "catalonia-650-form",
+      "page": 5,
+      "reference": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "sourceEvidence": "Printed 650 liquidation continuation of the ATC form. Regional issuer is established by physical page 1; catalog form none even though the model number is visible.",
+      "visualSha256": "f5708494d452a76ba593ba6302a6f3e4041fa785731206b64e57f98d573daee3",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form",
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form",
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "The candidate matches the frozen visual source identity and the required review is preserved."
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 1,
+      "reference": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "sourceEvidence": "ATC header and title explicitly identify instructions for regional 660 and 650; model none for the national catalog.",
+      "visualSha256": "f32b0ab1595c0bd175f088bf513e6e7cbb656dd4048cc65e86c70cab4e78e713",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        }
+      },
+      "reviewFinding": "The candidate matches the frozen visual source identity and the required review is preserved."
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 2,
+      "reference": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "sourceEvidence": "ATC header with explanatory prose and illustrative form snippets. The page is instructions, not a blank tax form.",
+      "visualSha256": "c77389dd89bd797365967f8ef4fb29ba01a89537abf7035bb3d8de066bc78b59",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        }
+      },
+      "reviewFinding": "Guidance with illustrations, not a tax-form page. Context recovers the correct instructions kind; regional scope remains held."
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 15,
+      "reference": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "sourceEvidence": "ATC header; documentation checklist illustration followed by information for filling Modelo 650. Embedded form illustrations do not change the instructional page kind.",
+      "visualSha256": "84954278a464d3bc704f4c4d86521b7212de8cb174257ac51b87ea9ea6384480",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        }
+      },
+      "reviewFinding": "Illustrated ATC guidance remains misclassified as tax_form in all conditions. Correct kind is instructions, authority regional, catalog form none. Review is held; this is not a correct identity."
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 16,
+      "reference": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": null
+      },
+      "reviewRequired": true,
+      "sourceEvidence": "ATC header, definitions and completion prose around form illustrations; regional instructions.",
+      "visualSha256": "72c30347750acbfff136255bcb2ce15c446874d048451614bdbfadfc4cdae42d",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form",
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "tax_form",
+            "jurisdiction": "regional",
+            "form": "none"
+          },
+          "identityCorrect": false,
+          "verdict": "incorrect_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "outside_national_aeat_scope",
+            "no_supported_aeat_form",
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "Illustrated ATC guidance remains misclassified as tax_form in all conditions. Correct kind is instructions, authority regional, catalog form none. Review is held; this is not a correct identity."
+    },
+    {
+      "sourceId": "tgss-receipt",
+      "page": 1,
+      "reference": {
+        "kind": "social_security",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "reviewRequired": false,
+      "sourceEvidence": "Tesoreria General de la Seguridad Social header and Recibo de Liquidacion de Cotizaciones with an EMPRESA PRUEBA example. Route as social_security, not an AEAT filing receipt or bank statement.",
+      "visualSha256": "f52cccc59742f08c36ef247c4ebc36cb37a0ba00836878d49efae27036baab52",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "social_security",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "selective/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "social_security",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/ocr": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "social_security",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        },
+        "adaptive/context": {
+          "status": "accepted",
+          "candidate": {
+            "kind": "social_security",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_automatic_route",
+          "reasons": []
+        }
+      },
+      "reviewFinding": "Automatic route matches the frozen visual source identity. This is document routing only; no populated fields, filing status or accounting amounts were adjudicated."
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 1,
+      "reference": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "reviewRequired": true,
+      "sourceEvidence": "Formato FACTURAE introduction describes required/optional fields and a format table. Technical instructions with no issuing tax authority, not an invoice.",
+      "visualSha256": "0e49d6f28eea78f46da0ca708acabd49972a095d0c166e6a384ce0b8cda984d8",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form"
+          ]
+        }
+      },
+      "reviewFinding": "The candidate matches the frozen visual source identity and the required review is preserved."
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 4,
+      "reference": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "reviewRequired": true,
+      "sourceEvidence": "Ejemplo 1 explains a worked invoice example and its six information blocks. Pedagogical prose and diagram make this instructions, not a transaction invoice.",
+      "visualSha256": "4b51c8946039c0a56abfc661bd451b7fc8a0522a263b831e0f0720d0f0ede718",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form"
+          ]
+        }
+      },
+      "reviewFinding": "The candidate matches the frozen visual source identity and the required review is preserved."
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 18,
+      "reference": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": null
+      },
+      "reviewRequired": true,
+      "sourceEvidence": "Ejemplo 2 explains the second worked example and its CABECERA block; illustrative values remain part of technical instructions, not a real invoice.",
+      "visualSha256": "553a3b7d02bb98aed9d254f749dcb541856f57a8ab7be1f1fe2adea21974d90f",
+      "outcomes": {
+        "selective/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form"
+          ]
+        },
+        "selective/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form",
+            "context_continuity_not_established"
+          ]
+        },
+        "adaptive/ocr": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form"
+          ]
+        },
+        "adaptive/context": {
+          "status": "needs_review",
+          "candidate": {
+            "kind": "instructions",
+            "jurisdiction": "not_applicable",
+            "form": "none"
+          },
+          "identityCorrect": true,
+          "verdict": "correct_identity_held",
+          "reasons": [
+            "low_kind_confidence",
+            "low_jurisdiction_confidence",
+            "no_supported_aeat_form",
+            "context_continuity_not_established"
+          ]
+        }
+      },
+      "reviewFinding": "The candidate matches the frozen visual source identity and the required review is preserved."
+    }
+  ]
+}

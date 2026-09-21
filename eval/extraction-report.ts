@@ -121,6 +121,7 @@ Use a source checkout, Node.js 22+, Poppler for the original corpus verifier, an
 npm ci
 npm run samples:verify -- --download
 npm run eval:spanish -- --prepare
+npm run eval:extraction -- --prepare
 npm run eval:extraction
 npm run eval:extraction-report -- eval/results/extraction-TIMESTAMP.json eval/results/extraction-TIMESTAMP-report
 \`\`\`

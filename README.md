@@ -4,9 +4,36 @@ Spanish tax document classification and reviewable Plan General de Contabilidad 
 
 The classifier identifies a page's document type, tax authority and AEAT model. A separate accounting function proposes one principal PGC account for a transaction whose direction and accounting plan the caller supplies. It returns candidates, probabilities, provider confidence, review reasons, source references and an audit hash.
 
-This is a document-routing library and CLI. It does not calculate tax, extract invoice amounts, determine deductibility, create complete journal entries, file returns, or implement SII/VERI*FACTU. Local OCR is available through an optional LiteParse adapter. Spanish production accuracy is not yet established; see the [reviewed Spanish benchmark](docs/benchmarks/spanish-reviewed-2026-09-21.md).
+This is a document-routing library and CLI. It does not calculate tax, extract invoice amounts, determine deductibility, create complete journal entries, file returns, or implement SII/VERI*FACTU. Local OCR is available through an optional LiteParse adapter. Spanish production accuracy is not yet established; see the [reviewed benchmarks and extraction comparison](#public-benchmark).
 
 ## Public benchmark
+
+### Adaptive extraction — v0.5.0
+
+The improved local OCR recovers scanned form bodies hidden behind readable BOE headers. It retries selected pages at 300 DPI, tries 450 DPI when model-header evidence is missing, and preserves substantial existing text with a readable model header. No classifier prompts, model catalog or 0.95 gates were changed.
+
+**Same-run development comparison on our 42 reviewed pages:**
+
+| Measure | Previous OCR | Previous OCR + context | Improved OCR | Improved OCR + context |
+| --- | ---: | ---: | ---: | ---: |
+| Correct AEAT model + page kind | 23/30 (76.7%) | 23/30 (76.7%) | **29/30 (96.7%)** | **30/30 (100.0%)** |
+| Correct automatic routing, eligible pages | 10/31 (32.3%) | 13/31 (41.9%) | **16/31 (51.6%)** | **19/31 (61.3%)** |
+| Correct among automatically accepted | 10/10 | 13/13 | 16/16 | **19/19** |
+| Wrong automatic acceptances observed | 0 | 0 | 0 | **0** |
+| Required-review controls held correctly | 10/11 | 9/11 | 10/11 | **10/11** |
+| Failed page outcomes | 1 | 2 | 1 | **1** |
+
+The six original extraction-related AEAT misses are now recognized. The final condition accepts **19/42 pages overall**, leaves **22 for review**, and retains **one response-validation failure**. Complete identity across all pages is **38/42**: unsupported Modelo 124 is still guessed as 123 (held by the gates), two illustrated ATC instruction pages are mistaken for forms (also held), and the unsupported Modelo 117 request fails validation. All 168 outcomes were checked by Codex against the frozen source review; no reference labels changed.
+
+**This reuses inspected documents and is not a new holdout or a production accuracy estimate.** The first development attempt introduced a 210-to-216 OCR regression; its [report is preserved](docs/benchmarks/extraction-2026-09-21.md). The separately frozen revision fixes that case by preserving the existing readable header. Both original partitions are now development data. Hosted-model variation explains differences from earlier baseline runs; compare columns within this run. Character-level text, amounts and PGC accuracy are not measured here.
+
+Improved OCR is the default with `--ocr`; context remains opt-in:
+
+```sh
+aeat-classify classify /absolute/path/return.pdf --ocr --experimental-context --fail-on-review
+```
+
+[Full comparison and completed review](docs/benchmarks/extraction-guarded-2026-09-21.md) · [All outcomes and provenance](docs/benchmarks/extraction-guarded-2026-09-21.json) · [OCR options](docs/OCR.md). Next priorities are annex grouping, unsupported-model handling and better response-validation diagnostics, followed by a new holdout.
 
 ### Completed Spanish review — 2026-09-21
 
@@ -23,7 +50,7 @@ This is a document-routing library and CLI. It does not calculate tax, extract i
 
 The 31 eligible pages comprise 30 supported AEAT pages and one TGSS document; 11 other pages require review under the catalog policy. Errors stay in the denominators. The final condition accepts 14/42 pages overall and leaves 25 under review plus three errors. On the separately reported **25-page reserved partition**, it recognizes **14/17 AEAT pages (82.4%)** and correctly accepts **9/17 eligible pages (52.9%)**. The 17 calibration pages are reported separately; neither partition was used to tune this run.
 
-The review found a concrete extraction problem: five scanned AEAT pages still produce only BOE headers, and a sixth loses its printed model number. These account for all six remaining AEAT recognition misses. Correct continuation identities are also held by authority/continuity gates, and some illustrated guidance is mistaken for forms. **Improve extraction and document grouping before lowering thresholds.** Three final outcomes fail response validation and are not counted as successful reviews.
+The original review found a concrete extraction problem: five scanned AEAT pages still produce only BOE headers, and a sixth loses its printed model number. These account for all six remaining AEAT recognition misses. Correct continuation identities are also held by authority/continuity gates, and some illustrated guidance is mistaken for forms. These findings motivated the v0.5 extraction work above. Three final outcomes in this original run fail response validation and are not counted as successful reviews.
 
 This is a harder, different corpus from the original 85.2% result below; the three columns above provide the paired comparison. It remains a small, correlated public-template set, reviewed by the same AI agent that developed the implementation. It does not establish production or PGC accuracy. [Full results](docs/benchmarks/spanish-reviewed-2026-09-21.json) · [Frozen reviewed labels](eval/spanish-v1-judged.json) · [Source documents](docs/SPANISH-SAMPLES.md) · [Reproduce](docs/benchmarks/spanish-reviewed-2026-09-21.md#reproduce).
 

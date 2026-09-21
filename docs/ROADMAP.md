@@ -40,7 +40,8 @@ Exit criterion: documented performance on a held-out representative corpus, not 
 - Detect substantial scanned content behind sparse native text and retry the whole page as a raster.
 - Bounded 300-DPI OCR and a conditional 450-DPI retry for unresolved model headers, with explicit per-page provenance and warnings.
 - Automatic, original selective, and explicit raster modes in the CLI/library; no additional OCR dependency or service.
-- Preserve the earlier benchmarks and compare both extraction paths against the same frozen, reviewed labels.
+- Preserve readable selective model headers before considering replacement; retain the first development regression in the public record.
+- [Completed same-run comparison and Codex review](benchmarks/extraction-guarded-2026-09-21.md): 29/30 isolated AEAT recognition, 30/30 with context, and 19/31 correct eligible contextual acceptance. One final failure remains. These are development results, with unchanged gates and frozen reference labels.
 - Next: improve annex grouping and response-validator diagnostics, then evaluate a new holdout. Broader scan quality and character/amount accuracy remain unmeasured.
 
 ## Next — accounting assistance
