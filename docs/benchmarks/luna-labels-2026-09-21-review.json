@@ -1,0 +1,1045 @@
+{
+  "schemaVersion": 1,
+  "completedAt": "2026-09-21T06:50:35.117551+00:00",
+  "status": "completed",
+  "reviewer": "Codex, AI assistant and implementation author; not independent human annotation",
+  "method": "Checked all 42 label-only outcomes against unchanged visual source references. Compared all errors and retained every original prediction. No routing or confidence decision inferred from labels.",
+  "reviewedPages": 42,
+  "reviewedOutcomes": 42,
+  "reportSha256": "70b8f06d5cf78e78d89071d5620e68911c7f9f42078e31d0980c0e8cb7e42d1c",
+  "referenceSha256": "5119a476eab9cc04f2a5fa458c7381c278c47fdea23c3ae9316abed18fb04bcc",
+  "rows": [
+    {
+      "sourceId": "036-order",
+      "page": 7,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "sourceEvidence": "Printed Modelo 036, national AEAT header and blank census fields identify the form cover.",
+      "visualSha256": "85bb98f906ef732c9c7bc37631b165c4c57e57723a7ce81bc4c8f72b19d9cd8a",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      }
+    },
+    {
+      "sourceId": "036-order",
+      "page": 8,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "sourceEvidence": "Printed 036 page 2A with blank identity/address fields; continuation of the national AEAT census form on physical page 7.",
+      "visualSha256": "44a8a464aaaca31d320aa81e51dd1057cdde944876bdab248eb246bd01b10b49",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      }
+    },
+    {
+      "sourceId": "036-order",
+      "page": 13,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "sourceEvidence": "Printed 036 page 5 with VAT registration fields. IVA and references to other models do not change its 036 identity.",
+      "visualSha256": "3e0321fd48875c4b535f6537af2a9a2dac1192ed2163d4599ff8d6794660e6d5",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      }
+    },
+    {
+      "sourceId": "036-order",
+      "page": 15,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "unknown",
+        "form": "aeat-036"
+      },
+      "sourceEvidence": "Printed 036 page 7 with withholding and other tax-obligation boxes; references to 111/115/123 are obligations within 036.",
+      "visualSha256": "a4b91a7de6097c6e7a1da4153dfd579deb9633431a75a3047b6f98007d4fe2f4",
+      "identityCorrect": false,
+      "mismatchedFields": [
+        "jurisdiction"
+      ],
+      "finding": "Correct 036 kind/model; unknown authority differs from source-established AEAT reference.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      }
+    },
+    {
+      "sourceId": "036-order",
+      "page": 18,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "unknown",
+        "form": "aeat-036"
+      },
+      "sourceEvidence": "Printed 036 page 10, beneficial-owner identity table; blank form continuation, not an accounting report.",
+      "visualSha256": "df5f25e179efe7a1172263cb3003181ba4029a3ffd5e3bab4e1bcaea70bed8d4",
+      "identityCorrect": false,
+      "mismatchedFields": [
+        "jurisdiction"
+      ],
+      "finding": "Correct 036 kind/model; unknown authority differs from source-established AEAT reference.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      }
+    },
+    {
+      "sourceId": "111-order",
+      "page": 13,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "sourceEvidence": "Scanned national AEAT Modelo 111 with blank withholding declaration fields.",
+      "visualSha256": "04f992769dc2b2fa7fd6c704356e1045ac68823ccb6899ffaf0ac7c4e16fbd03",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      }
+    },
+    {
+      "sourceId": "111-order",
+      "page": 14,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "sourceEvidence": "Scanned Modelo 111 partial bank copy with blank fields. An unfilled bank copy is a tax form, not a filing receipt.",
+      "visualSha256": "f6dcb552b2c67adcad50d8c4e4aaeeea49b73a6b6fb2f636ae27e9d51ce20040",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      }
+    },
+    {
+      "sourceId": "123-order",
+      "page": 9,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "none"
+      },
+      "sourceEvidence": "The scan explicitly prints Modelo 117. It is a national AEAT tax form but 117 is absent from the supported catalog: form none and review required.",
+      "visualSha256": "d156cce8f0e632a938cecb0132275e2adb15ac16d5924c08ca4dfe8db41b9c4d",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "none"
+      }
+    },
+    {
+      "sourceId": "123-order",
+      "page": 10,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-123"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-123"
+      },
+      "sourceEvidence": "The scan explicitly prints national AEAT Modelo 123 with blank declaration fields. Adjacent 117/124 annexes must not override it.",
+      "visualSha256": "bc82445664abee4a29e53150a5853d3bcd34f5047477c16b5e0f3b0ce1bbbcfb",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-123"
+      }
+    },
+    {
+      "sourceId": "123-order",
+      "page": 11,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-123"
+      },
+      "sourceEvidence": "The scan explicitly prints Modelo 124. It is a national AEAT tax form but 124 is unsupported: form none and review required.",
+      "visualSha256": "7312927c1cde17bdb1b64f2218d7e99c19c6169e87fe44d49d094d7c55077997",
+      "identityCorrect": false,
+      "mismatchedFields": [
+        "form"
+      ],
+      "finding": "Printed model 124 is unsupported. Correct form is none, not aeat-123; no acceptance metric exists in this follow-up.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "none"
+      }
+    },
+    {
+      "sourceId": "202-form",
+      "page": 1,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "sourceEvidence": "National AEAT header and printed Modelo 202; blank corporate/nonresident installment-payment form. Foral checkboxes do not change the issuer.",
+      "visualSha256": "ded87c94e914f8293bec6239053b2450a9133ac220a333021ed624542130c94e",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      }
+    },
+    {
+      "sourceId": "202-form",
+      "page": 2,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "sourceEvidence": "Printed Modelo 202 page 2 with continuation of liquidation boxes; the source cover establishes the national AEAT issuer.",
+      "visualSha256": "8bf55c079481e1eaa7ca4d1581f57f7b46ae134b5fb1c5da7882f07d6653facf",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      }
+    },
+    {
+      "sourceId": "202-form",
+      "page": 3,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "sourceEvidence": "National AEAT header and Anexo Modelo 202; additional-data communication is a blank form annex, not completion instructions.",
+      "visualSha256": "c1af35be43262f1176990a3e0bf1192b31ff4c1065eff4ea23e01bd9d696a166",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      }
+    },
+    {
+      "sourceId": "202-form",
+      "page": 4,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "unknown",
+        "form": "aeat-202"
+      },
+      "sourceEvidence": "Anexo Modelo 202 page 2; additional-information and supplementary/substitute filing boxes. This is the continuation of physical page 3.",
+      "visualSha256": "96ce100263bef40382a5cfef5043e772226f240154b466001cc52101963bf2a8",
+      "identityCorrect": false,
+      "mismatchedFields": [
+        "jurisdiction"
+      ],
+      "finding": "Correct 202 annex kind/model; unknown authority differs from source-established AEAT reference.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 25,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "sourceEvidence": "Scanned national AEAT Modelo 210, nonresident income-tax self-assessment with blank fields.",
+      "visualSha256": "4e15b371ba0b59fb13247d67fa03852a6c06c84a5390be488552bc51eb1303b6",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 27,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 210 dividend-detail annex; repeated payer/dividend fields are part of the form.",
+      "visualSha256": "defb9024756e2cc8337beced74bd62762fa1df4657e0ce2d5fd375d4d5c74e59",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 29,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 210 deductible-expense and amortization annex; a form annex, not a bank refund receipt.",
+      "visualSha256": "e498fb332bb8359305d015689b7bdc1240139d993e53be46b418fde4c102a930",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 31,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 211 property-acquisition withholding self-assessment, blank form.",
+      "visualSha256": "9d6b7b8fdd8568e634930fe85e1eb0c4bf1e2de40fc009fb89367474a15ec606",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 32,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "sourceEvidence": "Printed Modelo 211 partial collaborating-bank copy, with blank payment fields. It is not proof of filing or payment.",
+      "visualSha256": "f3696976b83088a434358ea1d1b8b7d8744e843c46696bf5ac62686e431f773e",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 34,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 211 Anexo I, list of acquirers, blank form fields.",
+      "visualSha256": "f346a147e0ab407d48ec95bea0357b9750ca5818ba62f46a8a7ec83c7d10f67c",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      }
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 36,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 211 Anexo II, list of nonresident transferors, blank form fields.",
+      "visualSha256": "62bafcc3d250a06170bb5c63b99d5396b35a6db88efa99456d47b318ecd910cf",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      }
+    },
+    {
+      "sourceId": "309-order",
+      "page": 5,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "sourceEvidence": "Scanned national AEAT Modelo 309 nonperiodic VAT declaration with blank fields.",
+      "visualSha256": "80860f4587ca3ecfea924eba5a84606bad58afc79edf56f16397b5893530ce0d",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      }
+    },
+    {
+      "sourceId": "309-order",
+      "page": 6,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 309 partial bank copy. Blank payment section and absence of validation mean a form, not a filing receipt.",
+      "visualSha256": "c768a868d1d91102a5d0ab4d1b37b8264f6955bf13178babee6cbd61f8a49338",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      }
+    },
+    {
+      "sourceId": "347-order",
+      "page": 6,
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "unknown",
+        "form": "aeat-347"
+      },
+      "sourceEvidence": "Printed MODELO 347 with field positions, types and completion descriptions (se consignara). This is record-layout guidance, not an actual return; national AEAT URL appears in the table.",
+      "visualSha256": "c8e785f4993ef859664aabbf565626c6a9619022fc27cb464d2175358b223216",
+      "identityCorrect": false,
+      "mismatchedFields": [
+        "kind",
+        "jurisdiction"
+      ],
+      "finding": "Field-layout descriptions are instructions, not a completed or blank return. Source evidence establishes AEAT; predicted unknown differs.",
+      "correctedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      }
+    },
+    {
+      "sourceId": "347-order",
+      "page": 7,
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      },
+      "labels": {
+        "kind": "instructions",
+        "jurisdiction": "unknown",
+        "form": "none"
+      },
+      "sourceEvidence": "Continuation of the 347 record-layout instruction table on physical page 6, including field positions and Agencia Estatal de Administracion Tributaria reference. Instructions, not a return.",
+      "visualSha256": "c79c0e90fc0e905179dc9e8416e1617c985bb125ea87ae5a6f08f36b2bc59d73",
+      "identityCorrect": false,
+      "mismatchedFields": [
+        "jurisdiction",
+        "form"
+      ],
+      "finding": "Instruction continuation belongs to AEAT 347 by source context; predicted unknown/none loses that identity.",
+      "correctedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 10,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "National AEAT Modelo 369 non-Union regime first page; blank OSS form.",
+      "visualSha256": "814e56f0925b19d2c777b2b2d895c012c5304b1d3132853c155e9ba47cc83c61",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 11,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "Printed Modelo 369 page 2 with prior-period correction rows, continuing the non-Union form on physical page 10.",
+      "visualSha256": "d7ff8308461ad719cc52e417e034673fdca4752ca38b12d8e04d26a697a01452",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 13,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "National AEAT Modelo 369 Union-regime first page, blank form.",
+      "visualSha256": "17b5480a6fccf2430c970a6f125c207226c40e33729e84c90ba824476cf9f0a2",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 14,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "Printed Modelo 369 page 2 with goods-supply rows, continuing the Union-regime form.",
+      "visualSha256": "4216dba24542f5fe68562901740df373bb2e30bb94dd7abcbd9cac2d9b223384",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 19,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "National AEAT Modelo 369 import-regime first page with IOSS and intermediary fields.",
+      "visualSha256": "0bd0d437c76e1608643cef6f214dc3851d4e34609f66c44726769aebcb81b9e8",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 20,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "Printed Modelo 369 page 2 with prior-period correction rows, continuing the import-regime form.",
+      "visualSha256": "4cb65389dd1fc4493d698c74a4008da374b46930d8655bd80a58b504c1c5afb8",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      }
+    },
+    {
+      "sourceId": "369-order",
+      "page": 22,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "National AEAT Modelo 369 additional-payment form for a previously submitted declaration. Blank fields make this a tax form, not the receipt of that earlier filing.",
+      "visualSha256": "bee4554dd803cf429b071558fddf53747b8622f25c61df22adb25ede65b02f90",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      }
+    },
+    {
+      "sourceId": "catalonia-650-form",
+      "page": 1,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "Agencia Tributaria de Catalunya header, Generalitat references and printed 650. Regional inheritance-tax form; never national AEAT 650.",
+      "visualSha256": "154227de6c4fefa263a856b3f43c9feb4d0171ad0e7198049efe855d87ec8d49",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      }
+    },
+    {
+      "sourceId": "catalonia-650-form",
+      "page": 5,
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "Printed 650 liquidation continuation of the ATC form. Regional issuer is established by physical page 1; catalog form none even though the model number is visible.",
+      "visualSha256": "f5708494d452a76ba593ba6302a6f3e4041fa785731206b64e57f98d573daee3",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      }
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 1,
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "ATC header and title explicitly identify instructions for regional 660 and 650; model none for the national catalog.",
+      "visualSha256": "f32b0ab1595c0bd175f088bf513e6e7cbb656dd4048cc65e86c70cab4e78e713",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      }
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 2,
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "ATC header with explanatory prose and illustrative form snippets. The page is instructions, not a blank tax form.",
+      "visualSha256": "c77389dd89bd797365967f8ef4fb29ba01a89537abf7035bb3d8de066bc78b59",
+      "identityCorrect": false,
+      "mismatchedFields": [
+        "kind"
+      ],
+      "finding": "Explanatory prose and illustrative form snippets remain instructions; regional authority and none are correct.",
+      "correctedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      }
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 15,
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "ATC header; documentation checklist illustration followed by information for filling Modelo 650. Embedded form illustrations do not change the instructional page kind.",
+      "visualSha256": "84954278a464d3bc704f4c4d86521b7212de8cb174257ac51b87ea9ea6384480",
+      "identityCorrect": false,
+      "mismatchedFields": [
+        "kind"
+      ],
+      "finding": "Documentation checklist and completion guidance remain instructions; regional authority and none are correct.",
+      "correctedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      }
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 16,
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "ATC header, definitions and completion prose around form illustrations; regional instructions.",
+      "visualSha256": "72c30347750acbfff136255bcb2ce15c446874d048451614bdbfadfc4cdae42d",
+      "identityCorrect": false,
+      "mismatchedFields": [
+        "kind"
+      ],
+      "finding": "Definitions and completion prose around form illustrations remain instructions; regional authority and none are correct.",
+      "correctedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      }
+    },
+    {
+      "sourceId": "tgss-receipt",
+      "page": 1,
+      "expected": {
+        "kind": "social_security",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "social_security",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "sourceEvidence": "Tesoreria General de la Seguridad Social header and Recibo de Liquidacion de Cotizaciones with an EMPRESA PRUEBA example. Route as social_security, not an AEAT filing receipt or bank statement.",
+      "visualSha256": "f52cccc59742f08c36ef247c4ebc36cb37a0ba00836878d49efae27036baab52",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "social_security",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      }
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 1,
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "instructions",
+        "jurisdiction": "unknown",
+        "form": "none"
+      },
+      "sourceEvidence": "Formato FACTURAE introduction describes required/optional fields and a format table. Technical instructions with no issuing tax authority, not an invoice.",
+      "visualSha256": "0e49d6f28eea78f46da0ca708acabd49972a095d0c166e6a384ce0b8cda984d8",
+      "identityCorrect": false,
+      "mismatchedFields": [
+        "jurisdiction"
+      ],
+      "finding": "Technical format instructions have no issuing tax authority; expected not_applicable, predicted unknown.",
+      "correctedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      }
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 4,
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "sourceEvidence": "Ejemplo 1 explains a worked invoice example and its six information blocks. Pedagogical prose and diagram make this instructions, not a transaction invoice.",
+      "visualSha256": "4b51c8946039c0a56abfc661bd451b7fc8a0522a263b831e0f0720d0f0ede718",
+      "identityCorrect": true,
+      "mismatchedFields": [],
+      "finding": "All three labels match the unchanged visual/source reference; no correction needed.",
+      "correctedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      }
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 18,
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "labels": {
+        "kind": "invoice",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "sourceEvidence": "Ejemplo 2 explains the second worked example and its CABECERA block; illustrative values remain part of technical instructions, not a real invoice.",
+      "visualSha256": "553a3b7d02bb98aed9d254f749dcb541856f57a8ab7be1f1fe2adea21974d90f",
+      "identityCorrect": false,
+      "mismatchedFields": [
+        "kind"
+      ],
+      "finding": "Explanatory introduction to the second invoice example and CABECERA fields remains instructions. The source image was reopened in the main-run review; illustrative values do not make this an actual transaction invoice.",
+      "correctedIdentity": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      }
+    }
+  ]
+}

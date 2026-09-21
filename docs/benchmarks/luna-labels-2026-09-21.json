@@ -1,0 +1,1596 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-09-21T06:43:21.347Z",
+  "completedAt": "2026-09-21T06:48:07.649Z",
+  "commit": "67b0a69c2fb9075d9d13ed2fa6d9ea95ccca1713",
+  "cli": "codex-cli 0.154.0",
+  "protocol": {
+    "schemaVersion": 1,
+    "frozenAt": "2026-09-21T06:40:19.081Z",
+    "model": "gpt-5.6-luna",
+    "reasoningEffort": "low",
+    "method": "Post-hoc output-format ablation motivated by failures in the separately preserved Choice-contract run. All 42 targets receive identical isolated OCR evidence and Choice criteria, but Luna returns only three labels. No confidence, probabilities, context, images or acceptance/routing claims. One run, no repaired answers or best-of reruns. Labels unchanged; development data, not a new holdout.",
+    "judgmentsSha256": "5119a476eab9cc04f2a5fa458c7381c278c47fdea23c3ae9316abed18fb04bcc",
+    "inputsSha256": "71b29352b7d34a650e227fb672a8e2f0848964a8a0e95362c0714fe080931139",
+    "baseProtocolSha256": "99c7a78a80a55d23f1453def2341c43c18731ace289592b89242960581b6ccb4",
+    "instructionsSha256": "1c510bf55a90ae31f5e758283b2331885c3b98b6d895edd138c73f8f90aaa5c8",
+    "questionsSha256": "055d5c7b44472f62e468d1754b12545b733a4fc945ead1ebbe49f575710ac743",
+    "schemaSha256": "cac24f03cb227a0abaf427d4d5a8c04f4e2e287213d9a6d20d5d7bc0d82221e2",
+    "implementationSha256": "7be8e08a7fa48f7342528568aa919f14af7f2d8477ca5b8d71a62948d8126632"
+  },
+  "protocolSha256": "d4da607072dd667fafdce296e8cb752a80d10b5c7551ef0daa87dbb54a21d3d9",
+  "rows": [
+    {
+      "sourceId": "036-order",
+      "page": 7,
+      "inputSha256": "317fdfe63cebab5f88341f66690b8d6a17e73d68a03a013a19c5132e6fe1cd4a",
+      "requestSha256": "1fe4b3e120ae55ba6e5911e468a9fabfe8818d49eab72f0dd1fee028c69f1146",
+      "promptSha256": "faa77484be248fd6b8e1ad23831db0405f54f9e9190ba64306c5fd8a999d2366",
+      "elapsedMs": 6697,
+      "stdoutSha256": "57919bffce1c49a230d2efc8cd988baf1ded91370e3cd8d2a2c69ed5367c003f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 14248,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "sourceEvidence": "Printed Modelo 036, national AEAT header and blank census fields identify the form cover.",
+      "visualSha256": "85bb98f906ef732c9c7bc37631b165c4c57e57723a7ce81bc4c8f72b19d9cd8a",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "036-order",
+      "page": 8,
+      "inputSha256": "8d86c1f12fe85a573752d61cd0b0e06e9bd781a602b0a7bbb4b63ffd2b3e07a9",
+      "requestSha256": "96c8a45efee6e33019dab281d283c4b216d3a8a1068ba8521b0610b174d77a96",
+      "promptSha256": "516a1df8059fe25bfe248adf297443124f4482e7d1a925d21f8d0ecdf0bd7374",
+      "elapsedMs": 8064,
+      "stdoutSha256": "67ec15e9144e7b575800f0703edf2810da69d471da9611163f4d6ee3f634c5a2",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 14477,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "sourceEvidence": "Printed 036 page 2A with blank identity/address fields; continuation of the national AEAT census form on physical page 7.",
+      "visualSha256": "44a8a464aaaca31d320aa81e51dd1057cdde944876bdab248eb246bd01b10b49",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "036-order",
+      "page": 13,
+      "inputSha256": "c35ab02c640dc4e45520b629c891fd2119f37ba8b3f3ec8a5726fffa2ddb00bc",
+      "requestSha256": "6ba66810707e4f0f22ddda372b237c4dca3f7b15bd76ac2f59175126e9a9e5a4",
+      "promptSha256": "7ca313249c6b817bde2467d1981de8981dd75bbf30ae015c831b5787ff312550",
+      "elapsedMs": 5314,
+      "stdoutSha256": "e4a8560aa872915944b8096781b3185606395ad1640a039517ce3b36ccb949fb",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 14651,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "sourceEvidence": "Printed 036 page 5 with VAT registration fields. IVA and references to other models do not change its 036 identity.",
+      "visualSha256": "3e0321fd48875c4b535f6537af2a9a2dac1192ed2163d4599ff8d6794660e6d5",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "036-order",
+      "page": 15,
+      "inputSha256": "4cf657209d36f1b693bda2e305b7db32c0c072e0fabe299fdad726f2e2516a55",
+      "requestSha256": "ff0c2bfe906f340170c0e73384ac7ded7375c3307ed3462a93bfe0933fe1fdc7",
+      "promptSha256": "3ecfb64e876af45d0d6882aee1b04043f361bf95ef502f039129bb43e7f5a682",
+      "elapsedMs": 5912,
+      "stdoutSha256": "60287f91590c182d509c32fc09226c84d7a9bf225f6c638c07b23494145b3dac",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 14613,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 28,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "unknown",
+        "form": "aeat-036"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "sourceEvidence": "Printed 036 page 7 with withholding and other tax-obligation boxes; references to 111/115/123 are obligations within 036.",
+      "visualSha256": "a4b91a7de6097c6e7a1da4153dfd579deb9633431a75a3047b6f98007d4fe2f4",
+      "mismatchedFields": [
+        "jurisdiction"
+      ],
+      "identityCorrect": false,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "036-order",
+      "page": 18,
+      "inputSha256": "268b4ad71f4bfb72e66ab403938923932ab78b1bb4e18bf30bb47bb9f9462e47",
+      "requestSha256": "7cb1d2d2e6dc60c4aad9e6973e522bb16124b58a537ff0c718e4cf89a4cf70f2",
+      "promptSha256": "8795c9e38b6ab3bdadf196a194311dfefd7b3384aac1a311950f7fa01a5379f8",
+      "elapsedMs": 11656,
+      "stdoutSha256": "2e555f8b4b6a721702567286f1104f944b2a118180e6cad94d099792f9446a3e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13924,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 152,
+        "reasoning_output_tokens": 122
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "unknown",
+        "form": "aeat-036"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-036"
+      },
+      "sourceEvidence": "Printed 036 page 10, beneficial-owner identity table; blank form continuation, not an accounting report.",
+      "visualSha256": "df5f25e179efe7a1172263cb3003181ba4029a3ffd5e3bab4e1bcaea70bed8d4",
+      "mismatchedFields": [
+        "jurisdiction"
+      ],
+      "identityCorrect": false,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "111-order",
+      "page": 13,
+      "inputSha256": "29af35044efd52e03f322cdbf5d8902a8d6aa5a2287e5e8c81eaa3222be7c7c7",
+      "requestSha256": "7d7738451308acefbd72e472955b332b580061b73d0dd3b38b4d7e74296f24f6",
+      "promptSha256": "16cd9fef2956e07417032f315153dd7e09d8d99e33cf32135a6e04880a615028",
+      "elapsedMs": 5331,
+      "stdoutSha256": "ce3876051d8376130b3e3617641f92ae5047f1ea7d75c5f8915abfa1be690fe2",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 14298,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "sourceEvidence": "Scanned national AEAT Modelo 111 with blank withholding declaration fields.",
+      "visualSha256": "04f992769dc2b2fa7fd6c704356e1045ac68823ccb6899ffaf0ac7c4e16fbd03",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "111-order",
+      "page": 14,
+      "inputSha256": "b5aa1012f8d5d19aa1dff9dbdcc8711f66f8145eadc3afdf40a6c2fd67ee64f9",
+      "requestSha256": "cb7125b15097738093da9b538b0521f538a56d58e4f49c23382a23a2db4111f2",
+      "promptSha256": "2401417f46c488659d3d947ceddf61cef3b569d2233c05dba7a1381ae429e553",
+      "elapsedMs": 4590,
+      "stdoutSha256": "62f768b2aa4ffe382199fcc5e9d4df31846a5cdb44aaf5a2024d1894a5433425",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13559,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-111"
+      },
+      "sourceEvidence": "Scanned Modelo 111 partial bank copy with blank fields. An unfilled bank copy is a tax form, not a filing receipt.",
+      "visualSha256": "f6dcb552b2c67adcad50d8c4e4aaeeea49b73a6b6fb2f636ae27e9d51ce20040",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "123-order",
+      "page": 9,
+      "inputSha256": "35df1f8e9e7caafea1a139425f3102c1e0ca859d46d0d19ef7a644d68613efd1",
+      "requestSha256": "a09a5a4edb3b3992cfb9e0a4ab6b82541609362d985009fde46d8e15b94b5b03",
+      "promptSha256": "c18a4d9862383af6b42c55e8cf877bb2cf4d2803c3bb01a77ec4197150e379da",
+      "elapsedMs": 5728,
+      "stdoutSha256": "aad33a249ba4d31ac354ac280c11c7b26bb25979b32c22e9520c30273690a3a6",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13743,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 26,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "none"
+      },
+      "split": "validation-reserved",
+      "group": "scope_control",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "none"
+      },
+      "sourceEvidence": "The scan explicitly prints Modelo 117. It is a national AEAT tax form but 117 is absent from the supported catalog: form none and review required.",
+      "visualSha256": "d156cce8f0e632a938cecb0132275e2adb15ac16d5924c08ca4dfe8db41b9c4d",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "123-order",
+      "page": 10,
+      "inputSha256": "a3712b1c4a877f7bfb943c9abb6088446073c729cb10635f2869b6bd2e643aa1",
+      "requestSha256": "f57a288926b9d7b85ee1e1f4ad7acfc9e9ae957a36d3023e29475f517d7ba12e",
+      "promptSha256": "f90b21143f22ac44bbce0747d2497de2ccff6c0a9badbb186156245fbb308bce",
+      "elapsedMs": 5308,
+      "stdoutSha256": "5e08ac3706618339600c84eea1e53211d3dfb8e8b85248e914899214a1751d18",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13691,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-123"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-123"
+      },
+      "sourceEvidence": "The scan explicitly prints national AEAT Modelo 123 with blank declaration fields. Adjacent 117/124 annexes must not override it.",
+      "visualSha256": "bc82445664abee4a29e53150a5853d3bcd34f5047477c16b5e0f3b0ce1bbbcfb",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "123-order",
+      "page": 11,
+      "inputSha256": "5135686e730bb14ac83224e1d8043cd12b0a58c30c5df48cea0e299945cf7cf1",
+      "requestSha256": "f643436ed7df6fcd792fb61da3c5885c18b46f390ff68b548fd848f607f53c6d",
+      "promptSha256": "e635456d5c47216beb3daf5e71fbff3fdb304529290723941d655e130fdf11d1",
+      "elapsedMs": 4188,
+      "stdoutSha256": "82528a09bf5b4103e01b98ee6a0ce5c9666e2bf3cb22cbf17f37d7b1f666fe54",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13985,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-123"
+      },
+      "split": "validation-reserved",
+      "group": "scope_control",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "none"
+      },
+      "sourceEvidence": "The scan explicitly prints Modelo 124. It is a national AEAT tax form but 124 is unsupported: form none and review required.",
+      "visualSha256": "7312927c1cde17bdb1b64f2218d7e99c19c6169e87fe44d49d094d7c55077997",
+      "mismatchedFields": [
+        "form"
+      ],
+      "identityCorrect": false,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "202-form",
+      "page": 1,
+      "inputSha256": "9abac5027828c0f059e832242d22e4a62af032d1555decacbba42fe5a4d631ea",
+      "requestSha256": "edd985f10b681543256528f168b2f09e393429008e89e5d86c49b087e91c1806",
+      "promptSha256": "1340cc7fb9bff0c68f9a4c0abd9c2992c1d0bdb1181e113e8e64a439792788d5",
+      "elapsedMs": 4776,
+      "stdoutSha256": "eb71d89467148a6b722fdfff959763e1370197c07657014ba70a4af62faa5821",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 14500,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "sourceEvidence": "National AEAT header and printed Modelo 202; blank corporate/nonresident installment-payment form. Foral checkboxes do not change the issuer.",
+      "visualSha256": "ded87c94e914f8293bec6239053b2450a9133ac220a333021ed624542130c94e",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "202-form",
+      "page": 2,
+      "inputSha256": "1b5de6df12be72e6d9965ebf8553868b209700c8de2e4c37c0407100318525d2",
+      "requestSha256": "0ef60943f91dd11a7d6eab48473af75a9a4c1ae27e37c6da59e54efdc7f71d4b",
+      "promptSha256": "6efbd2ff25d4e6382fd091e30510f585f720d41800211e0cc2684e736610afaf",
+      "elapsedMs": 4468,
+      "stdoutSha256": "84643ee9d4ec894faae6b79c55546e34451e70f290500af293d083e678e34128",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 14096,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "sourceEvidence": "Printed Modelo 202 page 2 with continuation of liquidation boxes; the source cover establishes the national AEAT issuer.",
+      "visualSha256": "8bf55c079481e1eaa7ca4d1581f57f7b46ae134b5fb1c5da7882f07d6653facf",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "202-form",
+      "page": 3,
+      "inputSha256": "a83bca30cab0fe5d730f96d611e2b9ac7d067d750a4707d5fd84d9056013f1a5",
+      "requestSha256": "e95f4d57ae7482adb6b4deb1eff2e45047024b9e703b77f1eaf79bcb1f5d2f7c",
+      "promptSha256": "a59543d8df8085f569437cc2552d7647f91479ac3c3f1d73226001b1d3e227e5",
+      "elapsedMs": 6353,
+      "stdoutSha256": "e0e9cf040d6894662e02557eeb00122dfa78bfa3b3eba812493d7acc880131f9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 15020,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "sourceEvidence": "National AEAT header and Anexo Modelo 202; additional-data communication is a blank form annex, not completion instructions.",
+      "visualSha256": "c1af35be43262f1176990a3e0bf1192b31ff4c1065eff4ea23e01bd9d696a166",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "202-form",
+      "page": 4,
+      "inputSha256": "4088424195a4381aa8d27fbc497260d194cee840e82561d38303b485cb231b4f",
+      "requestSha256": "33aab2fae5a059cc23eab93a152de3306b0e5a70e75942826a5740fd94306fd5",
+      "promptSha256": "fab14e2b255487af003d9c348348cc2cb6a9850011ee517ea98fc87ede938556",
+      "elapsedMs": 9860,
+      "stdoutSha256": "12c17fd87324e6db1dd286d27051885d85dae09f050de9743a60013bf46f0be1",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13415,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 127,
+        "reasoning_output_tokens": 97
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "unknown",
+        "form": "aeat-202"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-202"
+      },
+      "sourceEvidence": "Anexo Modelo 202 page 2; additional-information and supplementary/substitute filing boxes. This is the continuation of physical page 3.",
+      "visualSha256": "96ce100263bef40382a5cfef5043e772226f240154b466001cc52101963bf2a8",
+      "mismatchedFields": [
+        "jurisdiction"
+      ],
+      "identityCorrect": false,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 25,
+      "inputSha256": "cbd1849f13490e90a8bb200bd25e9697c6d2b448b29545b3d5087f174af59b8a",
+      "requestSha256": "83057aa750e5b0baa845a024fbeacb6de7ee8433af1df6fe989344e57ebe7b52",
+      "promptSha256": "aaab54878db0f5c3db1e8ec563f42a22ecfc7881e462361a631679d2b9bb6d7e",
+      "elapsedMs": 5650,
+      "stdoutSha256": "82e304da11aaa6a6a84556ab62a4fcdd0639de390d18cf29961f0ab828826283",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 14130,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "sourceEvidence": "Scanned national AEAT Modelo 210, nonresident income-tax self-assessment with blank fields.",
+      "visualSha256": "4e15b371ba0b59fb13247d67fa03852a6c06c84a5390be488552bc51eb1303b6",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 27,
+      "inputSha256": "7298ea01bbfe1723cd2b5cf313a7eb7c822a113f119a6c27729b461097fcc8f6",
+      "requestSha256": "9edaf6b5b7a47a2ef7f21e5184d35ade611be06ad1a139ee14807e785acb28b9",
+      "promptSha256": "f70305b3e8cfccb78d95587958cc0aecda9421e805dba9f38cefb61a492c4afa",
+      "elapsedMs": 5920,
+      "stdoutSha256": "6684a8a987c3baa8f92f9590165243089d83c22de1a3e9754b1e013496854aaf",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13511,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 67,
+        "reasoning_output_tokens": 36
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 210 dividend-detail annex; repeated payer/dividend fields are part of the form.",
+      "visualSha256": "defb9024756e2cc8337beced74bd62762fa1df4657e0ce2d5fd375d4d5c74e59",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 29,
+      "inputSha256": "8fa0ba29cac50a5364f76cf7c9aa852fd49be63a98702512325e23aadf7e9c5c",
+      "requestSha256": "4dc77c47bef6467151dd654ff2757fad1364f611e677200dcce23a368b45d5f3",
+      "promptSha256": "23fc3e2c8ac0746498cfdf760decb1400f18dbe44058a295d460ebca39c1f12c",
+      "elapsedMs": 5703,
+      "stdoutSha256": "c2d917056d69f1852823ad614cb1a4ee7b19aa4325198fb2a582474695455e23",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13569,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-210"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 210 deductible-expense and amortization annex; a form annex, not a bank refund receipt.",
+      "visualSha256": "e498fb332bb8359305d015689b7bdc1240139d993e53be46b418fde4c102a930",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 31,
+      "inputSha256": "903d449ea1ce87cf5536f75b1314b9830aeaabb89a0e5d3386a6c01c6b4261b3",
+      "requestSha256": "88d8ef0a8db9f091e2ac961aa940c6c2c09091de01616a2694e885d4facfcb1e",
+      "promptSha256": "bc10f9050d355deb11634d6a8670224025ad5c1b98f8bc721b5ef2a3e8a91d56",
+      "elapsedMs": 5726,
+      "stdoutSha256": "85e51ea5059d79e8a0720adcfaac746f08aba416721e9f40e59efd61f7bdaea4",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13973,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 211 property-acquisition withholding self-assessment, blank form.",
+      "visualSha256": "9d6b7b8fdd8568e634930fe85e1eb0c4bf1e2de40fc009fb89367474a15ec606",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 32,
+      "inputSha256": "eab61003c736fd51805dc803f16dcaaf9ce2aee90713fc7a1696c8b1417bf408",
+      "requestSha256": "9bcac2fa564c8d4a3ea501abfa8591bcbd50d73bd35cde10d216d3d7cc8ab30e",
+      "promptSha256": "945dd2dd3733ccc886c1a889ef8df1f1edf212b450e2b7e93b4efa969aef1a11",
+      "elapsedMs": 5680,
+      "stdoutSha256": "6f54e7e317323abdde590017cccf8bbe57fee8e292fe5f47363699169c5ee4ae",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13577,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 55,
+        "reasoning_output_tokens": 24
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "sourceEvidence": "Printed Modelo 211 partial collaborating-bank copy, with blank payment fields. It is not proof of filing or payment.",
+      "visualSha256": "f3696976b83088a434358ea1d1b8b7d8744e843c46696bf5ac62686e431f773e",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 34,
+      "inputSha256": "e29bf4f7cc4fc8bada52f9049469d5090acaeaeb87755bf238c4d05605e6ee1e",
+      "requestSha256": "d8ee141a9dd85f6d7c625d03f94a4bb1fa6aa2b7aa56c1812a8bcbc5164a0821",
+      "promptSha256": "c24ea327bf0def01aa16f577364807d46e0d4318bdc99b55faaaaafe819a4a86",
+      "elapsedMs": 4699,
+      "stdoutSha256": "67dd19df74fc3e71fb129634505ef9343e7e26d96d6006629e604d6da9fe93b7",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13641,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 211 Anexo I, list of acquirers, blank form fields.",
+      "visualSha256": "f346a147e0ab407d48ec95bea0357b9750ca5818ba62f46a8a7ec83c7d10f67c",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "210-211-order",
+      "page": 36,
+      "inputSha256": "030691bc9b574d8bcdc98e296bc422a6d269b7bd1bffc38e47fc789492ca1444",
+      "requestSha256": "5311c88d0f28172851b835ec9e9b2338f32c30d33f85b769f96b78bcb952541a",
+      "promptSha256": "7f51f1a777756dfe8b9adfd06540bb6f717e6940e8099d5dfb67aedc3004c413",
+      "elapsedMs": 6322,
+      "stdoutSha256": "e94ae7d682e5cd033d57591a00d8ead53a8b39451beb0daf988d9e6fe8ec2fc8",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13832,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 67,
+        "reasoning_output_tokens": 36
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-211"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 211 Anexo II, list of nonresident transferors, blank form fields.",
+      "visualSha256": "62bafcc3d250a06170bb5c63b99d5396b35a6db88efa99456d47b318ecd910cf",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "309-order",
+      "page": 5,
+      "inputSha256": "0ca45c5e1ed1d543041dcfac2037608d1e7b84a537a04350dde0dcdec26d6513",
+      "requestSha256": "682528fe38720d298b6c878b3e643a59b98d2f25d0a1c4cf4392a55acb642528",
+      "promptSha256": "2249160dbb33b0f40a886b9a5f300779b8d367d11fbd59138f97d10d7dbedc00",
+      "elapsedMs": 4807,
+      "stdoutSha256": "7830662d8606147dcda7d1184b21038fb09aae99277d7c70ff8281b1b50f9729",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13957,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 52,
+        "reasoning_output_tokens": 21
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "sourceEvidence": "Scanned national AEAT Modelo 309 nonperiodic VAT declaration with blank fields.",
+      "visualSha256": "80860f4587ca3ecfea924eba5a84606bad58afc79edf56f16397b5893530ce0d",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "309-order",
+      "page": 6,
+      "inputSha256": "cb3f229a591ee5f8a98b039a496aa6071217869bf06bc215d277d39e8aaac46f",
+      "requestSha256": "a0a701a0676ff49fa5a3d56df7916c124586e7fc75391fea27b49fa59000f8fe",
+      "promptSha256": "78d34741165d5d6d2eb9734567255cbb3fdf820fa9a531469dc191c4e3890865",
+      "elapsedMs": 4749,
+      "stdoutSha256": "743a940d6c742ad935e1afb0c579b62db3cc8fa4b9c42a6192bad3b48c430041",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13565,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "split": "calibration",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-309"
+      },
+      "sourceEvidence": "Printed national AEAT Modelo 309 partial bank copy. Blank payment section and absence of validation mean a form, not a filing receipt.",
+      "visualSha256": "c768a868d1d91102a5d0ab4d1b37b8264f6955bf13178babee6cbd61f8a49338",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "347-order",
+      "page": 6,
+      "inputSha256": "0acd7f14bee8a808e139156ecbdcb963ca063f7919b0e8aa613aad64bdf844d7",
+      "requestSha256": "76b5b85a68964ac82d646a92f06fea9dda5373639b3c80d859f27192b4e29c39",
+      "promptSha256": "b34f415fd79a6ef23c11fe942b3e0f023442d5e6eb16ea9bb9fd8ccffb88340c",
+      "elapsedMs": 7393,
+      "stdoutSha256": "947ac876da46bf2072db9c1d08dabe856a4bff24bc7245adff80514a30984418",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 14197,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 137,
+        "reasoning_output_tokens": 107
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "unknown",
+        "form": "aeat-347"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      },
+      "sourceEvidence": "Printed MODELO 347 with field positions, types and completion descriptions (se consignara). This is record-layout guidance, not an actual return; national AEAT URL appears in the table.",
+      "visualSha256": "c8e785f4993ef859664aabbf565626c6a9619022fc27cb464d2175358b223216",
+      "mismatchedFields": [
+        "kind",
+        "jurisdiction"
+      ],
+      "identityCorrect": false,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "347-order",
+      "page": 7,
+      "inputSha256": "bdd5144243d17b74853286e8c8c3fb7c1284d5dc6dbb1d4a4a579bf552d1e0ff",
+      "requestSha256": "6c1cfdcb07d5c89715bdff4f56442e5fa5f92f298a1a07cc122e899ab6a090ab",
+      "promptSha256": "0aaa16f78824bf1a1f9125c5865025e2e666f7c16b34c3f45af55d0131e4c119",
+      "elapsedMs": 13948,
+      "stdoutSha256": "ec0c6228f3380b2a9ab9b6da1d931c2eddf7960c10fe42ac6836ee48c60d72bd",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 14287,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 142,
+        "reasoning_output_tokens": 116
+      },
+      "labels": {
+        "kind": "instructions",
+        "jurisdiction": "unknown",
+        "form": "none"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "aeat",
+        "form": "aeat-347"
+      },
+      "sourceEvidence": "Continuation of the 347 record-layout instruction table on physical page 6, including field positions and Agencia Estatal de Administracion Tributaria reference. Instructions, not a return.",
+      "visualSha256": "c79c0e90fc0e905179dc9e8416e1617c985bb125ea87ae5a6f08f36b2bc59d73",
+      "mismatchedFields": [
+        "jurisdiction",
+        "form"
+      ],
+      "identityCorrect": false,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "369-order",
+      "page": 10,
+      "inputSha256": "22ca1246871754f64a01fa391c92f5c066a2d11493a430d2ad8b68eaecd4111a",
+      "requestSha256": "51299f40156acd1ac7fac26087a76566fb5364c3f76b154943f1b812ac979a40",
+      "promptSha256": "d8e3eebd779e738a735566fa330f954b043e7248d3be4789ffbcb271f6957598",
+      "elapsedMs": 6928,
+      "stdoutSha256": "f0ac4b8816f853c478ad0f7ce2458801a169616637f7c80f9dd2786c81dac0d1",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13576,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 55,
+        "reasoning_output_tokens": 24
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "National AEAT Modelo 369 non-Union regime first page; blank OSS form.",
+      "visualSha256": "814e56f0925b19d2c777b2b2d895c012c5304b1d3132853c155e9ba47cc83c61",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "369-order",
+      "page": 11,
+      "inputSha256": "15cb8bdb580a0b261632d50cb8feed8e0f4e72fbe53fb6d3e3caba25442545bb",
+      "requestSha256": "9b96433c987ba84fbe9eac6c38d8c6883d41cfd0967172899816b75d81c2931f",
+      "promptSha256": "01e2da03a0d70a088ddd05c716195b37521b03104a200a176c8194543a0a27a4",
+      "elapsedMs": 11211,
+      "stdoutSha256": "a85d9718f2fb3573e37f6ea002b3afcef4850a8d926c8af39f066f7de8cdc3d6",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13307,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 111,
+        "reasoning_output_tokens": 80
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "Printed Modelo 369 page 2 with prior-period correction rows, continuing the non-Union form on physical page 10.",
+      "visualSha256": "d7ff8308461ad719cc52e417e034673fdca4752ca38b12d8e04d26a697a01452",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "369-order",
+      "page": 13,
+      "inputSha256": "451885f462ded99297ab0a2abeac536812e5d79337bc19663e266d611d96247c",
+      "requestSha256": "10d7b6534ab2b319dc5920006d33a01252a29dde8f37ae5753975077f84acfd4",
+      "promptSha256": "0bb713d6ac63b3c7c314cf516ab1ccd778771f2e0defcc75a005bd3ec22cc6c2",
+      "elapsedMs": 4985,
+      "stdoutSha256": "b5ed8d6a560e1b38dd2e930072f280e8a0993ff293e680b30d7901122ce16a30",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13583,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "National AEAT Modelo 369 Union-regime first page, blank form.",
+      "visualSha256": "17b5480a6fccf2430c970a6f125c207226c40e33729e84c90ba824476cf9f0a2",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "369-order",
+      "page": 14,
+      "inputSha256": "4f1dddf8d76527884d1ebbff04c3720a8ea0490011591d0f3dc2d69ac4eec95d",
+      "requestSha256": "46be73b07fde5229feae8b7ae300816cc373c2848ede3e12ad95213fe478ce1c",
+      "promptSha256": "6fd85196f888afd6fbf428e903617a9f382f198a52ecddda34fad1910229e5ba",
+      "elapsedMs": 9808,
+      "stdoutSha256": "45e7ae597c2390ef84512a422420912a8cbd81d823aa9ce9840e422ce986db53",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13302,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "Printed Modelo 369 page 2 with goods-supply rows, continuing the Union-regime form.",
+      "visualSha256": "4216dba24542f5fe68562901740df373bb2e30bb94dd7abcbd9cac2d9b223384",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "369-order",
+      "page": 19,
+      "inputSha256": "d91379cc1248b1d4ac9ae67d668257fd2f3a365038bdd147017e278d40c0e456",
+      "requestSha256": "49e12939df6716448b73e516966fb222a3500111f85d6ab4f83a125b127de2d4",
+      "promptSha256": "071abf6f49fbbf68f29647a7aa300cefabae6a4e888968d1f507fe054b695e1d",
+      "elapsedMs": 6877,
+      "stdoutSha256": "170bf6e3e9efb0554fabd4fdbeac2bf0d68d7ccf15b0281d26015e13657ad90f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13605,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "National AEAT Modelo 369 import-regime first page with IOSS and intermediary fields.",
+      "visualSha256": "0bd0d437c76e1608643cef6f214dc3851d4e34609f66c44726769aebcb81b9e8",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "369-order",
+      "page": 20,
+      "inputSha256": "b526cd0ba92ea52ded4c6afd6f7769816dbc1f82279d2579faf61859a28d83f7",
+      "requestSha256": "00d8ff6130d47c71ea2246089beaa4bfe7d8a9ca7c3d2ed1b5db81185fb03b69",
+      "promptSha256": "dadede7bd97aef5c2230a769f044446399bed0f555961c70364c7387718919aa",
+      "elapsedMs": 15579,
+      "stdoutSha256": "173d5840caf0bb0ee85dfc4760192fec1290e5099eba0615e118670c728daed9",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13343,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 225,
+        "reasoning_output_tokens": 194
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "Printed Modelo 369 page 2 with prior-period correction rows, continuing the import-regime form.",
+      "visualSha256": "4cb65389dd1fc4493d698c74a4008da374b46930d8655bd80a58b504c1c5afb8",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "369-order",
+      "page": 22,
+      "inputSha256": "4a6133b4aaddcc89c5230115b6cec8fb0b943c8a91fde1e7f1334caa032d0c4c",
+      "requestSha256": "0184387aa17ed0750f40b81a55ce1a884b36c26ec0426cfe56bf17c075faba2d",
+      "promptSha256": "2758c764118ca6946b14bcd10559ac17476de24a99baac1b6a878a91a1aa3126",
+      "elapsedMs": 5644,
+      "stdoutSha256": "22e233396e3d426765377bc66bfa0cbfee0f4bf81a31c1fdd003ec21b03d04b5",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13667,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 29,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "split": "validation-reserved",
+      "group": "aeat",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "aeat",
+        "form": "aeat-369"
+      },
+      "sourceEvidence": "National AEAT Modelo 369 additional-payment form for a previously submitted declaration. Blank fields make this a tax form, not the receipt of that earlier filing.",
+      "visualSha256": "bee4554dd803cf429b071558fddf53747b8622f25c61df22adb25ede65b02f90",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": true
+    },
+    {
+      "sourceId": "catalonia-650-form",
+      "page": 1,
+      "inputSha256": "4dc4f0a4743f355a9ca44e946deaf8ea6841401491ef4c69addb602641002923",
+      "requestSha256": "ad1d1ac9a34ec5a30bdf672a60489cf91e9a622770606ad2e42e124482b6286b",
+      "promptSha256": "b31fbab0f559ad615a15639167b4b21ef304a76014e4f0975d4917d7044710b3",
+      "elapsedMs": 6866,
+      "stdoutSha256": "0a282628cde48680a768eb9825b3e7714afb28938a61f9ec4960d3b4fd85038d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13717,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 25,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "split": "validation-reserved",
+      "group": "scope_control",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "Agencia Tributaria de Catalunya header, Generalitat references and printed 650. Regional inheritance-tax form; never national AEAT 650.",
+      "visualSha256": "154227de6c4fefa263a856b3f43c9feb4d0171ad0e7198049efe855d87ec8d49",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "catalonia-650-form",
+      "page": 5,
+      "inputSha256": "0a21c260b86612b33e1f3740adb5c692020e7f1dcc1145f2662fda40d91f88df",
+      "requestSha256": "ac934a53589d7740df55d5969159eebdf249e974b5eb560f645d852764a7a325",
+      "promptSha256": "1454e46548dc99a7c2fba5911d84e534e9ca81108fa346b83d6cd224c1287e9b",
+      "elapsedMs": 8072,
+      "stdoutSha256": "e723a59b34a388793dc8180a691b28d9e9c8a14a9252c127da5c1c0baf30142e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13822,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 76,
+        "reasoning_output_tokens": 49
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "split": "validation-reserved",
+      "group": "scope_control",
+      "expected": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "Printed 650 liquidation continuation of the ATC form. Regional issuer is established by physical page 1; catalog form none even though the model number is visible.",
+      "visualSha256": "f5708494d452a76ba593ba6302a6f3e4041fa785731206b64e57f98d573daee3",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 1,
+      "inputSha256": "31122d2f17658d734e7d21db950973a44e4c05b9af56db611e90d9d1bd564ace",
+      "requestSha256": "c6c3c182af48bb20c7b1e9f8d9cee5991bff6ae892a9788981753540cd087855",
+      "promptSha256": "17ee397a18857703941d4ba0ebb8e0a233aba933e56cf6a69a0d5e0e1e7fcf5e",
+      "elapsedMs": 4386,
+      "stdoutSha256": "36d2aacf70ac8b9bc54e3a69d88e817ef8e9b6d310cc338573cc42690078636e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13874,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 24,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "split": "validation-reserved",
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "ATC header and title explicitly identify instructions for regional 660 and 650; model none for the national catalog.",
+      "visualSha256": "f32b0ab1595c0bd175f088bf513e6e7cbb656dd4048cc65e86c70cab4e78e713",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 2,
+      "inputSha256": "3d582b0106c3bc0b76d57e1b9c1e11d1630f6359dfed46cdc26bc6605dfa358f",
+      "requestSha256": "855f651f9382dbe839e548d32bc0578b4231c8ad366aad35f1f90ca9291c13ba",
+      "promptSha256": "0bd97b54216e62e2f4b85abab4bf6d61f55853bfe594c6ecef3e01daa66caeac",
+      "elapsedMs": 5230,
+      "stdoutSha256": "6ab60399d1396d244247c8e75e249699242b45b0c68c5e98d3a10f0793b29e14",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13762,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 25,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "split": "validation-reserved",
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "ATC header with explanatory prose and illustrative form snippets. The page is instructions, not a blank tax form.",
+      "visualSha256": "c77389dd89bd797365967f8ef4fb29ba01a89537abf7035bb3d8de066bc78b59",
+      "mismatchedFields": [
+        "kind"
+      ],
+      "identityCorrect": false,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 15,
+      "inputSha256": "bc584bfffc58d78286fb22ba5913616ae1fcda619ae0dfa21b063422c54857e5",
+      "requestSha256": "c960ce7fa271c1d4ecb5bef56ecb77028e36cdec940a85e7eb575ab015718e63",
+      "promptSha256": "eb4bb4c7fbf52c04fd02e860b7b0e84dc3aae99f40d8e1b4fb3418278d42fbd6",
+      "elapsedMs": 5387,
+      "stdoutSha256": "56604ebac86232da3c8de06e292d4f4e1a24e6d893c322ebdc82d7d4ca036ef7",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13824,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 72,
+        "reasoning_output_tokens": 45
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "split": "validation-reserved",
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "ATC header; documentation checklist illustration followed by information for filling Modelo 650. Embedded form illustrations do not change the instructional page kind.",
+      "visualSha256": "84954278a464d3bc704f4c4d86521b7212de8cb174257ac51b87ea9ea6384480",
+      "mismatchedFields": [
+        "kind"
+      ],
+      "identityCorrect": false,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "catalonia-650-instructions",
+      "page": 16,
+      "inputSha256": "0da8566b98b1fb1673d88ad9883c373ff87d1b4a272cc3ab87b9781fc7c75729",
+      "requestSha256": "b114d03ded33862336505bd2e5599ebc3d77b94c5feffca2bd2c3260c2b3b884",
+      "promptSha256": "5965f10dd1331054d88076dd885482d1068baa22d860e86f0580693cf7ab92d7",
+      "elapsedMs": 6324,
+      "stdoutSha256": "c37a4affeefdd21c8fe5ca5ccc39cf828a4131a431bb0aa00470226e3cc7fa98",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13869,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 90,
+        "reasoning_output_tokens": 63
+      },
+      "labels": {
+        "kind": "tax_form",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "split": "validation-reserved",
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "regional",
+        "form": "none"
+      },
+      "sourceEvidence": "ATC header, definitions and completion prose around form illustrations; regional instructions.",
+      "visualSha256": "72c30347750acbfff136255bcb2ce15c446874d048451614bdbfadfc4cdae42d",
+      "mismatchedFields": [
+        "kind"
+      ],
+      "identityCorrect": false,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "tgss-receipt",
+      "page": 1,
+      "inputSha256": "cddf23a1f4c76c6efa9046baa56f3387cb3db8e698d96615c9314641e797e28c",
+      "requestSha256": "ce66398ce96d03a2b86de27a0bc948a7659d906c58fafbe2d5e6e3437c6281ec",
+      "promptSha256": "29a8a7bcc7e6b1ad87dd9299e7bd3032d0910fc03d4f73156c26794d2b8de5ea",
+      "elapsedMs": 10146,
+      "stdoutSha256": "74ae6859b17afaeb64ba3a1496d0154a089ffa74ad3ce6f015991ebcbd988efe",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13973,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 69,
+        "reasoning_output_tokens": 40
+      },
+      "labels": {
+        "kind": "social_security",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "split": "calibration",
+      "group": "scope_control",
+      "expected": {
+        "kind": "social_security",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "sourceEvidence": "Tesoreria General de la Seguridad Social header and Recibo de Liquidacion de Cotizaciones with an EMPRESA PRUEBA example. Route as social_security, not an AEAT filing receipt or bank statement.",
+      "visualSha256": "f52cccc59742f08c36ef247c4ebc36cb37a0ba00836878d49efae27036baab52",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 1,
+      "inputSha256": "71e4c191410a8f1ef52f500a29b21a1c4609a07f4e6ff70f28651f3451aeb423",
+      "requestSha256": "00039f98e8c14b1724ef34e6c3c0f1dd54c3f0122ddf3241c553c23bc51ad6e0",
+      "promptSha256": "fe0775363c8073e27897f37066166cd48e3379a4280bb424bf134e6fcabb5497",
+      "elapsedMs": 6544,
+      "stdoutSha256": "947bca3d22ada951c062b9e59abec74af939f50dea562c279781174538763918",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13601,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 61,
+        "reasoning_output_tokens": 35
+      },
+      "labels": {
+        "kind": "instructions",
+        "jurisdiction": "unknown",
+        "form": "none"
+      },
+      "split": "calibration",
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "sourceEvidence": "Formato FACTURAE introduction describes required/optional fields and a format table. Technical instructions with no issuing tax authority, not an invoice.",
+      "visualSha256": "0e49d6f28eea78f46da0ca708acabd49972a095d0c166e6a384ce0b8cda984d8",
+      "mismatchedFields": [
+        "jurisdiction"
+      ],
+      "identityCorrect": false,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 4,
+      "inputSha256": "3dac55e1bc8971907853dbc63b7a604106ee3cd0d9315d0c23344c4b773bf390",
+      "requestSha256": "6eb40c974e4e8286c0f6244ad0ba0391cd4d5a1139f73027a18a5ec4872d0a1e",
+      "promptSha256": "dee338efd11729a219d826e0b2ce432e4809fca3d5c432ef94fd3801e328bf30",
+      "elapsedMs": 5959,
+      "stdoutSha256": "0d5234e60b2c248b89acbe58e1556cad2f61dfaa4848eb377736a82308f1fced",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13350,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 26,
+        "reasoning_output_tokens": 0
+      },
+      "labels": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "split": "calibration",
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "sourceEvidence": "Ejemplo 1 explains a worked invoice example and its six information blocks. Pedagogical prose and diagram make this instructions, not a transaction invoice.",
+      "visualSha256": "4b51c8946039c0a56abfc661bd451b7fc8a0522a263b831e0f0720d0f0ede718",
+      "mismatchedFields": [],
+      "identityCorrect": true,
+      "aeatModelAndKindCorrect": false
+    },
+    {
+      "sourceId": "facturae-examples",
+      "page": 18,
+      "inputSha256": "83d7ae0d86ecf5c9eab52a8328209d53d883f021e3553efa1170558fdd8041fc",
+      "requestSha256": "1b41c8432ceb6b6361ddf5b05202b4841ad2286a58c8c4a660b417a4a1193aae",
+      "promptSha256": "ad8434762319b295d44f011b58efd234334476620bdc79e6bec66210de3c6f34",
+      "elapsedMs": 7433,
+      "stdoutSha256": "f43a0de175aa49bddd5fef45ffe84d4d0a7e4e164e9c1f097ea4d02bed841760",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "usage": {
+        "input_tokens": 13414,
+        "cached_input_tokens": 9984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 66,
+        "reasoning_output_tokens": 38
+      },
+      "labels": {
+        "kind": "invoice",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "split": "calibration",
+      "group": "scope_control",
+      "expected": {
+        "kind": "instructions",
+        "jurisdiction": "not_applicable",
+        "form": "none"
+      },
+      "sourceEvidence": "Ejemplo 2 explains the second worked example and its CABECERA block; illustrative values remain part of technical instructions, not a real invoice.",
+      "visualSha256": "553a3b7d02bb98aed9d254f749dcb541856f57a8ab7be1f1fe2adea21974d90f",
+      "mismatchedFields": [
+        "kind"
+      ],
+      "identityCorrect": false,
+      "aeatModelAndKindCorrect": false
+    }
+  ],
+  "summary": {
+    "all": {
+      "pages": 42,
+      "aeatPages": 30,
+      "aeatModelAndKindCorrect": 28,
+      "fullIdentityCorrect": 31,
+      "errors": 0,
+      "sourceMacroAeatRecognition": 0.875,
+      "fieldCorrect": {
+        "kind": 37,
+        "jurisdiction": 36,
+        "form": 40
+      }
+    },
+    "calibration": {
+      "pages": 17,
+      "aeatPages": 13,
+      "aeatModelAndKindCorrect": 13,
+      "fullIdentityCorrect": 12,
+      "errors": 0,
+      "sourceMacroAeatRecognition": 1,
+      "fieldCorrect": {
+        "kind": 16,
+        "jurisdiction": 13,
+        "form": 17
+      }
+    },
+    "validation-reserved": {
+      "pages": 25,
+      "aeatPages": 17,
+      "aeatModelAndKindCorrect": 15,
+      "fullIdentityCorrect": 19,
+      "errors": 0,
+      "sourceMacroAeatRecognition": 0.75,
+      "fieldCorrect": {
+        "kind": 21,
+        "jurisdiction": 23,
+        "form": 23
+      }
+    }
+  },
+  "comparison": {
+    "jev/ocr": {
+      "pages": 42,
+      "documents": 12,
+      "aeatPages": 30,
+      "recognitionPages": 42,
+      "extractionPages": 0,
+      "scopeControlPages": 12,
+      "aeatModelCorrect": 29,
+      "aeatModelAndKindCorrect": 29,
+      "fullIdentityCorrect": 32,
+      "accepted": 17,
+      "correctAccepted": 17,
+      "wrongAccepted": 0,
+      "acceptanceRate": 0.40476190476190477,
+      "acceptedPrecision": 1,
+      "needsReview": 22,
+      "needsOcr": 0,
+      "reviewRequired": 11,
+      "reviewCorrect": 8,
+      "errors": 3,
+      "routingEligible": 31,
+      "correctEligibleAccepted": 17,
+      "aeatAccepted": 16,
+      "sourceMacroAeatRecognition": 0.9375
+    },
+    "luna/ocr": {
+      "pages": 42,
+      "documents": 12,
+      "aeatPages": 30,
+      "recognitionPages": 42,
+      "extractionPages": 0,
+      "scopeControlPages": 12,
+      "aeatModelCorrect": 28,
+      "aeatModelAndKindCorrect": 28,
+      "fullIdentityCorrect": 34,
+      "accepted": 22,
+      "correctAccepted": 21,
+      "wrongAccepted": 1,
+      "acceptanceRate": 0.5238095238095238,
+      "acceptedPrecision": 0.9545454545454546,
+      "needsReview": 17,
+      "needsOcr": 0,
+      "reviewRequired": 11,
+      "reviewCorrect": 8,
+      "errors": 3,
+      "routingEligible": 31,
+      "correctEligibleAccepted": 21,
+      "aeatAccepted": 20,
+      "sourceMacroAeatRecognition": 0.9125
+    },
+    "luna/labels": {
+      "pages": 42,
+      "aeatPages": 30,
+      "aeatModelAndKindCorrect": 28,
+      "fullIdentityCorrect": 31,
+      "errors": 0,
+      "sourceMacroAeatRecognition": 0.875,
+      "fieldCorrect": {
+        "kind": 37,
+        "jurisdiction": 36,
+        "form": 40
+      }
+    }
+  },
+  "usage": {
+    "calls": 42,
+    "failed": 0,
+    "knownInputTokens": 582048,
+    "knownCachedInputTokens": 239616,
+    "knownOutputTokens": 2329,
+    "knownReasoningOutputTokens": 1127,
+    "callsWithUnknownUsage": 0,
+    "medianCallMs": 5916,
+    "totalCallMs": 286221
+  },
+  "matchedIsolatedRequests": 42,
+  "sourceRunSha256": "84aaf65cdb97e2fdaf2d75e5c4fa88b372f94baf596b73492c1ec77057865100",
+  "mainReportSha256": "7a8cef10a9bd91b1fa4a830e6ba9b8f9ce9e0ad4b80d565551452d3988ba25b2"
+}

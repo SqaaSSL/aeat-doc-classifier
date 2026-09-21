@@ -44,6 +44,12 @@ Exit criterion: documented performance on a held-out representative corpus, not 
 - [Completed same-run comparison and Codex review](benchmarks/extraction-guarded-2026-09-21.md): 29/30 isolated AEAT recognition, 30/30 with context, and 19/31 correct eligible contextual acceptance. One final failure remains. These are development results, with unchanged gates and frozen reference labels.
 - Next: improve annex grouping and response-validator diagnostics, then evaluate a new holdout. Broader scan quality and character/amount accuracy remain unmeasured.
 
+## Delivered evaluation — Jev versus Luna
+
+- [Five-condition comparison and completed review](benchmarks/luna-2026-09-21.md) on the 42 development pages: identical OCR/catalog for both text backends, optional context, and a separate Luna image-only condition.
+- [Post-hoc label-only follow-up](benchmarks/luna-labels-2026-09-21.md) separates output-contract failures from simple label recognition. All original outcomes remain published.
+- Next: investigate teaching-example versus invoice mistakes, improve validation diagnostics, and evaluate an optional text/vision fallback with separate calibration on new document families. The existing 0.95 gates cannot be transferred between models as equal-risk thresholds. Production backend remains Jev.
+
 ## Next — accounting assistance
 
 1. Extract invoice fields with evidence spans and immutable source links; exact decimal arithmetic, document totals and identifier checks belong in code.

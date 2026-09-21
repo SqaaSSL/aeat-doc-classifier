@@ -8,6 +8,26 @@ This is a document-routing library and CLI. It does not calculate tax, extract i
 
 ## Public benchmark
 
+### Jev versus GPT-5.6 Luna — 2026-09-21
+
+We ran both backends on the **same 42 reviewed pages**, with identical adaptive OCR, catalog criteria and routing code, plus a separate Luna image-only condition. Codex checked all 210 outcomes against unchanged references. These are reused development documents, **not a new holdout**.
+
+| Measure | Jev OCR | Jev + context | Luna OCR | Luna + context | Luna image only |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Correct AEAT model + page kind | 29/30 | **30/30** | 28/30 | 29/30 | 29/30 |
+| Complete kind/authority/model identity | 32/42 | 35/42 | 34/42 | 36/42 | **37/42** |
+| Correct automatic routing, eligible pages | 17/31 | 20/31 | 21/31 | **27/31** | 25/31 |
+| Wrong automatic acceptances | 0 | 0 | **1** | **1** | 0 |
+| Failed page outcomes | 3 | 4 | 3 | 4 | 1 |
+
+**Luna accepts more correct pages, but its text workflow also confidently accepts a Facturae teaching example as a real invoice.** The contextual condition preserves that already accepted mistake. Jev fails validation on the same page; Luna image-only recognizes it as guidance. Errors remain in denominators. Luna's self-reported confidence is not calibrated to Jev's: the shared 0.95 gates do not establish equal risk.
+
+A separately frozen, post-hoc **label-only Luna follow-up** returns valid output on 42/42 pages, recognizes 28/30 AEAT model/type pairs and gets complete identity right on 31/42. It still mislabels the invoice example. This simpler contract has no confidence or automatic-acceptance metric and does not replace the original results. [Follow-up report and completed review](docs/benchmarks/luna-labels-2026-09-21.md).
+
+The comparison supports the value of the shared Spanish catalog, OCR, review policy and audit trail; it does **not** prove that Jev universally outperforms a general-purpose LLM. Luna remains an evaluation adapter, not a production CLI backend. All Luna calls used fresh GPT-5.6 Luna sessions through Codex at low reasoning effort, with tools disabled. Timings include Codex overhead; dollar costs are unmeasured. Production, amount extraction and PGC accuracy remain unestablished.
+
+[Full comparison and completed review](docs/benchmarks/luna-2026-09-21.md) · [All predictions and usage](docs/benchmarks/luna-2026-09-21.json) · [Frozen method and reproduction](eval/LUNA-BENCHMARK.md).
+
 ### Adaptive extraction — v0.5.0
 
 The improved local OCR recovers scanned form bodies hidden behind readable BOE headers. It retries selected pages at 300 DPI, tries 450 DPI when model-header evidence is missing, and preserves substantial existing text with a readable model header. No classifier prompts, model catalog or 0.95 gates were changed.
